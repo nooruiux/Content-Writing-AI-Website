@@ -1,0 +1,18 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Frame 24">
+<g id="Ellipse 13">
+<circle cx="14" cy="14" r="14" fill="white" fill-opacity="0.06"/>
+<circle cx="14" cy="14" r="13.5781" stroke="white" stroke-opacity="0.04" stroke-width="0.84375"/>
+</g>
+<g id="Paperclip" clip-path="url(#clip0_20_535)">
+<g id="Vector">
+</g>
+<path id="Vector_2" d="M16 11L10.7931 16.2932C10.6101 16.4816 10.5087 16.7345 10.5106 16.9972C10.5126 17.2599 10.6179 17.5113 10.8037 17.697C10.9894 17.8827 11.2408 17.9878 11.5035 17.9897C11.7662 17.9915 12.0191 17.89 12.2075 17.7069L18.4143 11.4144C18.7895 11.0393 19.0002 10.5305 19.0002 10C19.0002 9.46954 18.7895 8.96077 18.4143 8.58566C18.0392 8.21054 17.5305 7.9998 17 7.9998C16.4695 7.9998 15.9607 8.21054 15.5856 8.58566L9.37871 14.8788C8.82367 15.4429 8.51404 16.2036 8.51726 16.995C8.52048 17.7864 8.8363 18.5445 9.39592 19.1041C9.95553 19.6637 10.7136 19.9795 11.505 19.9827C12.2964 19.986 13.0571 19.6763 13.6212 19.1213L18.75 14" stroke="white" stroke-opacity="0.72" stroke-width="1.0242" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_20_535">
+<rect width="16" height="16" fill="white" transform="translate(6 6)"/>
+</clipPath>
+</defs>
+</svg>
