@@ -27,12 +27,12 @@ export function Testimonials() {
           aria-hidden
           className="absolute left-1/2 top-1/2 hidden w-[1400px] -translate-x-1/2 -translate-y-1/2 justify-between lg:flex"
         >
-          <div className="h-[445px] w-[162px] rounded-r-[32px] border-y-[1.4px] border-r-[1.4px] border-white bg-gradient-to-r from-[rgb(29_28_32/0.48)] to-[rgb(29_28_32/0.8)]" />
-          <div className="h-[445px] w-[162px] rounded-l-[32px] border-y-[1.4px] border-l-[1.4px] border-white bg-gradient-to-l from-[rgb(29_28_32/0.48)] to-[rgb(29_28_32/0.8)]" />
+          <div className="h-[445px] w-[162px] rounded-r-[32px] border-y-[1.4px] border-r-[1.4px] border-border bg-gradient-to-r from-[rgb(29_28_32/0.48)] to-[rgb(29_28_32/0.8)]" />
+          <div className="h-[445px] w-[162px] rounded-l-[32px] border-y-[1.4px] border-l-[1.4px] border-border bg-gradient-to-l from-[rgb(29_28_32/0.48)] to-[rgb(29_28_32/0.8)]" />
         </div>
 
         {/* main card */}
-        <div className="relative z-10 mx-4 flex w-full max-w-[1059px] flex-col overflow-hidden rounded-[32px] border-[1.4px] border-white bg-surface sm:flex-row">
+        <div className="relative z-10 mx-4 flex w-full max-w-[1059px] flex-col overflow-hidden rounded-[32px] border-[1.4px] border-border bg-surface sm:flex-row">
           <div className="relative flex shrink-0 justify-center pt-8 sm:w-[390px] sm:justify-start sm:pt-0">
             <img
               src="/assets/testimonials/portrait.png"
@@ -53,7 +53,7 @@ export function Testimonials() {
               </p>
             </div>
 
-            <div className="flex flex-col items-start gap-6 rounded-3xl border border-white/[0.12] p-6 sm:flex-row sm:items-center sm:justify-between sm:gap-8 sm:rounded-pill-lg sm:py-5 sm:pl-8 sm:pr-6">
+            <div className="flex flex-col items-start gap-6 rounded-3xl border border-border p-6 sm:flex-row sm:items-center sm:justify-between sm:gap-8 sm:rounded-pill-lg sm:py-5 sm:pl-8 sm:pr-6">
               <div className="flex flex-col gap-2">
                 <p className="text-lead font-bold text-white">{quote.name}</p>
                 <p className="text-sm text-white/[0.88]">{quote.role}</p>

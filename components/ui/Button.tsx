@@ -17,7 +17,7 @@ const base =
 
 const variants: Record<Variant, string> = {
   glass:
-    "border border-white/12 bg-white/[0.08] text-white shadow-[1px_1px_0.8px_0_rgb(255_255_255/0.04),inset_0_-1px_1px_1.5px_rgb(255_255_255/0.08)] hover:bg-white/[0.14]",
+    "border border-white/[0.12] bg-white/[0.08] text-white shadow-[1px_1px_0.8px_0_rgb(255_255_255/0.04),inset_0_-1px_1px_1.5px_rgb(255_255_255/0.08)] hover:bg-white/[0.14]",
   outline: "border border-white bg-transparent text-white hover:bg-white/10",
   gradient:
     "text-black bg-[linear-gradient(-5deg,#e6220c_5%,#ffffff_55%,#6f3ada_114%)] hover:opacity-95",

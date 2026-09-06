@@ -5,7 +5,7 @@
   --color-surface: #1d1c20;
   --color-accent: #18a0fb;
   --color-accent-soft: rgb(24 160 251 / 0.16);
-  --color-pro: #e6220c;
+  --color-border: rgb(255 255 255 / 0.05);
 
   --font-sans: var(--font-satoshi), ui-sans-serif, system-ui, sans-serif;
 
@@ -42,6 +42,13 @@
 @layer base {
   :root {
     color-scheme: dark;
+  }
+
+  /* every border is the same hairline unless a utility overrides it */
+  *,
+  ::after,
+  ::before {
+    border-color: var(--color-border);
   }
 
   html {
