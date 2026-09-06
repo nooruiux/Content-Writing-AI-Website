@@ -18,7 +18,7 @@ export function Hero() {
         <div className="relative flex justify-center">
           <div
             aria-hidden
-            className="pointer-events-none absolute top-1/2 left-1/2 hidden w-screen max-w-[1512px] -translate-x-1/2 -translate-y-1/2 justify-between lg:flex"
+            className="pointer-events-none absolute top-1/2 left-1/2 hidden w-[1176px] -translate-x-1/2 -translate-y-1/2 justify-between lg:flex"
           >
             <img
               src="/assets/hero/bracket-left.svg"
