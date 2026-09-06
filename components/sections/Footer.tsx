@@ -2,7 +2,7 @@ import { Container } from "@/components/ui/Container";
 import { NewsletterForm } from "@/components/ui/NewsletterForm";
 import { footer, site } from "@/lib/content";
 
-const panel = "rounded-xl border-[1.4px] border-white/[0.16] bg-surface backdrop-blur-lg";
+const panel = "rounded-xl border-[1.4px] border-border bg-surface backdrop-blur-lg";
 
 export function Footer() {
   return (
@@ -10,7 +10,7 @@ export function Footer() {
       <Container className="flex flex-col items-center gap-10">
         <div className="flex w-full flex-col gap-4 lg:flex-row lg:items-start">
           <div className={`w-full p-8 lg:flex-1 ${panel}`}>
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-5">
               <div className="flex flex-col gap-3">
                 <div className="flex items-center gap-2">
                   <img src="/assets/logo-mark.svg" alt="" width={24} height={24} className="size-6" />
@@ -19,7 +19,7 @@ export function Footer() {
                 <p className="text-base font-bold text-white/[0.72]">{footer.tagline}</p>
               </div>
 
-              <div className="h-px w-full bg-white/[0.16]" />
+              <div className="h-px w-full bg-white/5" />
 
               <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
                 {footer.columns.map((col) => (
@@ -49,14 +49,12 @@ export function Footer() {
             </div>
 
             <ul className="flex gap-4">
-              {footer.socials.map((social, i) => (
+              {footer.socials.map((social) => (
                 <li key={social.label} className="flex-1 lg:flex-none">
                   <a
                     href="#"
                     aria-label={social.label}
-                    className={`flex aspect-square items-center justify-center rounded-xl border-[1.4px] bg-surface backdrop-blur-lg lg:size-[152px] ${
-                      i === 0 ? "border-white" : "border-white/[0.16]"
-                    }`}
+                    className="flex aspect-square items-center justify-center rounded-xl border-[1.4px] border-border bg-surface backdrop-blur-lg lg:size-[152px]"
                   >
                     <img
                       src={social.icon}

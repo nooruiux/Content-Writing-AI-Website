@@ -18,7 +18,7 @@ function SelectField({ label, value }: { label: string; value: string }) {
   return (
     <label className="flex flex-col gap-2">
       <span className="text-sm font-medium text-white">{label}</span>
-      <span className="flex w-[324px] items-center justify-between rounded-lg border border-white/[0.06] bg-white/[0.04] px-4 py-2.5 text-sm text-white/80">
+      <span className="flex w-[324px] items-center justify-between rounded-lg border border-border bg-white/[0.04] px-4 py-2.5 text-sm text-white/80">
         {value}
         <Icon src="/assets/voice/ic-caret.svg" size={16} />
       </span>
@@ -110,7 +110,7 @@ function EditorTimeline({ width = 732 }: { width?: number }) {
           ))}
         </div>
       </div>
-      <div className="mt-3 border-t border-white/12 pt-2">
+      <div className="mt-3 border-t border-border pt-2">
         <div className="flex justify-between text-sm text-white">
           <span>0.00</span>
           <span>0.08</span>
@@ -118,8 +118,8 @@ function EditorTimeline({ width = 732 }: { width?: number }) {
           <span>0.16</span>
           <span>0.20</span>
         </div>
-        <div className="mt-4 flex h-[48px] items-center rounded bg-accent px-2 text-sm font-medium text-white ring-2 ring-[#68d0be]">
-          <Icon src="/assets/voice/ic-play-sm.svg" size={16} className="mr-1 shrink-0" />
+        <div className="mt-6 flex h-7 items-center gap-1 rounded-sm bg-accent px-2 text-sm font-medium text-white ring-2 ring-[#68d0be]">
+          <Icon src="/assets/voice/ic-play-sm.svg" size={14} className="shrink-0" />
           <span className="truncate">{voiceAI.clipText}</span>
         </div>
       </div>
@@ -130,7 +130,7 @@ function EditorTimeline({ width = 732 }: { width?: number }) {
 function SettingsPanel({ className = "" }: { className?: string }) {
   return (
     <div
-      className={`flex flex-col gap-4 rounded-2xl border border-white/[0.04] bg-white/[0.04] p-6 ${className}`}
+      className={`flex flex-col gap-4 rounded-2xl border border-border bg-white/[0.04] p-6 ${className}`}
     >
       <span className="flex items-center gap-2 text-base text-white">
         <Icon src="/assets/voice/ic-speaker.svg" size={20} />
@@ -146,13 +146,13 @@ function SettingsPanel({ className = "" }: { className?: string }) {
       <SelectField label="Pitch" value="Default" />
       <label className="flex flex-col gap-2">
         <span className="text-sm font-medium text-white">Text</span>
-        <span className="h-[89px] w-[324px] rounded-lg border border-white/[0.06] bg-white/[0.04] px-4 py-2.5 text-sm leading-[21px] text-white">
+        <span className="h-[89px] w-[324px] rounded-lg border border-border bg-white/[0.04] px-4 py-2.5 text-sm leading-[21px] text-white">
           {voiceAI.settingsText}
         </span>
       </label>
       <span className="text-sm font-medium text-white">Maximum duration 10 min</span>
       <div className="flex gap-4">
-        <span className="flex h-10 w-[154px] items-center justify-center gap-2 rounded-lg border border-white/24 text-sm font-bold text-white">
+        <span className="flex h-10 w-[154px] items-center justify-center gap-2 rounded-lg border border-border text-sm font-bold text-white">
           <Icon src="/assets/voice/ic-preview.svg" size={16} />
           Preview
         </span>
@@ -168,7 +168,7 @@ function SettingsPanel({ className = "" }: { className?: string }) {
 function VoiceToProcessCard({ className = "" }: { className?: string }) {
   return (
     <div
-      className={`rounded-2xl border border-white/[0.08] bg-white/[0.08] p-6 backdrop-blur-[120px] ${className}`}
+      className={`rounded-2xl border border-border bg-white/[0.08] p-6 backdrop-blur-[120px] ${className}`}
     >
       <div className="flex w-[485px] max-w-full flex-col items-center gap-3">
         <div className="flex w-full items-center justify-between">
@@ -180,14 +180,14 @@ function VoiceToProcessCard({ className = "" }: { className?: string }) {
             <span className="text-sm text-white/80">0.7:32s / 10m</span>
           </div>
         </div>
-        <div className="h-px w-full bg-white/10" />
+        <div className="h-px w-full bg-white/5" />
       </div>
       <div className="mt-6 flex gap-6">
         <div className="flex flex-col gap-4">
           <RecordedRow name="Recorded1" len="(2.00)" />
           <RecordedRow name="Recorded3" len="(4.00)" />
         </div>
-        <div className="w-px bg-white/10" />
+        <div className="w-px bg-white/5" />
         <div className="flex flex-col gap-4">
           <RecordedRow name="Recorded2" len="(2.00)" />
           <RecordedRow name="Recorded4" len="(4.00)" on={false} />
@@ -211,7 +211,7 @@ function TopToolbar({ className = "" }: { className?: string }) {
   return (
     <div className={`flex items-center justify-between ${className}`}>
       <div className="flex items-center gap-6">
-        <span className="rounded-lg border border-white/[0.08] bg-white/10 px-5 py-2.5 text-sm font-bold text-white shadow-[inset_0_-1px_1px_rgb(255_255_255/0.08)]">
+        <span className="rounded-lg border border-border bg-white/10 px-5 py-2.5 text-sm font-bold text-white shadow-[inset_0_-1px_1px_rgb(255_255_255/0.08)]">
           Text to spech
         </span>
         <Icon src="/assets/voice/ic-cloud.svg" size={24} />
@@ -231,13 +231,13 @@ export function VoiceEditorDesktop() {
     <div className="relative h-[767px] w-[1200px] overflow-hidden rounded-[16px] bg-[#161518]">
       <TitleBar />
       <TopToolbar className="absolute inset-x-8 top-[72px]" />
-      <span className="absolute left-[688px] top-[132px] rounded-lg border border-white/24 px-5 py-2.5 text-sm font-bold text-white">
+      <span className="absolute left-[688px] top-[132px] rounded-lg border border-border px-5 py-2.5 text-sm font-bold text-white">
         9:32
       </span>
-      <div className="absolute left-[155px] top-[140px]">
+      <div className="absolute left-[155px] top-[132px]">
         <VoiceOutput />
       </div>
-      <div className="absolute inset-x-8 top-[500px]">
+      <div className="absolute inset-x-8 top-[540px]">
         <EditorTimeline width={732} />
       </div>
       <SettingsPanel className="absolute left-[796px] top-[72px] h-[665px] shadow-[-120px_20px_124px_rgb(0_0_0/0.2)]" />
@@ -256,7 +256,7 @@ export function VoiceEditorMobile() {
         <TopToolbar className="w-full max-w-[420px]" />
 
         <div className="flex flex-col items-center gap-3">
-          <span className="self-end rounded-lg border border-white/24 px-4 py-2 text-sm font-bold text-white">
+          <span className="self-end rounded-lg border border-border px-4 py-2 text-sm font-bold text-white">
             9:32
           </span>
           <div className="[zoom:0.66] min-[380px]:[zoom:0.74]">
