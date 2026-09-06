@@ -20,11 +20,7 @@ function PricingCard({ plan }: { plan: Plan }) {
   const checkIcon = plan.popular ? "/assets/pricing/check-pro.svg" : "/assets/pricing/check.svg";
 
   return (
-    <div
-      className={`relative flex w-full max-w-[360px] flex-col gap-7 rounded-[20px] bg-surface px-6 pb-8 pt-6 backdrop-blur-2xl sm:w-[324px] ${
-        plan.popular ? "border-2 border-pro" : "border border-white/[0.16]"
-      }`}
-    >
+    <div className="relative flex w-full max-w-[360px] flex-col gap-7 rounded-[20px] border border-border bg-surface px-6 pb-8 pt-6 backdrop-blur-2xl sm:w-[324px]">
       {plan.popular ? (
         <span className="absolute right-6 top-0 flex h-8 items-center gap-1.5 rounded-pill bg-[rgb(239_118_104/0.08)] px-3 text-sm font-bold text-[#ffaca4]">
           <Icon src="/assets/pricing/sparkle.svg" size={16} />
@@ -43,7 +39,7 @@ function PricingCard({ plan }: { plan: Plan }) {
         </p>
       </div>
 
-      <div className="h-px w-full bg-white/[0.12]" />
+      <div className="h-px w-full bg-white/5" />
 
       <ul className="flex flex-col gap-4">
         {plan.features.map((f) => (

@@ -29,14 +29,14 @@ function SkeletonRows({ rows }: { rows: number[][] }) {
 
 export function RichEditorCard() {
   return (
-    <div className="relative h-[456px] w-[588px] overflow-hidden rounded-[32px] border-[1.4px] border-white bg-surface backdrop-blur-4xl">
+    <div className="relative h-[456px] w-[588px] overflow-hidden rounded-[32px] border-[1.4px] border-border bg-surface backdrop-blur-4xl">
       <div
         aria-hidden
-        className="absolute left-1/2 top-8 h-[420px] w-[720px] -translate-x-1/2 rounded-full border border-white/[0.04]"
+        className="absolute left-1/2 top-8 h-[420px] w-[720px] -translate-x-1/2 rounded-full border border-border"
       />
       <div
         aria-hidden
-        className="absolute left-1/2 top-14 h-[320px] w-[560px] -translate-x-1/2 rounded-full border border-white/[0.04]"
+        className="absolute left-1/2 top-14 h-[320px] w-[560px] -translate-x-1/2 rounded-full border border-border"
       />
 
       <div className="absolute left-1/2 top-8 flex -translate-x-1/2 flex-col items-center gap-8">
@@ -46,7 +46,7 @@ export function RichEditorCard() {
           ))}
         </div>
 
-        <div className="flex flex-col gap-6 rounded-t-xl border border-white bg-white/20 px-6 py-5 backdrop-blur-[6px]">
+        <div className="flex flex-col gap-6 rounded-t-xl border border-border bg-white/20 px-6 py-5 backdrop-blur-[6px]">
           <div className="flex flex-col gap-5">
             <div className="flex flex-col gap-3">
               <p className="text-base font-bold text-white">Describe your topic</p>

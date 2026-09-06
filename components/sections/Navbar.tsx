@@ -42,7 +42,7 @@ export function Navbar() {
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? "Close menu" : "Open menu"}
-          className="flex size-10 items-center justify-center rounded-lg border border-white/12 bg-white/[0.08] lg:hidden"
+          className="flex size-10 items-center justify-center rounded-lg border border-border bg-white/[0.08] lg:hidden"
         >
           <span className="relative block h-2.5 w-4">
             <span
@@ -68,7 +68,7 @@ export function Navbar() {
         <Container className="lg:hidden">
           <div
             id="mobile-menu"
-            className="mt-4 flex flex-col gap-1 rounded-2xl border border-white/12 bg-surface/95 p-4 backdrop-blur-2xl"
+            className="mt-4 flex flex-col gap-1 rounded-2xl border border-border bg-surface/95 p-4 backdrop-blur-2xl"
           >
             {nav.links.map((link) => (
               <a

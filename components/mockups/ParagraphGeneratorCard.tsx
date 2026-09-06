@@ -22,7 +22,7 @@ function Field({
 
 function SelectBox({ value, icon }: { value: string; icon?: string }) {
   return (
-    <div className="flex items-center justify-between rounded-lg border border-white/[0.06] bg-white/[0.04] px-4 py-3.5">
+    <div className="flex items-center justify-between rounded-lg border border-border bg-white/[0.04] px-4 py-3.5">
       <span className="flex items-center gap-2 text-sm text-white/70">
         {icon ? <Icon src={icon} size={20} /> : null}
         {value}
@@ -35,7 +35,7 @@ function SelectBox({ value, icon }: { value: string; icon?: string }) {
 export function ParagraphGeneratorCard() {
   const { paragraphGenerator: pg } = superpowers;
   return (
-    <div className="w-[576px] rounded-[32px] border-[1.4px] border-white bg-surface p-8 backdrop-blur-4xl">
+    <div className="w-[576px] rounded-[32px] border-[1.4px] border-border bg-surface p-8 backdrop-blur-4xl">
       <div className="flex flex-col gap-2">
         <div className="flex items-center gap-3">
           <span className="rounded bg-[rgb(16_185_129/0.12)] px-1.5 py-[5px]">
@@ -61,14 +61,14 @@ export function ParagraphGeneratorCard() {
 
         <div className="relative flex flex-col gap-2">
           <span className="text-base text-white">What is your paragraph about?*</span>
-          <div className="h-[108px] rounded-lg border border-white/[0.06] bg-white/[0.04] px-4 py-3.5">
+          <div className="h-[108px] rounded-lg border border-border bg-white/[0.04] px-4 py-3.5">
             <p className="text-sm text-white/70">The best  cryptocurrency to invest in..</p>
           </div>
           <span className="absolute right-0 top-0 text-base text-white/70">0/200</span>
         </div>
 
         <Field label="Keyword to include">
-          <div className="rounded-lg border border-white/[0.06] bg-white/[0.04] px-4 py-3.5">
+          <div className="rounded-lg border border-border bg-white/[0.04] px-4 py-3.5">
             <p className="text-sm text-white/70">Cryptocurrency</p>
           </div>
         </Field>
