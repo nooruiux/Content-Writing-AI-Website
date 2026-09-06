@@ -1,0 +1,21 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Frame 25">
+<g id="Ellipse 13">
+<circle cx="14" cy="14" r="14" fill="white" fill-opacity="0.06"/>
+<circle cx="14" cy="14" r="13.5" stroke="white" stroke-opacity="0.04"/>
+</g>
+<g id="Smiley" clip-path="url(#clip0_20_527)">
+<g id="Vector">
+</g>
+<path id="Vector_2" d="M14 20C17.3137 20 20 17.3137 20 14C20 10.6863 17.3137 8 14 8C10.6863 8 8 10.6863 8 14C8 17.3137 10.6863 20 14 20Z" stroke="white" stroke-opacity="0.72" stroke-width="1.03037" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" d="M11.75 13.5C12.1642 13.5 12.5 13.1642 12.5 12.75C12.5 12.3358 12.1642 12 11.75 12C11.3358 12 11 12.3358 11 12.75C11 13.1642 11.3358 13.5 11.75 13.5Z" fill="white" fill-opacity="0.72"/>
+<path id="Vector_4" d="M16.25 13.5C16.6642 13.5 17 13.1642 17 12.75C17 12.3358 16.6642 12 16.25 12C15.8358 12 15.5 12.3358 15.5 12.75C15.5 13.1642 15.8358 13.5 16.25 13.5Z" fill="white" fill-opacity="0.72"/>
+<path id="Vector_5" d="M16.5 15.5C15.9812 16.3969 15.1106 17 14 17C12.8894 17 12.0188 16.3969 11.5 15.5" stroke="white" stroke-opacity="0.72" stroke-width="1.03037" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_20_527">
+<rect width="16" height="16" fill="white" transform="translate(6 6)"/>
+</clipPath>
+</defs>
+</svg>

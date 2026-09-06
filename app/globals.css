@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #000000;
+  --color-surface: #1d1c20;
+  --color-accent: #18a0fb;
+  --color-accent-soft: rgb(24 160 251 / 0.16);
+  --color-pro: #e6220c;
+
+  --font-sans: var(--font-satoshi), ui-sans-serif, system-ui, sans-serif;
+
+  --text-display: 80px;
+  --text-display--line-height: 88px;
+  --text-h1: 72px;
+  --text-h1--line-height: 80px;
+  --text-h2: 64px;
+  --text-h2--line-height: 72px;
+  --text-h3: 56px;
+  --text-h3--line-height: 64px;
+  --text-h4: 48px;
+  --text-h4--line-height: 56px;
+  --text-h5: 40px;
+  --text-h5--line-height: 48px;
+  --text-quote: 32px;
+  --text-quote--line-height: 42px;
+  --text-title: 24px;
+  --text-title--line-height: 32px;
+  --text-lead: 20px;
+  --text-lead--line-height: 30px;
+  --text-list: 18px;
+  --text-list--line-height: 26px;
+
+  /* radius steps 4/8/12/16/24/32 come from Tailwind v4 defaults (sm/lg/xl/2xl/3xl/4xl) */
+  --radius-pill: 60px;
+  --radius-pill-lg: 100px;
+
+  --blur-xs: 6px;
+  --blur-2xl: 32px;
+  --blur-4xl: 100px;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: #ffffff;
+    font-family: var(--font-sans);
+    letter-spacing: -0.2px;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: #ffffff;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+}

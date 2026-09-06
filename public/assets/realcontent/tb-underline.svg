@@ -1,0 +1,13 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="TextUnderline" clip-path="url(#clip0_17_184)">
+<g id="Vector">
+</g>
+<path id="Vector_2" d="M6 21H18" stroke="white" stroke-opacity="0.8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" d="M17.25 5.25V12.75C17.25 14.1424 16.6969 15.4777 15.7123 16.4623C14.7277 17.4469 13.3924 18 12 18C10.6076 18 9.27226 17.4469 8.28769 16.4623C7.30312 15.4777 6.75 14.1424 6.75 12.75V5.25" stroke="white" stroke-opacity="0.8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_17_184">
+<rect width="24" height="24" fill="white"/>
+</clipPath>
+</defs>
+</svg>

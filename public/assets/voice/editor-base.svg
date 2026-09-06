@@ -1,0 +1,35 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="1200" height="767" viewBox="0 0 1200 767" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 663">
+<foreignObject x="-44" y="-44" width="1288" height="855"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(22px);clip-path:url(#bgblur_0_25_719_clip_path);height:100%;width:100%"></div></foreignObject><g id="shape" data-figma-bg-blur-radius="44">
+<path d="M0 20C0 8.95429 8.95431 0 20 0H81.3106C88.4573 0 95.0609 3.81344 98.6331 10.0034L110.174 30.002C113.746 36.192 120.35 40.0054 127.497 40.0054H370.329L1180.03 41.3517C1191.07 41.37 1200 50.319 1200 61.3517V747C1200 758.046 1191.05 767 1180 767H20C8.95429 767 0 758.046 0 747V20Z" fill="#1D1C20"/>
+<path d="M20 0.700195H81.3105C88.2071 0.700195 94.5792 4.38025 98.0264 10.3535L109.567 30.3516C113.264 36.758 120.099 40.7049 127.496 40.7051H370.328L1180.03 42.0518C1190.68 42.0696 1199.3 50.7051 1199.3 61.3516V747C1199.3 757.659 1190.66 766.3 1180 766.3H20C9.34091 766.3 0.700196 757.659 0.700195 747V20C0.700195 9.34091 9.3409 0.700196 20 0.700195Z" stroke="url(#paint0_radial_25_719)" stroke-opacity="0.16" stroke-width="1.4"/>
+<path d="M20 0.700195H81.3105C88.2071 0.700195 94.5792 4.38025 98.0264 10.3535L109.567 30.3516C113.264 36.758 120.099 40.7049 127.496 40.7051H370.328L1180.03 42.0518C1190.68 42.0696 1199.3 50.7051 1199.3 61.3516V747C1199.3 757.659 1190.66 766.3 1180 766.3H20C9.34091 766.3 0.700196 757.659 0.700195 747V20C0.700195 9.34091 9.3409 0.700196 20 0.700195Z" stroke="url(#paint1_radial_25_719)" stroke-opacity="0.16" stroke-width="1.4"/>
+<path d="M20 0.700195H81.3105C88.2071 0.700195 94.5792 4.38025 98.0264 10.3535L109.567 30.3516C113.264 36.758 120.099 40.7049 127.496 40.7051H370.328L1180.03 42.0518C1190.68 42.0696 1199.3 50.7051 1199.3 61.3516V747C1199.3 757.659 1190.66 766.3 1180 766.3H20C9.34091 766.3 0.700196 757.659 0.700195 747V20C0.700195 9.34091 9.3409 0.700196 20 0.700195Z" stroke="url(#paint2_radial_25_719)" stroke-opacity="0.16" stroke-width="1.4"/>
+<path d="M20 0.700195H81.3105C88.2071 0.700195 94.5792 4.38025 98.0264 10.3535L109.567 30.3516C113.264 36.758 120.099 40.7049 127.496 40.7051H370.328L1180.03 42.0518C1190.68 42.0696 1199.3 50.7051 1199.3 61.3516V747C1199.3 757.659 1190.66 766.3 1180 766.3H20C9.34091 766.3 0.700196 757.659 0.700195 747V20C0.700195 9.34091 9.3409 0.700196 20 0.700195Z" stroke="url(#paint3_radial_25_719)" stroke-opacity="0.16" stroke-width="1.4"/>
+</g>
+<g id="apple color dot">
+<circle id="Ellipse 1198" cx="37" cy="17" r="5" fill="#EC6B5E"/>
+<circle id="Ellipse 1199" cx="55" cy="17" r="5" fill="#F4BF4E"/>
+<circle id="Ellipse 1200" cx="73" cy="17" r="5" fill="#61C654"/>
+</g>
+</g>
+<defs>
+<clipPath id="bgblur_0_25_719_clip_path" transform="translate(44 44)"><path d="M0 20C0 8.95429 8.95431 0 20 0H81.3106C88.4573 0 95.0609 3.81344 98.6331 10.0034L110.174 30.002C113.746 36.192 120.35 40.0054 127.497 40.0054H370.329L1180.03 41.3517C1191.07 41.37 1200 50.319 1200 61.3517V747C1200 758.046 1191.05 767 1180 767H20C8.95429 767 0 758.046 0 747V20Z"/>
+</clipPath><radialGradient id="paint0_radial_25_719" cx="0" cy="0" r="1" gradientTransform="matrix(86.5 -188.489 294.898 230.27 1083 680.256)" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="paint1_radial_25_719" cx="0" cy="0" r="1" gradientTransform="matrix(159 -161.748 253.061 423.271 177 195.011)" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="paint2_radial_25_719" cx="0" cy="0" r="1" gradientTransform="matrix(-170 -131.094 205.102 -452.555 1038 155.878)" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="paint3_radial_25_719" cx="0" cy="0" r="1" gradientTransform="matrix(-18 -185.228 289.796 -47.9175 139.5 680.256)" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg>
