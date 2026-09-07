@@ -51,32 +51,30 @@ export default async function StoryPage({ params }: Params) {
             </h1>
 
             <div className="flex flex-col items-center gap-6">
-              <div className="relative h-[220px] w-[186px] overflow-hidden rounded-[24px] border border-border bg-surface">
+              <div className="relative h-[248px] w-[220px]">
                 <Image
                   src={q.photo}
                   alt=""
                   fill
-                  sizes="186px"
+                  sizes="220px"
                   priority
-                  className={
-                    q.photoCover
-                      ? "object-cover object-top grayscale"
-                      : "object-contain object-bottom"
-                  }
+                  className="object-contain object-bottom grayscale"
                 />
               </div>
-              <div className="flex flex-col items-center gap-3">
+              <div className="flex flex-col items-center gap-4">
                 <GradientText gradient={userStoryGradient} className="text-lead font-bold">
                   {q.eyebrow}
                 </GradientText>
-                <p className="text-[26px] font-bold leading-[1.1] text-white sm:text-[32px]">
-                  {q.name}
-                </p>
-                <p className="text-lead text-white/70">{q.role}</p>
+                <div className="flex flex-col items-center gap-0.5">
+                  <p className="text-[24px] font-bold leading-[30px] text-white sm:text-[28px] sm:leading-[34px]">
+                    {q.name}
+                  </p>
+                  <p className="text-lead leading-[24px] text-white/70">{q.role}</p>
+                </div>
               </div>
             </div>
 
-            <blockquote className="max-w-[680px] text-[22px] font-bold leading-[1.35] text-white sm:text-quote">
+            <blockquote className="max-w-[680px] text-[20px] font-bold leading-[1.4] text-white sm:text-[24px]">
               “{q.text}”
             </blockquote>
 
