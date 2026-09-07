@@ -178,6 +178,7 @@ export const testimonials = {
       name: "William Kerry",
       role: "Cofounder, Ofspace",
       photo: "/assets/testimonials/portrait.png",
+      photoCover: false,
       story: [
         "Before Quantum, our content calendar was more aspiration than plan. As a cofounder I was writing landing pages between investor calls, and every draft took two or three sittings before it felt shippable.",
         "The change wasn’t that the AI wrote for me — it removed the blank-page tax. I start with a rough brief, get back something eighty percent of the way there, and spend my time sharpening the argument instead of hunting for the first sentence.",
@@ -190,7 +191,8 @@ export const testimonials = {
       text: "Our blog was a weekly scramble, and now it’s a same-day publish where every draft lands close enough that editing it feels like a genuine treat.",
       name: "Amara Osei",
       role: "Head of Content, Northwind",
-      photo: "/assets/testimonials/portrait-amara.svg",
+      photo: "/assets/testimonials/amara.jpg",
+      photoCover: true,
       story: [
         "I run a team of four writers and a backlog that never stopped growing. Our blog was supposed to ship weekly and in practice it slipped most weeks, usually because a single post got stuck in edits.",
         "Now the first draft is done by the time the brief is written. My writers open something that already has structure, sources and a working headline, and they spend their hours making it sharp rather than making it exist.",
@@ -203,7 +205,8 @@ export const testimonials = {
       text: "Forty product descriptions in one afternoon, and each still sounded like our brand — the backlog the whole team dreaded finally cleared.",
       name: "Diego Marchetti",
       role: "Marketing Lead, Peppergrove",
-      photo: "/assets/testimonials/portrait-diego.svg",
+      photo: "/assets/testimonials/diego.jpg",
+      photoCover: true,
       story: [
         "Peppergrove has a catalogue of a few hundred products and every one needs a description that sounds like us and not like a spec sheet. That work used to sit at the bottom of every sprint.",
         "We trained Quantum on twenty of our best existing descriptions, then ran the rest through it in batches. Forty came back in a single afternoon, and the edits were tone, not rewrites.",
@@ -216,7 +219,8 @@ export const testimonials = {
       text: "I set the brand voice once, and every teammate now writes on tone without my line edits, which hands me back real hours every week.",
       name: "Priya Raman",
       role: "Founder, Studio Kite",
-      photo: "/assets/testimonials/portrait-priya.svg",
+      photo: "/assets/testimonials/priya.jpg",
+      photoCover: true,
       story: [
         "Studio Kite is small and everyone writes — proposals, case studies, social, client updates. Keeping all of that on one voice used to mean I read and lightly rewrote almost everything that went out.",
         "I sat down once and defined our brand voice properly inside Quantum: the words we use, the ones we avoid, the rhythm. Now every teammate drafts against that same setting.",

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -28,12 +29,12 @@ function PeekCard({ side, quote }: { side: "left" | "right"; quote: Quote }) {
           : "rounded-l-[32px] [mask-image:linear-gradient(to_left,transparent,#000_78%)]"
       }`}
     >
-      <img
+      <Image
         src={quote.photo}
         alt=""
         width={44}
         height={44}
-        className="size-11 shrink-0 rounded-full bg-white/[0.06] object-cover object-top opacity-45"
+        className="size-11 shrink-0 rounded-full object-cover object-top opacity-45 grayscale"
       />
       <p className="line-clamp-6 text-[15px] font-bold leading-[1.4] text-white/35">
         {quote.text}
@@ -67,7 +68,8 @@ export function Testimonials() {
         />
       </Container>
 
-      <div className="relative mt-2 flex justify-center">
+      {/* Figma frame 1:3310 subheading bottom (y128) → card 1:3296 top (y200) = 72px */}
+      <div className="relative mt-18 flex justify-center">
         {/* side peek cards — a faded glimpse of the neighbouring quotes */}
         <div
           aria-hidden
@@ -79,15 +81,22 @@ export function Testimonials() {
 
         {/* main card */}
         <div className="relative z-10 mx-4 flex w-full max-w-[1059px] flex-col overflow-hidden rounded-[32px] border-[1.4px] border-border bg-surface sm:flex-row">
-          <div className="relative flex shrink-0 justify-center pt-8 sm:w-[390px] sm:justify-start sm:pt-0">
-            <img
-              key={q.slug}
-              src={q.photo}
-              alt=""
-              width={390}
-              height={450}
-              className="h-[280px] w-auto self-end object-contain object-bottom sm:h-[450px] sm:pl-6"
-            />
+          <div className="relative flex shrink-0 items-end justify-center pt-8 sm:w-[390px] sm:pt-0">
+            <div className="relative h-[280px] w-[240px] sm:h-[450px] sm:w-[360px]">
+              <Image
+                key={q.slug}
+                src={q.photo}
+                alt=""
+                fill
+                sizes="(min-width: 640px) 360px, 240px"
+                priority={index === 0}
+                className={
+                  q.photoCover
+                    ? "rounded-2xl object-cover object-top grayscale"
+                    : "object-contain object-bottom"
+                }
+              />
+            </div>
           </div>
 
           <div className="flex flex-1 flex-col justify-center gap-10 p-8 sm:gap-16 sm:py-12 sm:pl-0 sm:pr-14">
