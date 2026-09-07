@@ -77,3 +77,47 @@
     color: transparent;
   }
 }
+
+/* Pro pricing card — blue/white gradient border that rotates on hover.
+   Unlayered so `background` wins over the `bg-surface` utility. */
+@property --pro-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.pro-card-frame {
+  --pro-angle: 0deg;
+  border: 2px solid transparent;
+  background:
+    linear-gradient(var(--color-surface), var(--color-surface)) padding-box,
+    conic-gradient(
+      from var(--pro-angle),
+      #18a0fb,
+      #ffffff,
+      #18a0fb,
+      #ffffff,
+      #18a0fb
+    )
+      border-box;
+  animation: pro-border-spin 3s linear infinite;
+  animation-play-state: paused;
+}
+
+@media (hover: hover) {
+  .pro-card-frame:hover {
+    animation-play-state: running;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pro-card-frame:hover {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes pro-border-spin {
+  to {
+    --pro-angle: 360deg;
+  }
+}
