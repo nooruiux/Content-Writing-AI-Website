@@ -250,9 +250,9 @@ export function VoiceEditorDesktop() {
           <EditorTimeline width={732} />
         </div>
         <SettingsPanel className="absolute left-[796px] top-[72px] h-[665px] shadow-[-120px_20px_124px_rgb(0_0_0/0.2)]" />
-        {/* Overlay card docked flush to the bottom edge of the audio preview,
-           kept clear of the settings panel so Emotion/Pitch stay readable. */}
-        <VoiceToProcessCard className="absolute left-[128px] top-[305px] h-[158px] w-[533px]" />
+        {/* Overlay card (approved "Option 2"): left edge aligned to the preview photo,
+           bottom edge flush with it, clear of the settings panel so Emotion/Pitch stay readable. */}
+        <VoiceToProcessCard className="absolute left-[156px] top-[305px] h-[158px] w-[533px]" />
       </div>
     </div>
   );
