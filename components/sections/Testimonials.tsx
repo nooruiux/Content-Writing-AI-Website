@@ -34,7 +34,7 @@ function PeekCard({ side, quote }: { side: "left" | "right"; quote: Quote }) {
         alt=""
         width={44}
         height={44}
-        className="size-11 shrink-0 rounded-full object-cover object-top opacity-45 grayscale"
+        className="size-11 shrink-0 rounded-full object-cover object-top opacity-40 grayscale"
       />
       <p className="line-clamp-6 text-[15px] font-bold leading-[1.4] text-white/35">
         {quote.text}
@@ -90,29 +90,25 @@ export function Testimonials() {
                 fill
                 sizes="(min-width: 640px) 360px, 240px"
                 priority={index === 0}
-                className={
-                  q.photoCover
-                    ? "rounded-2xl object-cover object-top grayscale"
-                    : "object-contain object-bottom"
-                }
+                className="object-contain object-bottom grayscale"
               />
             </div>
           </div>
 
-          <div className="flex flex-1 flex-col justify-center gap-10 p-8 sm:gap-16 sm:py-12 sm:pl-0 sm:pr-14">
-            <div className="flex flex-col gap-4">
+          <div className="flex flex-1 flex-col justify-center gap-10 p-8 sm:gap-14 sm:py-12 sm:pl-0 sm:pr-14">
+            <div className="flex flex-col items-start gap-4">
               <GradientText gradient={userStoryGradient} className="text-lead font-bold">
                 {q.eyebrow}
               </GradientText>
-              <p className="max-w-[556px] text-[26px] font-bold leading-[1.3] text-white sm:min-h-[176px] sm:text-quote">
+              <p className="max-w-[556px] text-left text-[22px] font-bold leading-[1.35] text-white sm:min-h-[128px] sm:text-title sm:leading-[34px]">
                 {q.text}
               </p>
             </div>
 
-            <div className="flex flex-col items-start gap-6 rounded-3xl border border-border p-6 sm:flex-row sm:items-center sm:justify-between sm:gap-8 sm:rounded-pill-lg sm:py-5 sm:pl-8 sm:pr-6">
-              <div className="flex flex-col gap-2">
-                <p className="text-lead font-bold text-white">{q.name}</p>
-                <p className="text-sm text-white/[0.88]">{q.role}</p>
+            <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between sm:gap-8">
+              <div className="flex flex-col gap-0.5">
+                <p className="text-lead font-bold leading-[26px] text-white">{q.name}</p>
+                <p className="text-sm leading-[18px] text-white/[0.88]">{q.role}</p>
               </div>
               <Link
                 href={`/story/${q.slug}`}
