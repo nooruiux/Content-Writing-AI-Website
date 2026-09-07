@@ -212,7 +212,7 @@ function TopToolbar({ className = "" }: { className?: string }) {
     <div className={`flex items-center justify-between ${className}`}>
       <div className="flex items-center gap-6">
         <span className="rounded-lg border border-border bg-white/10 px-5 py-2.5 text-sm font-bold text-white shadow-[inset_0_-1px_1px_rgb(255_255_255/0.08)]">
-          Text to spech
+          Text to speech
         </span>
         <Icon src="/assets/voice/ic-cloud.svg" size={24} />
       </div>
@@ -228,7 +228,7 @@ function TopToolbar({ className = "" }: { className?: string }) {
 /** Desktop: the full layered editor at Figma dimensions (scaled by the section). */
 export function VoiceEditorDesktop() {
   return (
-    <div className="relative h-[767px] w-[1200px] overflow-hidden rounded-[16px] bg-[#161518]">
+    <div className="relative h-[767px] w-[1200px] overflow-hidden rounded-[16px] border border-border bg-[#161518]">
       <TitleBar />
       <TopToolbar className="absolute inset-x-8 top-[72px]" />
       <span className="absolute left-[688px] top-[132px] rounded-lg border border-border px-5 py-2.5 text-sm font-bold text-white">
@@ -250,7 +250,7 @@ export function VoiceEditorDesktop() {
 /** Below md: restacked so every control stays legible without horizontal scroll. */
 export function VoiceEditorMobile() {
   return (
-    <div className="w-full overflow-hidden rounded-[16px] bg-[#161518] pb-8">
+    <div className="w-full overflow-hidden rounded-[16px] border border-border bg-[#161518] pb-8">
       <TitleBar />
       <div className="mt-6 flex flex-col items-center gap-8 px-4">
         <TopToolbar className="w-full max-w-[420px]" />
