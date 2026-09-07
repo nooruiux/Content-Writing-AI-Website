@@ -241,8 +241,8 @@ export function VoiceEditorDesktop() {
         <EditorTimeline width={732} />
       </div>
       <SettingsPanel className="absolute left-[796px] top-[72px] h-[665px] shadow-[-120px_20px_124px_rgb(0_0_0/0.2)]" />
-      {/* progress card floats over the preview, clear of the settings panel */}
-      <VoiceToProcessCard className="absolute left-[119px] top-[217px]" />
+      {/* Figma node 1:2500 — x 667, y 334, 533×158 */}
+      <VoiceToProcessCard className="absolute left-[667px] top-[334px] h-[158px] w-[533px]" />
     </div>
   );
 }
