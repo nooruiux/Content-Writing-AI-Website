@@ -1,0 +1,10 @@
+<svg width="360" height="450" viewBox="0 0 360 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="pr" x1="180" y1="48" x2="180" y2="450" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#dadadc"/>
+      <stop offset="1" stop-color="#616268"/>
+    </linearGradient>
+  </defs>
+  <circle cx="180" cy="152" r="96" fill="url(#pr)"/>
+  <path d="M20 450c0-104 72-188 160-188s160 84 160 188Z" fill="url(#pr)"/>
+</svg>

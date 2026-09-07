@@ -1,30 +1,42 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { GradientText } from "@/components/ui/GradientText";
 import { Icon } from "@/components/ui/Icon";
 import { testimonials } from "@/lib/content";
 
+type Quote = (typeof testimonials.quotes)[number];
+
 const userStoryGradient =
   "bg-[linear-gradient(107deg,#1264c4_4%,#ffffff_52%,#18a0fb_112%)]";
 
-const arrowBtn =
-  "group flex size-[58px] shrink-0 items-center justify-center rounded-full transition-[background-color,transform] duration-200 ease-out hover:bg-white/[0.1] hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg";
+const arrowBase =
+  "group flex size-[58px] shrink-0 items-center justify-center rounded-full transition-[background-color,transform,opacity] duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg disabled:pointer-events-none disabled:cursor-not-allowed";
+const arrowActive = "hover:bg-white/[0.1] hover:scale-105 active:scale-95";
+const arrowDisabled = "opacity-30";
 
-function PeekCard({ side, text }: { side: "left" | "right"; text: string }) {
+function PeekCard({ side, quote }: { side: "left" | "right"; quote: Quote }) {
   const isLeft = side === "left";
   return (
     <div
-      className={`h-[445px] w-[162px] bg-surface/90 p-7 ${
+      className={`flex h-[445px] w-[162px] flex-col gap-4 bg-surface/90 p-7 ${
         isLeft
           ? "rounded-r-[32px] [mask-image:linear-gradient(to_right,transparent,#000_78%)]"
           : "rounded-l-[32px] [mask-image:linear-gradient(to_left,transparent,#000_78%)]"
       }`}
     >
-      <p className="mt-16 line-clamp-6 text-[15px] font-bold leading-[1.4] text-white/35">
-        {text}
+      <img
+        src={quote.photo}
+        alt=""
+        width={44}
+        height={44}
+        className="size-11 shrink-0 rounded-full bg-white/[0.06] object-cover object-top opacity-45"
+      />
+      <p className="line-clamp-6 text-[15px] font-bold leading-[1.4] text-white/35">
+        {quote.text}
       </p>
     </div>
   );
@@ -32,13 +44,17 @@ function PeekCard({ side, text }: { side: "left" | "right"; text: string }) {
 
 export function Testimonials() {
   const { quotes } = testimonials;
-  const [index, setIndex] = useState(0);
   const count = quotes.length;
+  const [index, setIndex] = useState(0);
 
-  const go = (delta: number) => setIndex((v) => (v + delta + count) % count);
+  const go = (delta: number) =>
+    setIndex((v) => Math.min(count - 1, Math.max(0, v + delta)));
+
   const q = quotes[index];
-  const prev = quotes[(index - 1 + count) % count];
-  const next = quotes[(index + 1) % count];
+  const atStart = index === 0;
+  const atEnd = index === count - 1;
+  const prev = quotes[Math.max(0, index - 1)];
+  const next = quotes[Math.min(count - 1, index + 1)];
 
   return (
     <section className="overflow-hidden py-14">
@@ -57,15 +73,16 @@ export function Testimonials() {
           aria-hidden
           className="pointer-events-none absolute left-1/2 top-1/2 hidden w-[1400px] -translate-x-1/2 -translate-y-1/2 justify-between lg:flex"
         >
-          <PeekCard side="left" text={prev.text} />
-          <PeekCard side="right" text={next.text} />
+          <PeekCard side="left" quote={prev} />
+          <PeekCard side="right" quote={next} />
         </div>
 
         {/* main card */}
         <div className="relative z-10 mx-4 flex w-full max-w-[1059px] flex-col overflow-hidden rounded-[32px] border-[1.4px] border-border bg-surface sm:flex-row">
           <div className="relative flex shrink-0 justify-center pt-8 sm:w-[390px] sm:justify-start sm:pt-0">
             <img
-              src="/assets/testimonials/portrait.png"
+              key={q.slug}
+              src={q.photo}
               alt=""
               width={390}
               height={450}
@@ -78,7 +95,7 @@ export function Testimonials() {
               <GradientText gradient={userStoryGradient} className="text-lead font-bold">
                 {q.eyebrow}
               </GradientText>
-              <p className="max-w-[556px] text-[26px] font-bold leading-[1.3] text-white sm:text-quote">
+              <p className="max-w-[556px] text-[26px] font-bold leading-[1.3] text-white sm:min-h-[176px] sm:text-quote">
                 {q.text}
               </p>
             </div>
@@ -88,20 +105,26 @@ export function Testimonials() {
                 <p className="text-lead font-bold text-white">{q.name}</p>
                 <p className="text-sm text-white/[0.88]">{q.role}</p>
               </div>
-              <a
-                href={testimonials.cta.href}
+              <Link
+                href={`/story/${q.slug}`}
                 className="flex h-12 shrink-0 items-center gap-2 rounded-pill-lg bg-accent px-6 text-base font-bold text-white transition-colors duration-200 ease-out hover:bg-[#0f8fe6]"
               >
                 {testimonials.cta.label}
                 <Icon src="/assets/testimonials/read-arrow.svg" size={16} />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
       </div>
 
       <div className="mt-10 flex items-center justify-center gap-5">
-        <button type="button" aria-label="Previous testimonial" onClick={() => go(-1)} className={arrowBtn}>
+        <button
+          type="button"
+          aria-label="Previous testimonial"
+          onClick={() => go(-1)}
+          disabled={atStart}
+          className={`${arrowBase} ${atStart ? arrowDisabled : arrowActive}`}
+        >
           <img
             src="/assets/testimonials/arrow-prev.svg"
             alt=""
@@ -110,7 +133,13 @@ export function Testimonials() {
             className="opacity-55 transition-opacity duration-200 group-hover:opacity-100"
           />
         </button>
-        <button type="button" aria-label="Next testimonial" onClick={() => go(1)} className={arrowBtn}>
+        <button
+          type="button"
+          aria-label="Next testimonial"
+          onClick={() => go(1)}
+          disabled={atEnd}
+          className={`${arrowBase} ${atEnd ? arrowDisabled : arrowActive}`}
+        >
           <img
             src="/assets/testimonials/arrow-next.svg"
             alt=""
