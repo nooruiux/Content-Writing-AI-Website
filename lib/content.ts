@@ -169,31 +169,59 @@ export const testimonials = {
   title: "What are people say",
   subtitle:
     "We have 1k+ positive reviews from our customers whose are loving using quantum AI.",
-  cta: { label: "Read full", href: "#story" },
+  cta: { label: "Read full story" },
   quotes: [
     {
+      slug: "william-kerry",
       eyebrow: "User Story",
       text: "I’ve spent a great deal of time tools to get the most out of what I write, and Fraser feels like you’re using content marketing cheat codes.",
       name: "William Kerry",
       role: "Cofounder, Ofspace",
+      photo: "/assets/testimonials/portrait.png",
+      story: [
+        "Before Quantum, our content calendar was more aspiration than plan. As a cofounder I was writing landing pages between investor calls, and every draft took two or three sittings before it felt shippable.",
+        "The change wasn’t that the AI wrote for me — it removed the blank-page tax. I start with a rough brief, get back something eighty percent of the way there, and spend my time sharpening the argument instead of hunting for the first sentence.",
+        "Six months in, Ofspace publishes three times the volume we used to, and our own voice is louder in it, not quieter. It genuinely feels like using content marketing cheat codes.",
+      ],
     },
     {
+      slug: "amara-osei",
       eyebrow: "User Story",
-      text: "Quantum turned our blog from a weekly scramble into a same-day publish. The drafts land close enough that editing is a pleasure, not a rescue.",
+      text: "Our blog was a weekly scramble, and now it’s a same-day publish where every draft lands close enough that editing it feels like a genuine treat.",
       name: "Amara Osei",
       role: "Head of Content, Northwind",
+      photo: "/assets/testimonials/portrait-amara.svg",
+      story: [
+        "I run a team of four writers and a backlog that never stopped growing. Our blog was supposed to ship weekly and in practice it slipped most weeks, usually because a single post got stuck in edits.",
+        "Now the first draft is done by the time the brief is written. My writers open something that already has structure, sources and a working headline, and they spend their hours making it sharp rather than making it exist.",
+        "We moved from weekly to same-day publishing without adding headcount. The quality bar went up, not down — when editing is a pleasure instead of a rescue, people actually push the piece further.",
+      ],
     },
     {
+      slug: "diego-marchetti",
       eyebrow: "User Story",
-      text: "We shipped forty product descriptions in an afternoon and every one still sounded like us. My team stopped dreading the backlog.",
+      text: "Forty product descriptions in one afternoon, and each still sounded like our brand — the backlog the whole team dreaded finally cleared.",
       name: "Diego Marchetti",
       role: "Marketing Lead, Peppergrove",
+      photo: "/assets/testimonials/portrait-diego.svg",
+      story: [
+        "Peppergrove has a catalogue of a few hundred products and every one needs a description that sounds like us and not like a spec sheet. That work used to sit at the bottom of every sprint.",
+        "We trained Quantum on twenty of our best existing descriptions, then ran the rest through it in batches. Forty came back in a single afternoon, and the edits were tone, not rewrites.",
+        "The backlog that had haunted the team for a year cleared in a week. The new pages convert as well as the ones we agonised over, which settled a long argument about whether AI copy could carry our brand.",
+      ],
     },
     {
+      slug: "priya-raman",
       eyebrow: "User Story",
-      text: "The brand voice setting is the real unlock — I trained it once and now every teammate writes on-tone without me proofing each line.",
+      text: "I set the brand voice once, and every teammate now writes on tone without my line edits, which hands me back real hours every week.",
       name: "Priya Raman",
       role: "Founder, Studio Kite",
+      photo: "/assets/testimonials/portrait-priya.svg",
+      story: [
+        "Studio Kite is small and everyone writes — proposals, case studies, social, client updates. Keeping all of that on one voice used to mean I read and lightly rewrote almost everything that went out.",
+        "I sat down once and defined our brand voice properly inside Quantum: the words we use, the ones we avoid, the rhythm. Now every teammate drafts against that same setting.",
+        "The line edits I used to do have mostly disappeared. That’s a few hours back every week, and a better feeling for the team — they’re trusted to ship, and the writing still sounds like one studio.",
+      ],
     },
   ],
 };
