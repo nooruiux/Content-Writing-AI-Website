@@ -169,11 +169,31 @@ export const testimonials = {
   title: "What are people say",
   subtitle:
     "We have 1k+ positive reviews from our customers whose are loving using quantum AI.",
-  quote: {
-    eyebrow: "User Story",
-    text: "I’ve spent a great deal of time tools to get the most out of what I write, and Fraser feels like you’re using content marketing cheat codes.",
-    name: "William Kerry",
-    role: "Cofounder, Ofspace",
-    cta: { label: "Read full", href: "#story" },
-  },
+  cta: { label: "Read full", href: "#story" },
+  quotes: [
+    {
+      eyebrow: "User Story",
+      text: "I’ve spent a great deal of time tools to get the most out of what I write, and Fraser feels like you’re using content marketing cheat codes.",
+      name: "William Kerry",
+      role: "Cofounder, Ofspace",
+    },
+    {
+      eyebrow: "User Story",
+      text: "Quantum turned our blog from a weekly scramble into a same-day publish. The drafts land close enough that editing is a pleasure, not a rescue.",
+      name: "Amara Osei",
+      role: "Head of Content, Northwind",
+    },
+    {
+      eyebrow: "User Story",
+      text: "We shipped forty product descriptions in an afternoon and every one still sounded like us. My team stopped dreading the backlog.",
+      name: "Diego Marchetti",
+      role: "Marketing Lead, Peppergrove",
+    },
+    {
+      eyebrow: "User Story",
+      text: "The brand voice setting is the real unlock — I trained it once and now every teammate writes on-tone without me proofing each line.",
+      name: "Priya Raman",
+      role: "Founder, Studio Kite",
+    },
+  ],
 };
