@@ -58,7 +58,7 @@ export function Testimonials() {
   const next = quotes[Math.min(count - 1, index + 1)];
 
   return (
-    <section className="overflow-hidden py-14">
+    <section id="testimonials" className="scroll-mt-24 overflow-hidden py-14">
       <Container className="flex flex-col items-center gap-12 lg:gap-16">
         <SectionHeading
           title={testimonials.title}

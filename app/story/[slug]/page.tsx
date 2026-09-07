@@ -38,10 +38,10 @@ export default async function StoryPage({ params }: Params) {
       <main id="top" className="pb-24 pt-10 sm:pt-14">
         <Container className="flex flex-col gap-8">
           <Link
-            href="/"
+            href="/#testimonials"
             className="flex w-fit items-center gap-2 text-base font-medium text-white/60 transition-colors hover:text-white"
           >
-            <span aria-hidden>←</span> Back to home
+            <span aria-hidden>←</span> Back to testimonials
           </Link>
 
           {/* glass-morphism wrapper — starfield stays visible around it */}
@@ -51,14 +51,15 @@ export default async function StoryPage({ params }: Params) {
             </h1>
 
             <div className="flex flex-col items-center gap-6">
-              <div className="relative h-[248px] w-[220px]">
+              {/* photo in its own inner glass frame */}
+              <div className="relative h-[300px] w-[272px] overflow-hidden rounded-[28px] border border-white/[0.12] bg-white/[0.06] shadow-[inset_0_1px_0_0_rgb(255_255_255/0.06)] backdrop-blur-xl sm:h-[340px] sm:w-[308px]">
                 <Image
                   src={q.photo}
                   alt=""
                   fill
-                  sizes="220px"
+                  sizes="308px"
                   priority
-                  className="object-contain object-bottom grayscale"
+                  className="object-contain object-bottom p-3 grayscale"
                 />
               </div>
               <div className="flex flex-col items-center gap-4">
