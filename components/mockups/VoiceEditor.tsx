@@ -168,7 +168,7 @@ function SettingsPanel({ className = "" }: { className?: string }) {
 function VoiceToProcessCard({ className = "" }: { className?: string }) {
   return (
     <div
-      className={`rounded-2xl border border-white/[0.08] bg-white/[0.08] p-6 backdrop-blur-[120px] ${className}`}
+      className={`rounded-2xl border border-white/[0.08] bg-white/[0.08] p-6 shadow-[0_2px_1px_0_rgb(255_255_255/0.06)_inset,0_24px_70px_-16px_rgb(255_255_255/0.12),0_8px_28px_-12px_rgb(255_255_255/0.08)] backdrop-blur-[120px] ${className}`}
     >
       <div className="flex w-[485px] max-w-full flex-col items-center gap-3">
         <div className="flex w-full items-center justify-between">
