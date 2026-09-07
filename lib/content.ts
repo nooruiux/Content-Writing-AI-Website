@@ -158,7 +158,7 @@ export const footer = {
   ],
   newsletter: { heading: "Join our newsletter", placeholder: "Enter your email" },
   socials: [
-    { label: "Twitter", icon: "/assets/footer/social-twitter.svg" },
+    { label: "X", icon: "/assets/footer/social-x.svg" },
     { label: "LinkedIn", icon: "/assets/footer/social-linkedin.svg" },
     { label: "Instagram", icon: "/assets/footer/social-instagram.svg" },
   ],

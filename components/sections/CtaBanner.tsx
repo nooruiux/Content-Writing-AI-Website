@@ -4,7 +4,7 @@ import { cta } from "@/lib/content";
 
 export function CtaBanner() {
   return (
-    <section className="pt-14 pb-8">
+    <section className="pt-14 pb-6">
       <Container>
         <div className="flex flex-col items-start gap-8 rounded-2xl border border-border bg-surface p-8 backdrop-blur-xs sm:flex-row sm:items-center sm:justify-between sm:p-12 lg:p-16">
           <div className="flex flex-col gap-3">
