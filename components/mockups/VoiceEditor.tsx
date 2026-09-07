@@ -168,7 +168,7 @@ function SettingsPanel({ className = "" }: { className?: string }) {
 function VoiceToProcessCard({ className = "" }: { className?: string }) {
   return (
     <div
-      className={`rounded-2xl border border-border bg-white/[0.08] p-6 backdrop-blur-[120px] ${className}`}
+      className={`rounded-2xl border border-white/[0.08] bg-white/[0.08] p-6 backdrop-blur-[120px] ${className}`}
     >
       <div className="flex w-[485px] max-w-full flex-col items-center gap-3">
         <div className="flex w-full items-center justify-between">
@@ -242,7 +242,7 @@ export function VoiceEditorDesktop() {
       </div>
       <SettingsPanel className="absolute left-[796px] top-[72px] h-[665px] shadow-[-120px_20px_124px_rgb(0_0_0/0.2)]" />
       {/* progress card floats over the preview, clear of the settings panel */}
-      <VoiceToProcessCard className="absolute left-[150px] top-[292px]" />
+      <VoiceToProcessCard className="absolute left-[119px] top-[217px]" />
     </div>
   );
 }
