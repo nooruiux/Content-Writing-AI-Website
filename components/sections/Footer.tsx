@@ -50,13 +50,19 @@ export function Footer() {
               <div className="h-px w-full bg-white/5" />
               <ul className="flex gap-4">
                 {footer.socials.map((social) => (
-                  <li key={social.label}>
+                  <li key={social.label} className="flex-1">
                     <a
                       href="#"
                       aria-label={social.label}
-                      className="flex size-14 items-center justify-center rounded-xl border border-border bg-white/[0.03] transition-colors hover:bg-white/[0.08]"
+                      className="flex aspect-square items-center justify-center rounded-xl border-[1.4px] border-border bg-white/[0.03] transition-colors hover:bg-white/[0.08]"
                     >
-                      <img src={social.icon} alt="" width={24} height={24} className="size-6" />
+                      <img
+                        src={social.icon}
+                        alt=""
+                        width={56}
+                        height={56}
+                        className="size-10 sm:size-[56px]"
+                      />
                     </a>
                   </li>
                 ))}
