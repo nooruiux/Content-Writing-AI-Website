@@ -228,21 +228,32 @@ function TopToolbar({ className = "" }: { className?: string }) {
 /** Desktop: the full layered editor at Figma dimensions (scaled by the section). */
 export function VoiceEditorDesktop() {
   return (
-    <div className="relative h-[767px] w-[1200px] overflow-hidden rounded-[16px] border border-border bg-[#161518]">
-      <TitleBar />
-      <TopToolbar className="absolute inset-x-8 top-[72px]" />
-      <span className="absolute left-[688px] top-[132px] rounded-lg border border-border px-5 py-2.5 text-sm font-bold text-white">
-        9:32
-      </span>
-      <div className="absolute left-[155px] top-[132px]">
-        <VoiceOutput />
+    <div className="relative h-[767px] w-[1200px]">
+      {/* Window frame — exact outline, gradient border and traffic lights
+         exported from Figma node 1:2310 (radius 20, tabbed top-left, #1D1C20). */}
+      <img
+        src="/assets/voice/editor-frame.svg"
+        alt=""
+        aria-hidden
+        className="pointer-events-none absolute inset-0 size-full"
+      />
+      <div className="absolute inset-0 overflow-hidden rounded-[20px]">
+        {/* Figma Frame 130: toolbar row spans only the 732px editor column, not the panel */}
+        <TopToolbar className="absolute left-8 top-[72px] w-[732px]" />
+        <span className="absolute left-[688px] top-[132px] rounded-lg border border-border px-5 py-2.5 text-sm font-bold text-white">
+          9:32
+        </span>
+        <div className="absolute left-[155px] top-[132px]">
+          <VoiceOutput />
+        </div>
+        <div className="absolute left-8 top-[540px]">
+          <EditorTimeline width={732} />
+        </div>
+        <SettingsPanel className="absolute left-[796px] top-[72px] h-[665px] shadow-[-120px_20px_124px_rgb(0_0_0/0.2)]" />
+        {/* Overlay card docked flush to the bottom edge of the audio preview,
+           kept clear of the settings panel so Emotion/Pitch stay readable. */}
+        <VoiceToProcessCard className="absolute left-[128px] top-[305px] h-[158px] w-[533px]" />
       </div>
-      <div className="absolute inset-x-8 top-[540px]">
-        <EditorTimeline width={732} />
-      </div>
-      <SettingsPanel className="absolute left-[796px] top-[72px] h-[665px] shadow-[-120px_20px_124px_rgb(0_0_0/0.2)]" />
-      {/* Figma node 1:2500 — x 667, y 334, 533×158 */}
-      <VoiceToProcessCard className="absolute left-[667px] top-[334px] h-[158px] w-[533px]" />
     </div>
   );
 }
@@ -250,7 +261,7 @@ export function VoiceEditorDesktop() {
 /** Below md: restacked so every control stays legible without horizontal scroll. */
 export function VoiceEditorMobile() {
   return (
-    <div className="w-full overflow-hidden rounded-[16px] border border-border bg-[#161518] pb-8">
+    <div className="w-full overflow-hidden rounded-[20px] border border-white/[0.12] bg-surface pb-8">
       <TitleBar />
       <div className="mt-6 flex flex-col items-center gap-8 px-4">
         <TopToolbar className="w-full max-w-[420px]" />

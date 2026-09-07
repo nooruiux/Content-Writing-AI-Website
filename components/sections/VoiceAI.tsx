@@ -16,8 +16,8 @@ export function VoiceAI() {
         />
       </Container>
 
-      {/* md+ : layered Figma editor, scaled */}
-      <div className="mt-4 hidden w-full justify-center md:flex">
+      {/* md+ : layered Figma editor, scaled. 24px below the subheading per Figma (1:2306 → 1:2309). */}
+      <div className="mt-6 hidden w-full justify-center md:flex">
         <div className="shrink-0 [zoom:0.66] lg:[zoom:0.82] xl:[zoom:1]">
           <VoiceEditorDesktop />
         </div>
