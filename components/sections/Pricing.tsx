@@ -21,8 +21,8 @@ function PricingCard({ plan }: { plan: Plan }) {
 
   return (
     <div
-      className={`relative flex w-full max-w-[360px] flex-col gap-7 rounded-[20px] border bg-surface px-6 pb-8 pt-6 backdrop-blur-2xl sm:w-[324px] ${
-        plan.popular ? "border-accent/40" : "border-border"
+      className={`relative flex w-full max-w-[360px] flex-col gap-7 rounded-[20px] bg-surface px-6 pb-8 pt-6 backdrop-blur-2xl sm:w-[324px] ${
+        plan.popular ? "border-2 border-accent/35" : "border border-border"
       }`}
     >
       {plan.popular ? (
