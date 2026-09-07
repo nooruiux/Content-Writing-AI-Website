@@ -33,7 +33,7 @@ export function IterateCard() {
       </div>
 
       {/* formatting toolbar pill */}
-      <div className="absolute left-[90px] top-[225px] flex items-center gap-4 rounded-pill border border-border bg-white/[0.16] px-6 py-4 shadow-[12px_12px_32px_#1c1c1c]">
+      <div className="absolute left-[90px] top-[225px] flex items-center gap-4 rounded-pill border border-white/20 bg-white/[0.1] px-6 py-4 shadow-[12px_12px_32px_#1c1c1c] backdrop-blur-2xl">
         {pillIcons.map((name) => (
           <Icon key={name} src={`/assets/superpowers/${name}.svg`} size={24} />
         ))}
