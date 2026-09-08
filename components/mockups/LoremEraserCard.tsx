@@ -12,15 +12,26 @@ export function LoremEraserCard() {
         It&rsquo;s Quantum <span className="text-white/[0.28]">Lorem Ipsum</span>
       </p>
 
-      {/* eraser sweeping over the faded text */}
-      <img
-        src="/assets/realcontent/eraser.svg"
-        alt=""
-        width={60}
-        height={336}
-        className="absolute left-[210px] top-[210px] -rotate-[165deg]"
-      />
-      <div className="absolute left-[286px] top-[205px] h-[88px] w-12 rotate-[15deg] rounded-t-lg bg-white" />
+      {/* eraser sweeping over the faded text (Figma group 1:2598) */}
+      <div className="absolute left-[216.39px] top-[247.62px] flex h-[320.484px] w-[125.323px] items-center justify-center">
+        <div className="shrink-0 -rotate-[165deg]">
+          <div className="relative h-[320px] w-[44px]">
+            <div className="absolute inset-[-1.25%_-18.18%_-3.75%_-18.18%]">
+              <img
+                src="/assets/realcontent/eraser.svg"
+                alt=""
+                aria-hidden
+                className="block size-full max-w-none"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute left-[286.39px] top-[204.73px] flex h-[97.425px] w-[69.141px] items-center justify-center">
+        <div className="shrink-0 rotate-[15deg]">
+          <div className="h-[88px] w-[48px] rounded-t-[8px] bg-white" />
+        </div>
+      </div>
     </div>
   );
 }
