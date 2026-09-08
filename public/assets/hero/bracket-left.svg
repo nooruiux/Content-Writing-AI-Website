@@ -1,8 +1,12 @@
 <svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="484.25" height="400.258" viewBox="0 0 484.25 400.258" fill="none" xmlns="http://www.w3.org/2000/svg">
 <style>
-.bkp1,.bkp2{animation:bk 6s linear infinite}
-@keyframes bk{from{stroke-dashoffset:47.5}to{stroke-dashoffset:-1132.5}}
-@media (prefers-reduced-motion:reduce){.bkp1,.bkp2{animation:none;opacity:0}}
+.bkp1{animation:bka 6s linear infinite}
+.bkp2{animation:bkb 6s linear infinite}
+.bkp3{animation:bkc 6s linear infinite}
+@keyframes bka{from{stroke-dashoffset:13}to{stroke-dashoffset:-1167}}
+@keyframes bkb{from{stroke-dashoffset:31}to{stroke-dashoffset:-1149}}
+@keyframes bkc{from{stroke-dashoffset:50}to{stroke-dashoffset:-1130}}
+@media (prefers-reduced-motion:reduce){.bkp1,.bkp2,.bkp3{animation:none;opacity:0}}
 </style>
 <g id="Group 11">
 <path id="Vector 4" d="M229.75 387C248.15 387 253.083 387 253.25 387" stroke="white" stroke-opacity="0.2"/>
@@ -18,15 +22,19 @@
 <path id="Vector_2" d="M336.426 386.895L323.806 374.275L311.186 386.895L323.806 399.515L336.426 386.895Z" stroke="white" stroke-opacity="0.24" stroke-width="1.48729" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
 <path id="Vector 2" d="M0.25 0V363C0.25 376.255 10.9952 387 24.25 387H205.25" stroke="url(#paint1_linear_22_643)" stroke-opacity="0.36" stroke-width="0.5"/>
-<path class="bkp2" d="M0.25 0V363C0.25 376.255 10.9952 387 24.25 387H484.25" pathLength="1000" stroke="#ffffff" stroke-opacity="0.38" stroke-width="6" fill="none" stroke-dasharray="95 1085" filter="url(#bkGlow)"/>
-<path class="bkp1" d="M0.25 0V363C0.25 376.255 10.9952 387 24.25 387H484.25" pathLength="1000" stroke="#ffffff" stroke-opacity="0.45" stroke-width="1.8" fill="none" stroke-dasharray="95 1085" filter="url(#bkGlowT)"/>
+<path class="bkp3" d="M0.25 0V363C0.25 376.255 10.9952 387 24.25 387H484.25" pathLength="1000" stroke="#ffffff" stroke-opacity="0.28" stroke-width="6" fill="none" stroke-dasharray="100 1080" filter="url(#bkGlow)"/>
+<path class="bkp2" d="M0.25 0V363C0.25 376.255 10.9952 387 24.25 387H484.25" pathLength="1000" stroke="#ffffff" stroke-opacity="0.32" stroke-width="1.8" fill="none" stroke-dasharray="62 1118" filter="url(#bkGlowT)"/>
+<path class="bkp1" d="M0.25 0V363C0.25 376.255 10.9952 387 24.25 387H484.25" pathLength="1000" stroke="#ffffff" stroke-opacity="0.6" stroke-width="0.5" fill="none" stroke-dasharray="26 1154" filter="url(#bkGlowXT)"/>
 </g>
 <defs>
+<filter id="bkGlowXT" filterUnits="userSpaceOnUse" x="-48" y="-48" width="580" height="496">
+<feGaussianBlur stdDeviation="0.35"/>
+</filter>
 <filter id="bkGlowT" filterUnits="userSpaceOnUse" x="-48" y="-48" width="580" height="496">
-<feGaussianBlur stdDeviation="0.6"/>
+<feGaussianBlur stdDeviation="1"/>
 </filter>
 <filter id="bkGlow" filterUnits="userSpaceOnUse" x="-56" y="-56" width="596" height="512">
-<feGaussianBlur stdDeviation="2"/>
+<feGaussianBlur stdDeviation="2.4"/>
 </filter>
 <linearGradient id="paint0_linear_22_643" x1="337.25" y1="387" x2="484.25" y2="387" gradientUnits="userSpaceOnUse">
 <stop stop-color="white"/>
