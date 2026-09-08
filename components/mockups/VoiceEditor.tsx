@@ -49,17 +49,13 @@ function RecordedRow({ name, len, on = true }: { name: string; len: string; on?:
 function VoiceOutput() {
   return (
     <div className="flex flex-col items-center gap-6">
-      <div className="relative h-[330px] w-[477px] overflow-hidden rounded-2xl bg-[#1d1c20]">
-        <img
-          src="/assets/voice/waveform-photo.jpg"
-          alt=""
-          className="absolute inset-0 size-full object-cover opacity-50"
-        />
+      <div className="relative h-[330px] w-[477px] overflow-hidden rounded-2xl border border-accent bg-[#1d1c20]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_42%,rgb(24_160_251/0.32),rgb(24_160_251/0.08)_72%)]" />
         <div className="absolute left-1/2 top-1/2 size-[193px] -translate-x-1/2 -translate-y-1/2">
           {[193, 166, 139, 113].map((s, i) => (
             <span
               key={s}
-              className="absolute rounded-full bg-[#b321cb]"
+              className="absolute rounded-full bg-accent"
               style={{
                 width: s,
                 height: s,
@@ -69,7 +65,7 @@ function VoiceOutput() {
               }}
             />
           ))}
-          <span className="absolute left-1/2 top-1/2 flex size-[92px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#b321cb]">
+          <span className="absolute left-1/2 top-1/2 flex size-[92px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-accent">
             <Icon src="/assets/voice/ic-mic-play.svg" size={22} />
           </span>
         </div>
@@ -77,7 +73,7 @@ function VoiceOutput() {
           {bars.map(([x, y, h, faded], i) => (
             <span
               key={i}
-              className={`absolute w-2 rounded-pill ${faded ? "bg-white/10" : "bg-[#b321cb]"}`}
+              className={`absolute w-2 rounded-pill ${faded ? "bg-white/10" : "bg-accent"}`}
               style={{ left: x, top: y, height: h }}
             />
           ))}
@@ -138,7 +134,7 @@ function SettingsPanel({ className = "" }: { className?: string }) {
       </span>
       <SelectField label="Language" value="English (US)" />
       <SelectField label="Voice" value="Jenny Multilingual" />
-      <span className="flex items-center gap-2 text-sm font-medium text-[#b321cb]">
+      <span className="flex items-center gap-2 text-sm font-medium text-accent">
         <Icon src="/assets/voice/ic-play-sm.svg" size={16} />
         Hear this voice
       </span>
