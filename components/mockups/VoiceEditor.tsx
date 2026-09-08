@@ -74,13 +74,15 @@ function VoiceOutput() {
           </span>
         </div>
         <div className="absolute left-1/2 top-[70px] h-[138px] w-[474px] -translate-x-1/2">
-          {bars.map(([x, y, h, faded], i) => (
-            <span
-              key={i}
-              className={`absolute w-2 rounded-pill ${faded ? "bg-white/10" : "bg-[#b321cb]"}`}
-              style={{ left: x, top: y, height: h }}
-            />
-          ))}
+          {bars.map(([x, y, h, faded], i) =>
+            faded ? null : (
+              <span
+                key={i}
+                className="absolute w-2 rounded-pill bg-[#b321cb]"
+                style={{ left: x, top: y, height: h }}
+              />
+            ),
+          )}
         </div>
       </div>
       <div className="flex items-center gap-4">
@@ -138,7 +140,7 @@ function SettingsPanel({ className = "" }: { className?: string }) {
       </span>
       <SelectField label="Language" value="English (US)" />
       <SelectField label="Voice" value="Jenny Multilingual" />
-      <span className="flex items-center gap-2 text-sm font-medium text-[#b321cb]">
+      <span className="flex items-center gap-2 text-sm font-medium text-accent">
         <Icon src="/assets/voice/ic-play-sm.svg" size={16} />
         Hear this voice
       </span>
