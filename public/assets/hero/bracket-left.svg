@@ -1,8 +1,10 @@
 <svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="484.25" height="400.258" viewBox="0 0 484.25 400.258" fill="none" xmlns="http://www.w3.org/2000/svg">
 <style>
-.bkp1{animation:bk 6s linear infinite}
-@keyframes bk{from{stroke-dashoffset:0}to{stroke-dashoffset:-1180}}
-@media (prefers-reduced-motion:reduce){.bkp1{animation:none;opacity:0}}
+.bkp1{animation:bk1 6s linear infinite}
+.bkp2{animation:bk2 6s linear infinite}
+@keyframes bk1{from{stroke-dashoffset:15}to{stroke-dashoffset:-1165}}
+@keyframes bk2{from{stroke-dashoffset:24}to{stroke-dashoffset:-1156}}
+@media (prefers-reduced-motion:reduce){.bkp1,.bkp2{animation:none;opacity:0}}
 </style>
 <g id="Group 11">
 <path id="Vector 4" d="M229.75 387C248.15 387 253.083 387 253.25 387" stroke="white" stroke-opacity="0.2"/>
@@ -18,7 +20,8 @@
 <path id="Vector_2" d="M336.426 386.895L323.806 374.275L311.186 386.895L323.806 399.515L336.426 386.895Z" stroke="white" stroke-opacity="0.24" stroke-width="1.48729" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
 <path id="Vector 2" d="M0.25 0V363C0.25 376.255 10.9952 387 24.25 387H205.25" stroke="url(#paint1_linear_22_643)" stroke-opacity="0.36" stroke-width="0.5"/>
-<path class="bkp1" d="M0.25 0V363C0.25 376.255 10.9952 387 24.25 387H484.25" pathLength="1000" stroke="#ffffff" stroke-width="0.5" fill="none" stroke-linecap="round" stroke-dasharray="40 1140"/>
+<path class="bkp2" d="M0.25 0V363C0.25 376.255 10.9952 387 24.25 387H484.25" pathLength="1000" stroke="#ffffff" stroke-width="0.1" fill="none" stroke-linecap="round" stroke-dasharray="48 1132"/>
+<path class="bkp1" d="M0.25 0V363C0.25 376.255 10.9952 387 24.25 387H484.25" pathLength="1000" stroke="#ffffff" stroke-width="0.5" fill="none" stroke-linecap="round" stroke-dasharray="30 1150"/>
 </g>
 <defs>
 <linearGradient id="paint0_linear_22_643" x1="337.25" y1="387" x2="484.25" y2="387" gradientUnits="userSpaceOnUse">
