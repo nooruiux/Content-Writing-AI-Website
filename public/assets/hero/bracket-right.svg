@@ -1,23 +1,20 @@
 <svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="484.25" height="400.258" viewBox="0 0 484.25 400.258" fill="none" xmlns="http://www.w3.org/2000/svg">
 <style>
-.bkp1{animation:bk1 14s linear -2.1s infinite}
-.bkp2{animation:bk2 14s linear -2.1s infinite}
-.bkp3{animation:bk3 14s linear -2.1s infinite}
-.bkp4{animation:bk4 14s linear -2.1s infinite}
-@keyframes bk1{from{stroke-dashoffset:16}to{stroke-dashoffset:-1164}}
-@keyframes bk2{from{stroke-dashoffset:31}to{stroke-dashoffset:-1149}}
-@keyframes bk3{from{stroke-dashoffset:52.5}to{stroke-dashoffset:-1127.5}}
-@keyframes bk4{from{stroke-dashoffset:75}to{stroke-dashoffset:-1105}}
-@media (prefers-reduced-motion:reduce){.bkp1,.bkp2,.bkp3,.bkp4{animation:none;opacity:0}}
+.bkp1{animation:bk1 11s linear -1.6s infinite}
+.bkp2{animation:bk2 11s linear -1.6s infinite}
+.bkp3{animation:bk3 11s linear -1.6s infinite}
+@keyframes bk1{from{stroke-dashoffset:20}to{stroke-dashoffset:-1160}}
+@keyframes bk2{from{stroke-dashoffset:40}to{stroke-dashoffset:-1140}}
+@keyframes bk3{from{stroke-dashoffset:75}to{stroke-dashoffset:-1105}}
+@media (prefers-reduced-motion:reduce){.bkp1,.bkp2,.bkp3{animation:none;opacity:0}}
 </style>
 <g id="Group 12">
 <path id="Vector 4" d="M229.75 387C248.15 387 253.083 387 253.25 387" stroke="white" stroke-opacity="0.12"/>
 <path id="Vector 5" d="M277.25 387C296.041 387 301.08 387 301.25 387" stroke="white" stroke-opacity="0.12"/>
 <path id="Vector 2" d="M0.25 0V363C0.25 376.255 10.9952 387 24.25 387H205.25" stroke="url(#paint0_linear_22_633)" stroke-opacity="0.36" stroke-width="0.5"/>
-<path class="bkp4" d="M484.25 387H24.25C10.9952 387 0.25 376.255 0.25 363V0" pathLength="1000" stroke="#ffffff" stroke-opacity="0.22" stroke-width="4" fill="none" stroke-dasharray="150 1030" filter="url(#bkGlowWide)"/>
-<path class="bkp3" d="M484.25 387H24.25C10.9952 387 0.25 376.255 0.25 363V0" pathLength="1000" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2.4" fill="none" stroke-dasharray="105 1075" filter="url(#bkGlow)"/>
-<path class="bkp2" d="M484.25 387H24.25C10.9952 387 0.25 376.255 0.25 363V0" pathLength="1000" stroke="#ffffff" stroke-opacity="0.75" stroke-width="1.5" fill="none" stroke-dasharray="62 1118" filter="url(#bkGlowT)"/>
-<path class="bkp1" d="M484.25 387H24.25C10.9952 387 0.25 376.255 0.25 363V0" pathLength="1000" stroke="#ffffff" stroke-width="1" fill="none" stroke-dasharray="32 1148"/>
+<path class="bkp3" d="M484.25 387H24.25C10.9952 387 0.25 376.255 0.25 363V0" pathLength="1000" stroke="#ffffff" stroke-opacity="0.32" stroke-width="5" fill="none" stroke-dasharray="150 1030" filter="url(#bkGlowWide)"/>
+<path class="bkp2" d="M484.25 387H24.25C10.9952 387 0.25 376.255 0.25 363V0" pathLength="1000" stroke="#ffffff" stroke-opacity="0.6" stroke-width="2.5" fill="none" stroke-dasharray="80 1100" filter="url(#bkGlow)"/>
+<path class="bkp1" d="M484.25 387H24.25C10.9952 387 0.25 376.255 0.25 363V0" pathLength="1000" stroke="#ffffff" stroke-opacity="0.92" stroke-width="1.4" fill="none" stroke-dasharray="40 1140" filter="url(#bkGlowT)"/>
 <path id="Vector 3" d="M229.25 397.275V377.275L205.25 387.275L229.25 397.275Z" stroke="white" stroke-opacity="0.24"/>
 <g id="Ellipse 8">
 <circle cx="265.25" cy="387.275" r="12" fill="white" fill-opacity="0.08"/>
@@ -30,14 +27,14 @@
 </g>
 </g>
 <defs>
-<filter id="bkGlowT" filterUnits="userSpaceOnUse" x="-32" y="-32" width="548" height="464">
-<feGaussianBlur stdDeviation="1.1"/>
+<filter id="bkGlowT" filterUnits="userSpaceOnUse" x="-40" y="-40" width="564" height="480">
+<feGaussianBlur stdDeviation="0.9"/>
 </filter>
-<filter id="bkGlow" filterUnits="userSpaceOnUse" x="-40" y="-40" width="564" height="480">
-<feGaussianBlur stdDeviation="3.2"/>
+<filter id="bkGlow" filterUnits="userSpaceOnUse" x="-48" y="-48" width="580" height="496">
+<feGaussianBlur stdDeviation="2.4"/>
 </filter>
-<filter id="bkGlowWide" filterUnits="userSpaceOnUse" x="-48" y="-48" width="580" height="496">
-<feGaussianBlur stdDeviation="6"/>
+<filter id="bkGlowWide" filterUnits="userSpaceOnUse" x="-56" y="-56" width="596" height="512">
+<feGaussianBlur stdDeviation="5.5"/>
 </filter>
 <linearGradient id="paint0_linear_22_633" x1="0.250018" y1="-11.5" x2="195.75" y2="386.515" gradientUnits="userSpaceOnUse">
 <stop stop-color="white" stop-opacity="0.08"/>
