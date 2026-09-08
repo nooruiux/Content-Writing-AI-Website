@@ -59,7 +59,7 @@ function VoiceOutput() {
           {[193, 166, 139, 113].map((s, i) => (
             <span
               key={s}
-              className="absolute rounded-full bg-accent"
+              className="absolute rounded-full bg-[#b321cb]"
               style={{
                 width: s,
                 height: s,
@@ -69,7 +69,7 @@ function VoiceOutput() {
               }}
             />
           ))}
-          <span className="absolute left-1/2 top-1/2 flex size-[92px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-accent">
+          <span className="absolute left-1/2 top-1/2 flex size-[92px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#b321cb]">
             <Icon src="/assets/voice/ic-mic-play.svg" size={22} />
           </span>
         </div>
@@ -77,7 +77,7 @@ function VoiceOutput() {
           {bars.map(([x, y, h, faded], i) => (
             <span
               key={i}
-              className={`absolute w-2 rounded-pill ${faded ? "bg-white/10" : "bg-accent"}`}
+              className={`absolute w-2 rounded-pill ${faded ? "bg-white/10" : "bg-[#b321cb]"}`}
               style={{ left: x, top: y, height: h }}
             />
           ))}
@@ -138,7 +138,7 @@ function SettingsPanel({ className = "" }: { className?: string }) {
       </span>
       <SelectField label="Language" value="English (US)" />
       <SelectField label="Voice" value="Jenny Multilingual" />
-      <span className="flex items-center gap-2 text-sm font-medium text-accent">
+      <span className="flex items-center gap-2 text-sm font-medium text-[#b321cb]">
         <Icon src="/assets/voice/ic-play-sm.svg" size={16} />
         Hear this voice
       </span>
