@@ -18,7 +18,7 @@
 </g>
 <path d="M618 309C618 227.181 585.497 148.713 527.642 90.8576C469.787 33.0026 391.319 0.500006 309.5 0.5C227.681 0.499994 149.213 33.0026 91.3576 90.8575C33.5026 148.712 1.00001 227.181 1 309L309.5 309H618Z" stroke="white" stroke-opacity="0.06" stroke-width="1.62797"/>
 </g>
-<g class="gsweep"><path id="Ellipse 7" d="M309.5 309L309.5 40.5C309.5 40.5 322.5 33.5 322.5 20C322.5 6.5 309.5 1 309.5 1A308 308 0 0 0 73.6 111L309.5 309Z" fill="white" fill-opacity="0.1" stroke="url(#paint0_radial_20_600)" stroke-opacity="0.16" stroke-width="2" stroke-linejoin="round"/></g>
+<g class="gsweep"><path id="Ellipse 7" d="M309.5 169L309.5 40.5C309.5 40.5 322.5 33.5 322.5 20C322.5 6.5 309.5 1 309.5 1A308.5 308.5 0 0 0 73.2 110.7L202.3 219A140 140 0 0 1 309.5 169Z" fill="white" fill-opacity="0.1" stroke="url(#paint0_radial_20_600)" stroke-opacity="0.16" stroke-width="2" stroke-linejoin="round"/><path d="M202.3 219L73.2 110.7" stroke="white" stroke-opacity="0.06" stroke-width="1.62797"/></g>
 <g id="Ellipse 1">
 <mask id="path-4-inside-3_20_600" fill="white">
 <path d="M578.114 309C578.114 237.759 549.814 169.436 499.439 119.061C449.064 68.6857 380.741 40.3853 309.5 40.3853C238.258 40.3852 169.935 68.6856 119.56 119.061C69.1852 169.436 40.8848 237.759 40.8848 309L309.5 309H578.114Z"/>
@@ -58,7 +58,7 @@
 <g id="icon ekements">
 <style>
 @keyframes globeSweep{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-.gsweep{transform-origin:309.5px 309px;animation:globeSweep 30s linear infinite;will-change:transform}
+.gsweep{transform-origin:309.5px 309px;animation:globeSweep 20s linear infinite;will-change:transform}
 @keyframes badgeFloatA{0%,100%{transform:translate(0,0)}50%{transform:translate(4px,-20px)}}
 @keyframes badgeFloatB{0%,100%{transform:translate(0,0)}50%{transform:translate(-5px,18px)}}
 .ob{will-change:transform}
