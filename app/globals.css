@@ -78,47 +78,60 @@
   }
 }
 
-/* Pro pricing card — blue/white gradient border that rotates on hover.
-   Unlayered so `background` wins over the `bg-surface` utility. */
-@property --pro-angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}
-
+/* Pro pricing card — two soft #18A0FB light points continuously travelling
+   around the border (AuthKit "Leaked password protection" style): an oversized
+   conic-gradient square with two bright arcs rotates behind a border-ring mask
+   on a 9s linear loop, over a faint static border. */
 .pro-card-frame {
-  --pro-angle: 0deg;
-  border: 2px solid transparent;
-  background:
-    linear-gradient(var(--color-surface), var(--color-surface)) padding-box,
-    conic-gradient(
-      from var(--pro-angle),
-      #18a0fb,
-      #ffffff,
-      #18a0fb,
-      #ffffff,
-      #18a0fb
-    )
-      border-box;
-  animation: pro-border-spin 3s linear infinite;
-  animation-play-state: paused;
+  border: 1.5px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 0 16px rgba(24, 160, 251, 0.16);
 }
 
-@media (hover: hover) {
-  .pro-card-frame:hover {
-    animation-play-state: running;
+.pro-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  overflow: hidden;
+  pointer-events: none;
+  padding: 1.5px;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+
+.pro-glow-spin {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 200%;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  background: conic-gradient(
+    from 0deg,
+    rgba(24, 160, 251, 0) 0deg,
+    rgba(24, 160, 251, 0) 18deg,
+    #7cc9ff 40deg,
+    #18a0fb 56deg,
+    rgba(24, 160, 251, 0) 80deg,
+    rgba(24, 160, 251, 0) 198deg,
+    #7cc9ff 220deg,
+    #18a0fb 236deg,
+    rgba(24, 160, 251, 0) 260deg,
+    rgba(24, 160, 251, 0) 360deg
+  );
+  animation: pro-glow-spin 9s linear infinite;
+}
+
+@keyframes pro-glow-spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .pro-card-frame:hover {
-    animation-play-state: paused;
-  }
-}
-
-@keyframes pro-border-spin {
-  to {
-    --pro-angle: 360deg;
+  .pro-glow-spin {
+    animation: none;
   }
 }
 
