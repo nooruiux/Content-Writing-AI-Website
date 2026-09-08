@@ -30,16 +30,25 @@ function SkeletonRows({ rows }: { rows: number[][] }) {
 export function RichEditorCard() {
   return (
     <div className="relative h-[456px] w-[588px] overflow-hidden rounded-[32px] border-[1.4px] border-border bg-surface backdrop-blur-4xl">
-      <div
+      {/* concentric arc rings peeking from the card edges (Figma "Group 29" / "Group 28") */}
+      <img
+        src="/assets/realcontent/arc-left.svg"
+        alt=""
         aria-hidden
-        className="absolute left-1/2 top-8 h-[420px] w-[720px] -translate-x-1/2 rounded-full border border-border"
+        width={396}
+        height={396}
+        className="pointer-events-none absolute left-[-264px] top-[31px] size-[396px] rotate-90"
       />
-      <div
+      <img
+        src="/assets/realcontent/arc-right.svg"
+        alt=""
         aria-hidden
-        className="absolute left-1/2 top-14 h-[320px] w-[560px] -translate-x-1/2 rounded-full border border-border"
+        width={396}
+        height={396}
+        className="pointer-events-none absolute left-[456px] top-[31px] size-[396px] -rotate-90"
       />
 
-      <div className="absolute left-1/2 top-8 flex -translate-x-1/2 flex-col items-center gap-8">
+      <div className="absolute left-[84px] top-8 flex w-[420px] flex-col items-center gap-8">
         <div className="flex gap-5">
           {toolbar.map((name) => (
             <Icon key={name} src={`/assets/realcontent/${name}.svg`} size={24} />
@@ -67,7 +76,7 @@ export function RichEditorCard() {
 
           <button
             type="button"
-            className="flex w-[284px] items-center justify-center gap-2 rounded-lg bg-accent px-4 py-2.5 text-base font-bold text-white"
+            className="flex w-[284px] items-center justify-center gap-2.5 rounded-lg bg-accent px-4 py-[9px] text-base font-bold text-white"
           >
             <Icon src="/assets/realcontent/ic-generate.svg" size={20} />
             Generate copy
