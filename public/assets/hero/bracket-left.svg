@@ -4,10 +4,10 @@
 .bkp2{animation:bk2 14s linear infinite}
 .bkp3{animation:bk3 14s linear infinite}
 .bkp4{animation:bk4 14s linear infinite}
-@keyframes bk1{from{stroke-dashoffset:4}to{stroke-dashoffset:-1176}}
-@keyframes bk2{from{stroke-dashoffset:11}to{stroke-dashoffset:-1169}}
-@keyframes bk3{from{stroke-dashoffset:22}to{stroke-dashoffset:-1158}}
-@keyframes bk4{from{stroke-dashoffset:36}to{stroke-dashoffset:-1144}}
+@keyframes bk1{from{stroke-dashoffset:7.5}to{stroke-dashoffset:-1172.5}}
+@keyframes bk2{from{stroke-dashoffset:20}to{stroke-dashoffset:-1160}}
+@keyframes bk3{from{stroke-dashoffset:40}to{stroke-dashoffset:-1140}}
+@keyframes bk4{from{stroke-dashoffset:65}to{stroke-dashoffset:-1115}}
 @media (prefers-reduced-motion:reduce){.bkp1,.bkp2,.bkp3,.bkp4{animation:none;opacity:0}}
 </style>
 <g id="Group 11">
@@ -24,10 +24,10 @@
 <path id="Vector_2" d="M336.426 386.895L323.806 374.275L311.186 386.895L323.806 399.515L336.426 386.895Z" stroke="white" stroke-opacity="0.24" stroke-width="1.48729" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
 <path id="Vector 2" d="M0.25 0V363C0.25 376.255 10.9952 387 24.25 387H205.25" stroke="url(#paint1_linear_22_643)" stroke-opacity="0.36" stroke-width="0.5"/>
-<path class="bkp4" d="M0.25 0V363C0.25 376.255 10.9952 387 24.25 387H484.25" pathLength="1000" stroke="#ffffff" stroke-opacity="0.1" stroke-width="2.4" fill="none" stroke-dasharray="72 1108" filter="url(#bkGlowWide)"/>
-<path class="bkp3" d="M0.25 0V363C0.25 376.255 10.9952 387 24.25 387H484.25" pathLength="1000" stroke="#ffffff" stroke-opacity="0.24" stroke-width="1.3" fill="none" stroke-dasharray="44 1136" filter="url(#bkGlow)"/>
-<path class="bkp2" d="M0.25 0V363C0.25 376.255 10.9952 387 24.25 387H484.25" pathLength="1000" stroke="#ffffff" stroke-opacity="0.55" stroke-width="0.8" fill="none" stroke-dasharray="22 1158" filter="url(#bkGlowT)"/>
-<path class="bkp1" d="M0.25 0V363C0.25 376.255 10.9952 387 24.25 387H484.25" pathLength="1000" stroke="#ffffff" stroke-width="0.5" fill="none" stroke-dasharray="8 1172"/>
+<path class="bkp4" d="M0.25 0V363C0.25 376.255 10.9952 387 24.25 387H484.25" pathLength="1000" stroke="#ffffff" stroke-opacity="0.1" stroke-width="2.4" fill="none" stroke-dasharray="130 1050" filter="url(#bkGlowWide)"/>
+<path class="bkp3" d="M0.25 0V363C0.25 376.255 10.9952 387 24.25 387H484.25" pathLength="1000" stroke="#ffffff" stroke-opacity="0.24" stroke-width="1.3" fill="none" stroke-dasharray="80 1100" filter="url(#bkGlow)"/>
+<path class="bkp2" d="M0.25 0V363C0.25 376.255 10.9952 387 24.25 387H484.25" pathLength="1000" stroke="#ffffff" stroke-opacity="0.55" stroke-width="0.8" fill="none" stroke-dasharray="40 1140" filter="url(#bkGlowT)"/>
+<path class="bkp1" d="M0.25 0V363C0.25 376.255 10.9952 387 24.25 387H484.25" pathLength="1000" stroke="#ffffff" stroke-width="0.5" fill="none" stroke-dasharray="15 1165"/>
 </g>
 <defs>
 <filter id="bkGlowT" filterUnits="userSpaceOnUse" x="-32" y="-32" width="548" height="464">
