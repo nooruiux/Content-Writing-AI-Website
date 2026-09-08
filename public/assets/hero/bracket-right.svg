@@ -4,9 +4,9 @@
 .bkp2{animation:bk2 14s linear -2.1s infinite}
 .bkp3{animation:bk3 14s linear -2.1s infinite}
 .bkp4{animation:bk4 14s linear -2.1s infinite}
-@keyframes bk1{from{stroke-dashoffset:7.5}to{stroke-dashoffset:-1172.5}}
-@keyframes bk2{from{stroke-dashoffset:20}to{stroke-dashoffset:-1160}}
-@keyframes bk3{from{stroke-dashoffset:40}to{stroke-dashoffset:-1140}}
+@keyframes bk1{from{stroke-dashoffset:13}to{stroke-dashoffset:-1167}}
+@keyframes bk2{from{stroke-dashoffset:27}to{stroke-dashoffset:-1153}}
+@keyframes bk3{from{stroke-dashoffset:46}to{stroke-dashoffset:-1134}}
 @keyframes bk4{from{stroke-dashoffset:65}to{stroke-dashoffset:-1115}}
 @media (prefers-reduced-motion:reduce){.bkp1,.bkp2,.bkp3,.bkp4{animation:none;opacity:0}}
 </style>
@@ -14,10 +14,10 @@
 <path id="Vector 4" d="M229.75 387C248.15 387 253.083 387 253.25 387" stroke="white" stroke-opacity="0.12"/>
 <path id="Vector 5" d="M277.25 387C296.041 387 301.08 387 301.25 387" stroke="white" stroke-opacity="0.12"/>
 <path id="Vector 2" d="M0.25 0V363C0.25 376.255 10.9952 387 24.25 387H205.25" stroke="url(#paint0_linear_22_633)" stroke-opacity="0.36" stroke-width="0.5"/>
-<path class="bkp4" d="M484.25 387H24.25C10.9952 387 0.25 376.255 0.25 363V0" pathLength="1000" stroke="#ffffff" stroke-opacity="0.1" stroke-width="2.4" fill="none" stroke-dasharray="130 1050" filter="url(#bkGlowWide)"/>
-<path class="bkp3" d="M484.25 387H24.25C10.9952 387 0.25 376.255 0.25 363V0" pathLength="1000" stroke="#ffffff" stroke-opacity="0.24" stroke-width="1.3" fill="none" stroke-dasharray="80 1100" filter="url(#bkGlow)"/>
-<path class="bkp2" d="M484.25 387H24.25C10.9952 387 0.25 376.255 0.25 363V0" pathLength="1000" stroke="#ffffff" stroke-opacity="0.55" stroke-width="0.8" fill="none" stroke-dasharray="40 1140" filter="url(#bkGlowT)"/>
-<path class="bkp1" d="M484.25 387H24.25C10.9952 387 0.25 376.255 0.25 363V0" pathLength="1000" stroke="#ffffff" stroke-width="0.5" fill="none" stroke-dasharray="15 1165"/>
+<path class="bkp4" d="M484.25 387H24.25C10.9952 387 0.25 376.255 0.25 363V0" pathLength="1000" stroke="#ffffff" stroke-opacity="0.06" stroke-width="2.4" fill="none" stroke-dasharray="130 1050" filter="url(#bkGlowWide)"/>
+<path class="bkp3" d="M484.25 387H24.25C10.9952 387 0.25 376.255 0.25 363V0" pathLength="1000" stroke="#ffffff" stroke-opacity="0.11" stroke-width="1.7" fill="none" stroke-dasharray="92 1088" filter="url(#bkGlow)"/>
+<path class="bkp2" d="M484.25 387H24.25C10.9952 387 0.25 376.255 0.25 363V0" pathLength="1000" stroke="#ffffff" stroke-opacity="0.18" stroke-width="1.1" fill="none" stroke-dasharray="54 1126" filter="url(#bkGlowT)"/>
+<path class="bkp1" d="M484.25 387H24.25C10.9952 387 0.25 376.255 0.25 363V0" pathLength="1000" stroke="#ffffff" stroke-opacity="0.3" stroke-width="1" fill="none" stroke-dasharray="26 1154"/>
 <path id="Vector 3" d="M229.25 397.275V377.275L205.25 387.275L229.25 397.275Z" stroke="white" stroke-opacity="0.24"/>
 <g id="Ellipse 8">
 <circle cx="265.25" cy="387.275" r="12" fill="white" fill-opacity="0.08"/>
@@ -37,7 +37,7 @@
 <feGaussianBlur stdDeviation="2.6"/>
 </filter>
 <filter id="bkGlowWide" filterUnits="userSpaceOnUse" x="-40" y="-40" width="564" height="480">
-<feGaussianBlur stdDeviation="6"/>
+<feGaussianBlur stdDeviation="4"/>
 </filter>
 <linearGradient id="paint0_linear_22_633" x1="0.250018" y1="-11.5" x2="195.75" y2="386.515" gradientUnits="userSpaceOnUse">
 <stop stop-color="white" stop-opacity="0.08"/>
