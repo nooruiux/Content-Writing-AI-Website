@@ -18,12 +18,12 @@
 <path id="Vector_2" d="M336.426 386.895L323.806 374.275L311.186 386.895L323.806 399.515L336.426 386.895Z" stroke="white" stroke-opacity="0.24" stroke-width="1.48729" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
 <path id="Vector 2" d="M0.25 0V363C0.25 376.255 10.9952 387 24.25 387H205.25" stroke="url(#paint1_linear_22_643)" stroke-opacity="0.36" stroke-width="0.5"/>
-<path class="bkp2" d="M0.25 0V363C0.25 376.255 10.9952 387 24.25 387H484.25" pathLength="1000" stroke="#ffffff" stroke-opacity="0.35" stroke-width="5" fill="none" stroke-dasharray="150 1030" filter="url(#bkGlow)"/>
-<path class="bkp1" d="M0.25 0V363C0.25 376.255 10.9952 387 24.25 387H484.25" pathLength="1000" stroke="#ffffff" stroke-opacity="0.75" stroke-width="1.4" fill="none" stroke-dasharray="150 1030" filter="url(#bkGlowT)"/>
+<path class="bkp2" d="M0.25 0V363C0.25 376.255 10.9952 387 24.25 387H484.25" pathLength="1000" stroke="#ffffff" stroke-opacity="0.38" stroke-width="6" fill="none" stroke-dasharray="150 1030" filter="url(#bkGlow)"/>
+<path class="bkp1" d="M0.25 0V363C0.25 376.255 10.9952 387 24.25 387H484.25" pathLength="1000" stroke="#ffffff" stroke-opacity="0.45" stroke-width="1.8" fill="none" stroke-dasharray="150 1030" filter="url(#bkGlowT)"/>
 </g>
 <defs>
 <filter id="bkGlowT" filterUnits="userSpaceOnUse" x="-48" y="-48" width="580" height="496">
-<feGaussianBlur stdDeviation="0.7"/>
+<feGaussianBlur stdDeviation="1.8"/>
 </filter>
 <filter id="bkGlow" filterUnits="userSpaceOnUse" x="-56" y="-56" width="596" height="512">
 <feGaussianBlur stdDeviation="4"/>
