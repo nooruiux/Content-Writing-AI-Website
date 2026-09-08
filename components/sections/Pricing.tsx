@@ -26,10 +26,15 @@ function PricingCard({ plan }: { plan: Plan }) {
       }`}
     >
       {plan.popular ? (
-        <span className="absolute right-6 top-6 flex h-8 items-center gap-1.5 rounded-pill bg-accent-soft px-3 text-sm font-bold text-accent">
-          <Icon src="/assets/pricing/sparkle-blue.svg" size={16} />
-          Popular
-        </span>
+        <>
+          <span aria-hidden className="pro-glow">
+            <span className="pro-glow-spin" />
+          </span>
+          <span className="absolute right-6 top-6 flex h-8 items-center gap-1.5 rounded-pill bg-accent-soft px-3 text-sm font-bold text-accent">
+            <Icon src="/assets/pricing/sparkle-blue.svg" size={16} />
+            Popular
+          </span>
+        </>
       ) : null}
 
       <div className="flex flex-col gap-7">
