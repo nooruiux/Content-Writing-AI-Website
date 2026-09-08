@@ -32,7 +32,7 @@ export function Hero() {
               alt=""
               width={484}
               height={400}
-              className="-translate-y-[187px] -scale-x-100"
+              className="translate-y-[187px] rotate-180"
             />
           </div>
 
