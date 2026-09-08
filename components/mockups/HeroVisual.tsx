@@ -225,36 +225,39 @@ function AskQuantumPanel({ className = "" }: { className?: string }) {
         </p>
       </div>
 
-      {/* answer — Figma 1:1940 */}
-      <div className="absolute left-[23px] top-[188px] w-[387px] rounded-lg border border-white/[0.12] bg-white/[0.08] px-4 pb-2 pt-[9px]">
-        <p className="text-base leading-6 text-white/[0.88]">
-          Quantum AI is the most popular AI Content services provider. It&rsquo;s also provide article
-          writing, product description, paragraph writing, summarizing, and text to voice services.
-          You can check out with free trial.
-        </p>
-      </div>
+      {/* answer (Figma 1:1940) → actions → input, stacked from the answer top to
+         the panel bottom so Copy / Try again sit centred in the leftover space. */}
+      <div className="absolute inset-x-[23px] top-[188px] bottom-[25px] flex flex-col items-start">
+        <div className="w-[387px] rounded-lg border border-white/[0.12] bg-white/[0.08] px-4 pb-2 pt-[9px]">
+          <p className="text-base leading-6 text-white/[0.88]">
+            Quantum AI is the most popular AI Content services provider. It&rsquo;s also provide
+            article writing, product description, paragraph writing, summarizing, and text to voice
+            services. You can check out with free trial.
+          </p>
+        </div>
 
-      {/* actions — Figma 1:1942 */}
-      <div className="absolute left-[23px] top-[325px] flex gap-2">
-        <span className="flex h-10 items-center gap-2 rounded-pill border border-white/[0.24] px-5 text-sm font-bold text-white/80">
-          <Icon src="/assets/icon-copy.svg" size={16} />
-          Copy
-        </span>
-        <span className="flex h-10 items-center gap-2 rounded-pill border border-white/[0.24] px-5 text-sm font-bold text-white/80">
-          <Icon src="/assets/icon-retry.svg" size={16} />
-          Try again
-        </span>
-      </div>
+        {/* Figma 1:1942 — grows to fill the gap and vertically centres the buttons */}
+        <div className="flex flex-1 items-center gap-2">
+          <span className="flex h-10 items-center gap-2 rounded-pill border border-white/[0.24] px-5 text-sm font-bold text-white/80">
+            <Icon src="/assets/icon-copy.svg" size={16} />
+            Copy
+          </span>
+          <span className="flex h-10 items-center gap-2 rounded-pill border border-white/[0.24] px-5 text-sm font-bold text-white/80">
+            <Icon src="/assets/icon-retry.svg" size={16} />
+            Try again
+          </span>
+        </div>
 
-      {/* input — Figma 1:1899 */}
-      <div className="absolute left-[23px] top-[381px] flex h-12 w-[433px] items-center gap-3 rounded-pill border border-white/[0.12] bg-white/[0.08] pl-6 shadow-[1px_1px_0.8px_0_rgb(255_255_255/0.04),inset_0_-1px_1px_1.5px_rgb(255_255_255/0.08)] backdrop-blur-[6px]">
-        <span className="h-6 w-px bg-white/5" />
-        <span className="text-base font-bold text-white/40">Ask a question</span>
-        <Icon
-          src="/assets/hero/sparkle-lg.svg"
-          size={36}
-          className="absolute right-[7px] top-1/2 -translate-y-1/2"
-        />
+        {/* input — Figma 1:1899 */}
+        <div className="relative flex h-12 w-[433px] items-center gap-1 rounded-pill border border-white/[0.12] bg-white/[0.08] pl-6 shadow-[1px_1px_0.8px_0_rgb(255_255_255/0.04),inset_0_-1px_1px_1.5px_rgb(255_255_255/0.08)] backdrop-blur-[6px]">
+          <span className="caret-blink h-[18px] w-px animate-[caret-blink_1.06s_infinite] bg-white/70" />
+          <span className="text-base font-bold text-white/40">Ask a question</span>
+          <Icon
+            src="/assets/hero/sparkle-lg.svg"
+            size={36}
+            className="absolute right-[7px] top-1/2 -translate-y-1/2"
+          />
+        </div>
       </div>
     </div>
   );
