@@ -3,9 +3,9 @@ import { realContent } from "@/lib/content";
 export function LoremEraserCard() {
   return (
     <div className="relative h-[456px] w-[588px] overflow-hidden rounded-[32px] border-[1.4px] border-border bg-surface">
-      <div className="absolute left-[30px] top-[30px] flex flex-col gap-3">
+      <div className="absolute left-[31px] top-[31px] flex flex-col gap-3">
         <h3 className="text-title font-bold leading-8 text-white">{realContent.lorem.title}</h3>
-        <p className="max-w-[524px] text-base text-white/[0.88]">{realContent.lorem.description}</p>
+        <p className="w-[524px] text-base text-white/[0.88]">{realContent.lorem.description}</p>
       </div>
 
       <p className="absolute left-[25px] top-[240px] whitespace-nowrap text-[44px] font-bold leading-[52px] text-white">
