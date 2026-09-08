@@ -36,10 +36,18 @@ export function Hero() {
             />
           </div>
 
-          <Button href={hero.cta.href} variant="glass" className="relative">
-            <Icon src="/assets/hero/btn-quantum.svg" size={20} />
-            {hero.cta.label}
-          </Button>
+          <span className="cta-glow">
+            <span aria-hidden className="cta-glow-layer cta-glow-bloom">
+              <span className="cta-glow-spin" />
+            </span>
+            <span aria-hidden className="cta-glow-layer cta-glow-ring">
+              <span className="cta-glow-spin" />
+            </span>
+            <Button href={hero.cta.href} variant="glass" className="relative">
+              <Icon src="/assets/hero/btn-quantum.svg" size={20} />
+              {hero.cta.label}
+            </Button>
+          </span>
         </div>
       </Container>
 
