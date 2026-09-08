@@ -57,14 +57,14 @@
 </g>
 <g id="icon ekements">
 <style>
-@keyframes badgeFloatA{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
-@keyframes badgeFloatB{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+@keyframes badgeFloatA{0%,100%{transform:translate(0,0)}50%{transform:translate(4px,-20px)}}
+@keyframes badgeFloatB{0%,100%{transform:translate(0,0)}50%{transform:translate(-5px,18px)}}
 .ob{will-change:transform}
-.ob1{animation:badgeFloatA 5.4s ease-in-out infinite}
-.ob2{animation:badgeFloatB 6.2s ease-in-out -1.4s infinite}
-.ob3{animation:badgeFloatA 4.9s ease-in-out -2.6s infinite}
-.ob4{animation:badgeFloatB 7s ease-in-out -.6s infinite}
-.ob5{animation:badgeFloatA 6.4s ease-in-out -3.3s infinite}
+.ob1{animation:badgeFloatA 4.2s ease-in-out infinite}
+.ob2{animation:badgeFloatB 4.8s ease-in-out -1.4s infinite}
+.ob3{animation:badgeFloatA 3.8s ease-in-out -2.6s infinite}
+.ob4{animation:badgeFloatB 5.4s ease-in-out -.6s infinite}
+.ob5{animation:badgeFloatA 4.6s ease-in-out -3.3s infinite}
 @media (prefers-reduced-motion:reduce){.ob{animation:none}}
 </style>
 
