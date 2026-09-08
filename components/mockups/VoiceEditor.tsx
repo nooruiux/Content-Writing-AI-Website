@@ -49,8 +49,12 @@ function RecordedRow({ name, len, on = true }: { name: string; len: string; on?:
 function VoiceOutput() {
   return (
     <div className="flex flex-col items-center gap-6">
-      <div className="relative h-[330px] w-[477px] overflow-hidden rounded-2xl border border-accent bg-[#1d1c20]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_42%,rgb(24_160_251/0.32),rgb(24_160_251/0.08)_72%)]" />
+      <div className="relative h-[330px] w-[477px] overflow-hidden rounded-2xl">
+        <img
+          src="/assets/voice/waveform-photo.jpg"
+          alt=""
+          className="absolute inset-0 size-full object-cover"
+        />
         <div className="absolute left-1/2 top-1/2 size-[193px] -translate-x-1/2 -translate-y-1/2">
           {[193, 166, 139, 113].map((s, i) => (
             <span
