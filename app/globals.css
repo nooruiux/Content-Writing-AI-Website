@@ -138,3 +138,55 @@
     animation: none;
   }
 }
+
+/* Hero CTA — a light segment travelling around the pill border (wope.com style):
+   a conic-gradient square rotates behind the button; one copy is masked to the
+   1px rim, one copy is blurred for the soft glow. */
+.cta-glow {
+  position: relative;
+  display: inline-flex;
+  isolation: isolate;
+}
+.cta-glow-layer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: var(--radius-pill);
+  pointer-events: none;
+}
+.cta-glow-ring {
+  padding: 1px;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+.cta-glow-spin {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  background: conic-gradient(
+    rgba(255, 255, 255, 0.5) 0deg,
+    rgba(255, 255, 255, 0) 60deg,
+    rgba(255, 255, 255, 0) 310deg,
+    rgba(255, 255, 255, 0.5) 360deg
+  );
+  animation: cta-glow-spin 6s linear infinite;
+}
+.cta-glow-bloom .cta-glow-spin {
+  filter: blur(8px);
+  opacity: 0.12;
+}
+@keyframes cta-glow-spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cta-glow-spin {
+    animation: none;
+  }
+}
