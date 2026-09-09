@@ -12,7 +12,7 @@ export const nav = {
     { label: "Partner", href: "#partner" },
   ],
   login: { label: "Login", href: "/login" },
-  cta: { label: "Start free trial", href: "#start" },
+  cta: { label: "Start free trial", href: "/register" },
 };
 
 export const hero = {
@@ -74,7 +74,7 @@ export const realContent = {
 export const pricing = {
   title: "Pricing",
   subtitle: "Quantum AI plans & pricing are designed to meet your needs as you grow",
-  cta: { label: "Start free 7-day trial", href: "#start" },
+  cta: { label: "Start free 7-day trial", href: "/register" },
   plans: [
     {
       name: "Starter",
@@ -137,7 +137,7 @@ export const pricing = {
 export const cta = {
   title: "Get started for Free",
   subtitle: "Start for free with a 3,000 word limit for your project",
-  button: { label: "Start free trial", href: "#start" },
+  button: { label: "Start free trial", href: "/register" },
 };
 
 export const footer = {
