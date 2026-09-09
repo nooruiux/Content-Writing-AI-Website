@@ -5,7 +5,7 @@ export const site = {
 
 export const nav = {
   links: [
-    { label: "Product", href: "#product" },
+    { label: "Home", href: "/" },
     { label: "Solution", href: "#solution" },
     { label: "Pricing", href: "#pricing" },
     { label: "Resources", href: "#resources" },
@@ -145,7 +145,7 @@ export const footer = {
   columns: [
     {
       heading: "Company",
-      links: ["Product", "Solution", "Pricing", "Resources", "Partner"],
+      links: ["Home", "Solution", "Pricing", "Resources", "Partner"],
     },
     {
       heading: "Legal",
