@@ -56,20 +56,20 @@ function VoiceOutput() {
           className="absolute inset-0 size-full object-cover"
         />
         <div className="absolute left-1/2 top-1/2 size-[193px] -translate-x-1/2 -translate-y-1/2">
-          {[193, 166, 139, 113].map((s, i) => (
+          {[0, 1, 2, 3].map((i) => (
             <span
-              key={s}
-              className="absolute rounded-full bg-[#b321cb]"
+              key={i}
+              className="vo-ring absolute rounded-full bg-[#b321cb]"
               style={{
-                width: s,
-                height: s,
-                left: (193 - s) / 2,
-                top: (193 - s) / 2,
-                opacity: [0.1, 0.2, 0.3, 0.5][i] * 0.5,
+                width: 92,
+                height: 92,
+                left: (193 - 92) / 2,
+                top: (193 - 92) / 2,
+                animationDelay: `${i * -0.8}s`,
               }}
             />
           ))}
-          <span className="absolute left-1/2 top-1/2 flex size-[92px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#b321cb]">
+          <span className="vo-pulse absolute left-1/2 top-1/2 flex size-[92px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#b321cb]">
             <Icon src="/assets/voice/ic-mic-play.svg" size={22} />
           </span>
         </div>
@@ -78,8 +78,14 @@ function VoiceOutput() {
             faded ? null : (
               <span
                 key={i}
-                className="absolute w-2 rounded-pill bg-[#b321cb]"
-                style={{ left: x, top: y, height: h }}
+                className="wf-bar absolute w-2 rounded-pill bg-[#b321cb]"
+                style={{
+                  left: x,
+                  top: y,
+                  height: h,
+                  animationDelay: `${(i % 8) * -0.15 - x / 520}s`,
+                  animationDuration: `${0.62 + (i % 5) * 0.12}s`,
+                }}
               />
             ),
           )}
@@ -140,8 +146,8 @@ function SettingsPanel({ className = "" }: { className?: string }) {
       </span>
       <SelectField label="Language" value="English (US)" />
       <SelectField label="Voice" value="Jenny Multilingual" />
-      <span className="flex items-center gap-2 text-sm font-medium text-accent">
-        <Icon src="/assets/voice/ic-play-sm.svg" size={16} />
+      <span className="flex items-center gap-2 text-sm font-medium text-white">
+        <Icon src="/assets/voice/ic-mic-blue.svg" size={16} />
         Hear this voice
       </span>
       <SelectField label="Emotion" value="Neutral" />
@@ -170,14 +176,14 @@ function SettingsPanel({ className = "" }: { className?: string }) {
 function VoiceToProcessCard({ className = "" }: { className?: string }) {
   return (
     <div
-      className={`rounded-2xl border border-white/[0.08] bg-white/[0.08] p-6 shadow-[0_2px_1px_0_rgb(255_255_255/0.06)_inset,0_24px_70px_-16px_rgb(255_255_255/0.12),0_8px_28px_-12px_rgb(255_255_255/0.08)] backdrop-blur-[120px] ${className}`}
+      className={`vp-float rounded-2xl border border-white/[0.08] bg-white/[0.08] p-6 shadow-[0_2px_1px_0_rgb(255_255_255/0.06)_inset,0_24px_70px_-16px_rgb(255_255_255/0.12),0_8px_28px_-12px_rgb(255_255_255/0.08)] backdrop-blur-[120px] ${className}`}
     >
       <div className="flex w-[485px] max-w-full flex-col items-center gap-3">
         <div className="flex w-full items-center justify-between">
           <p className="text-sm font-bold text-white">Voice to process</p>
           <div className="flex items-center gap-6">
             <span className="relative block h-[10px] w-[124px] overflow-hidden rounded-pill bg-white/[0.16]">
-              <span className="absolute inset-y-0 left-0 w-[88px] rounded-pill bg-accent" />
+              <span className="vp-progress absolute inset-y-0 left-0 rounded-pill bg-accent" />
             </span>
             <span className="text-sm text-white/80">0.7:32s / 10m</span>
           </div>
