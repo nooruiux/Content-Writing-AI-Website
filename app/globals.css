@@ -260,3 +260,58 @@
   .hv-float-1, .hv-float-2, .hv-float-3 { animation: none; }
   .hv-type-l1, .hv-type-l2, .hv-type-ask { animation: none; width: auto; }
 }
+
+/* Superpowers "Craft together" — gradient cursor arrows bob strongly, and each
+   name pill gets the hero button's rotating border light. */
+@keyframes pill-arrow {
+  0%, 100% { translate: 0 0; rotate: 0deg; }
+  50% { translate: 5px -12px; rotate: -14deg; }
+}
+.pill-arrow {
+  animation: pill-arrow 2.2s ease-in-out infinite;
+  will-change: transform;
+}
+
+.pill-glow {
+  position: relative;
+  isolation: isolate;
+}
+.pill-glow-layer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.pill-glow-ring {
+  padding: 1px;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+.pill-glow-spin {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 190%;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  background: conic-gradient(
+    rgba(255, 255, 255, 0.85) 0deg,
+    rgba(255, 255, 255, 0) 70deg,
+    rgba(255, 255, 255, 0) 290deg,
+    rgba(255, 255, 255, 0.85) 360deg
+  );
+  animation: cta-glow-spin 6s linear infinite;
+}
+.pill-glow-bloom .pill-glow-spin {
+  filter: blur(6px);
+  opacity: 0.3;
+}
+@media (prefers-reduced-motion: reduce) {
+  .pill-arrow,
+  .pill-glow-spin {
+    animation: none;
+  }
+}

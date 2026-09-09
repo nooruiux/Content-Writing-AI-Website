@@ -1,4 +1,3 @@
-import { Icon } from "@/components/ui/Icon";
 import { superpowers } from "@/lib/content";
 
 const positions = [
@@ -12,18 +11,40 @@ const positions = [
 function PersonPill({
   name,
   avatar,
+  index,
   style,
 }: {
   name: string;
   avatar: string;
+  index: number;
   style: React.CSSProperties;
 }) {
   return (
     <div className="absolute" style={style}>
-      <Icon src="/assets/superpowers/ic-tag.svg" size={24} className="absolute -top-2 -left-2" />
-      <div className="flex items-center gap-3 rounded-pill-lg border border-border bg-white/[0.04] py-1 pr-4 pl-1 backdrop-blur-xs">
-        <img src={avatar} alt="" width={40} height={40} className="size-10 rounded-full object-cover" />
-        <span className="text-base font-bold text-white">{name}</span>
+      <img
+        src="/assets/superpowers/ic-tag.svg"
+        alt=""
+        aria-hidden
+        width={24}
+        height={24}
+        className="pill-arrow absolute -left-2 -top-2 size-6"
+        style={{ animationDelay: `${index * -0.44}s` }}
+      />
+      <div className="pill-glow flex items-center gap-3 rounded-pill-lg border border-border bg-white/[0.04] py-1 pr-4 pl-1 backdrop-blur-xs">
+        <span aria-hidden className="pill-glow-layer pill-glow-bloom">
+          <span className="pill-glow-spin" style={{ animationDelay: `${index * -1.1}s` }} />
+        </span>
+        <span aria-hidden className="pill-glow-layer pill-glow-ring">
+          <span className="pill-glow-spin" style={{ animationDelay: `${index * -1.1}s` }} />
+        </span>
+        <img
+          src={avatar}
+          alt=""
+          width={40}
+          height={40}
+          className="relative size-10 rounded-full object-cover"
+        />
+        <span className="relative text-base font-bold text-white">{name}</span>
       </div>
     </div>
   );
@@ -56,6 +77,7 @@ export function CollaboratorGraphCard() {
           key={person.name}
           name={person.name}
           avatar={person.avatar}
+          index={i}
           style={{ top: positions[i].top, left: positions[i].left }}
         />
       ))}
