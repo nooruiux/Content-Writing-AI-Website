@@ -6,7 +6,6 @@ import { footer, site } from "@/lib/content";
 const panel = "rounded-xl border-[1.4px] border-border bg-surface backdrop-blur-lg";
 
 const footerRoutes: Record<string, string> = {
-  Home: "/",
   Contact: "/contact",
   "Contact Us": "/contact",
 };

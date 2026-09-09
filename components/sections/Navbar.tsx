@@ -19,7 +19,7 @@ export function Navbar() {
 
         <nav
           aria-label="Primary"
-          className="hidden items-center gap-5 text-base font-medium text-white [text-shadow:0_4px_2px_rgb(0_0_0/0.25)] lg:flex xl:gap-8"
+          className="hidden items-center gap-8 text-base font-medium text-white [text-shadow:0_4px_2px_rgb(0_0_0/0.25)] lg:flex"
         >
           {nav.links.map((link) => (
             <a key={link.label} href={link.href} className="transition-opacity hover:opacity-70">
