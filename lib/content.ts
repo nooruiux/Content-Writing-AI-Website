@@ -11,7 +11,7 @@ export const nav = {
     { label: "Resources", href: "#resources" },
     { label: "Partner", href: "#partner" },
   ],
-  login: { label: "Login", href: "#login" },
+  login: { label: "Login", href: "/login" },
   cta: { label: "Start free trial", href: "#start" },
 };
 
