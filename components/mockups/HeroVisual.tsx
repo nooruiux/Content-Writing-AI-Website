@@ -170,7 +170,7 @@ function QuantumMenuPanel({ className = "" }: { className?: string }) {
 function GenerateTaskCard({ className = "" }: { className?: string }) {
   return (
     <div
-      className={`flex flex-col gap-4 rounded-2xl border border-white/[0.12] bg-white/5 p-6 backdrop-blur-[60px] ${className}`}
+      className={`flex w-[351px] shrink-0 flex-col gap-4 rounded-2xl border border-white/[0.12] bg-white/5 p-6 backdrop-blur-[60px] ${className}`}
     >
       <div className="flex items-center justify-center gap-3">
         <Icon src="/assets/icon-sparkles.svg" size={24} />
@@ -179,10 +179,13 @@ function GenerateTaskCard({ className = "" }: { className?: string }) {
         </p>
       </div>
       <div className="flex flex-col gap-9 rounded-lg border border-white/[0.08] bg-white/[0.08] px-3 py-2">
-        <p className="flex h-[18px] items-center whitespace-nowrap text-xs text-white/80">
-          <span className="hv-type hv-type-prompt">Write a blog post about AI writing tools</span>
-          <span className="caret-blink ml-px inline-block h-3 w-px animate-[caret-blink_1.06s_infinite] bg-white/70" />
-        </p>
+        <div className="min-h-[36px] text-xs leading-[18px] text-white/80">
+          <span className="hv-type hv-type-l1">Write a blog post about the best</span>
+          <span className="hv-type hv-type-l2">
+            AI writing tools
+            <span className="caret-blink ml-px inline-block h-3 w-px animate-[caret-blink_1.06s_infinite] bg-white/70 align-middle" />
+          </span>
+        </div>
         <div className="flex w-[279px] items-start justify-between">
           <div className="flex gap-2">
             <Icon src="/assets/hero/prompt-1.svg" size={28} />

@@ -225,24 +225,38 @@
   vertical-align: bottom;
   width: 0;
 }
-@keyframes hv-type-prompt {
+/* prompt field types two wrapped lines, card width stays fixed */
+.hv-type-l1,
+.hv-type-l2 {
+  display: block;
+}
+@keyframes hv-l1 {
   0%, 3% { width: 0; }
-  34% { width: 41ch; }
-  66% { width: 41ch; }
-  80% { width: 0; }
+  22% { width: 31ch; }
+  66% { width: 31ch; }
+  82% { width: 0; }
   100% { width: 0; }
 }
+@keyframes hv-l2 {
+  0%, 22% { width: 0; }
+  42% { width: 29ch; }
+  66% { width: 29ch; }
+  78% { width: 0; }
+  100% { width: 0; }
+}
+.hv-type-l1 { animation: hv-l1 9s linear infinite; }
+.hv-type-l2 { animation: hv-l2 9s linear infinite; }
+
 @keyframes hv-type-ask {
   0%, 3% { width: 0; }
-  34% { width: 45ch; }
-  66% { width: 45ch; }
+  34% { width: 40ch; }
+  66% { width: 40ch; }
   80% { width: 0; }
   100% { width: 0; }
 }
-.hv-type-prompt { animation: hv-type-prompt 9s linear infinite; }
 .hv-type-ask { animation: hv-type-ask 9.5s linear -2s infinite; }
 
 @media (prefers-reduced-motion: reduce) {
   .hv-float-1, .hv-float-2, .hv-float-3 { animation: none; }
-  .hv-type-prompt, .hv-type-ask { animation: none; width: auto; }
+  .hv-type-l1, .hv-type-l2, .hv-type-ask { animation: none; width: auto; }
 }
