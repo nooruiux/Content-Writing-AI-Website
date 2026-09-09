@@ -27,13 +27,17 @@ export function IterateCard() {
       <div className="absolute left-6 top-[140px] h-[280px] w-[252px] rounded-2xl border border-border bg-white/[0.04] p-6">
         <div className="flex flex-col gap-2">
           {Array.from({ length: 10 }).map((_, i) => (
-            <div key={i} className="h-4 w-[204px] rounded-pill bg-white/[0.03]" />
+            <div
+              key={i}
+              className="it-line h-4 w-[204px] rounded-pill bg-white/[0.03]"
+              style={{ animationDelay: `${i * -0.22}s` }}
+            />
           ))}
         </div>
       </div>
 
       {/* formatting toolbar pill */}
-      <div className="absolute left-[90px] top-[225px] flex items-center gap-4 rounded-pill border border-white/20 bg-white/[0.1] px-6 py-4 shadow-[12px_12px_32px_#1c1c1c] backdrop-blur-2xl">
+      <div className="it-bar absolute left-[90px] top-[225px] flex items-center gap-4 rounded-pill border border-white/20 bg-white/[0.1] px-6 py-4 shadow-[12px_12px_32px_#1c1c1c] backdrop-blur-2xl">
         {pillIcons.map((name) => (
           <Icon key={name} src={`/assets/superpowers/${name}.svg`} size={24} />
         ))}
@@ -41,10 +45,11 @@ export function IterateCard() {
 
       {/* social tiles */}
       <div className="absolute left-[377px] top-[139px] grid grid-cols-3 gap-4">
-        {tileIcons.map((name) => (
+        {tileIcons.map((name, i) => (
           <span
             key={name}
-            className="flex size-14 items-center justify-center rounded-lg border border-border bg-white/[0.08] shadow-[8px_8px_32px_rgb(0_0_0/0.32)]"
+            className="it-tile flex size-14 items-center justify-center rounded-lg border border-border bg-white/[0.08] shadow-[8px_8px_32px_rgb(0_0_0/0.32)]"
+            style={{ animationDelay: `${((i % 3) + Math.floor(i / 3)) * -0.32}s` }}
           >
             <Icon src={`/assets/superpowers/${name}.svg`} size={28} />
           </span>
