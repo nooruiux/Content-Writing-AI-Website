@@ -203,3 +203,46 @@
     animation: none;
   }
 }
+
+/* Hero mockup — gentle floating on the highlighted menu cards + prompt card,
+   and a typewriter fill/clear loop on the two input placeholders. */
+@keyframes hv-float-a {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -9px; }
+}
+@keyframes hv-float-b {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 8px; }
+}
+.hv-float-1 { animation: hv-float-a 5s ease-in-out infinite; will-change: translate; }
+.hv-float-2 { animation: hv-float-b 6.2s ease-in-out -1.6s infinite; will-change: translate; }
+.hv-float-3 { animation: hv-float-a 5.6s ease-in-out -2.7s infinite; will-change: translate; }
+
+.hv-type {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: bottom;
+  width: 0;
+}
+@keyframes hv-type-prompt {
+  0%, 3% { width: 0; }
+  34% { width: 41ch; }
+  66% { width: 41ch; }
+  80% { width: 0; }
+  100% { width: 0; }
+}
+@keyframes hv-type-ask {
+  0%, 3% { width: 0; }
+  34% { width: 45ch; }
+  66% { width: 45ch; }
+  80% { width: 0; }
+  100% { width: 0; }
+}
+.hv-type-prompt { animation: hv-type-prompt 9s linear infinite; }
+.hv-type-ask { animation: hv-type-ask 9.5s linear -2s infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hv-float-1, .hv-float-2, .hv-float-3 { animation: none; }
+  .hv-type-prompt, .hv-type-ask { animation: none; width: auto; }
+}
