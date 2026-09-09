@@ -27,8 +27,8 @@ function PersonPill({
         aria-hidden
         width={24}
         height={24}
-        className="pill-arrow absolute -left-2 -top-2 size-6"
-        style={{ animationDelay: `${index * -0.44}s` }}
+        className={`pill-arrow absolute -left-2 -top-2 size-6 ${index % 2 ? "pill-arrow-alt" : ""}`}
+        style={{ animationDelay: `${index * -0.9}s` }}
       />
       <div className="pill-glow flex items-center gap-3 rounded-pill-lg border border-border bg-white/[0.04] py-1 pr-4 pl-1 backdrop-blur-xs">
         <span aria-hidden className="pill-glow-layer pill-glow-bloom">

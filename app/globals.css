@@ -261,15 +261,28 @@
   .hv-type-l1, .hv-type-l2, .hv-type-ask { animation: none; width: auto; }
 }
 
-/* Superpowers "Craft together" — gradient cursor arrows bob strongly, and each
-   name pill gets the hero button's rotating border light. */
-@keyframes pill-arrow {
-  0%, 100% { translate: 0 0; rotate: 0deg; }
-  50% { translate: 5px -12px; rotate: -14deg; }
+/* Superpowers "Craft together" — the gradient cursors wander like live
+   collaborators, and each name pill gets the hero button's border light. */
+@keyframes pill-arrow-a {
+  0%   { translate: 0 0; }
+  25%  { translate: -6px -3px; }
+  50%  { translate: -3px -9px; }
+  75%  { translate: -8px -4px; }
+  100% { translate: 0 0; }
+}
+@keyframes pill-arrow-b {
+  0%   { translate: 0 0; }
+  30%  { translate: 5px -5px; }
+  55%  { translate: 8px 1px; }
+  80%  { translate: 2px -6px; }
+  100% { translate: 0 0; }
 }
 .pill-arrow {
-  animation: pill-arrow 2.2s ease-in-out infinite;
+  animation: pill-arrow-a 6s ease-in-out infinite;
   will-change: transform;
+}
+.pill-arrow-alt {
+  animation: pill-arrow-b 6.8s ease-in-out infinite;
 }
 
 .pill-glow {
@@ -311,6 +324,7 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .pill-arrow,
+  .pill-arrow-alt,
   .pill-glow-spin {
     animation: none;
   }
