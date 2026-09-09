@@ -179,10 +179,10 @@ function GenerateTaskCard({ className = "" }: { className?: string }) {
         </p>
       </div>
       <div className="flex flex-col gap-9 rounded-lg border border-white/[0.08] bg-white/[0.08] px-3 py-2">
-        <div className="min-h-[36px] text-xs leading-[18px] text-white/80">
-          <span className="hv-type hv-type-l1">Write a blog post about the best</span>
+        <div className="min-h-[36px] w-full text-xs leading-[18px] text-white/80">
+          <span className="hv-type hv-type-l1">Experienced Advertising Copywriter for</span>
           <span className="hv-type hv-type-l2">
-            AI writing tools
+            High-Converting Meta &amp; Google Ads campaigns
             <span className="caret-blink ml-px inline-block h-3 w-px animate-[caret-blink_1.06s_infinite] bg-white/70 align-middle" />
           </span>
         </div>

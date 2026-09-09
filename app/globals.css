@@ -232,15 +232,15 @@
 }
 @keyframes hv-l1 {
   0%, 3% { width: 0; }
-  22% { width: 31ch; }
-  66% { width: 31ch; }
+  24% { width: 40ch; }
+  66% { width: 40ch; }
   82% { width: 0; }
   100% { width: 0; }
 }
 @keyframes hv-l2 {
-  0%, 22% { width: 0; }
-  42% { width: 29ch; }
-  66% { width: 29ch; }
+  0%, 24% { width: 0; }
+  46% { width: 44ch; }
+  66% { width: 44ch; }
   78% { width: 0; }
   100% { width: 0; }
 }
