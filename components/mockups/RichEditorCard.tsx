@@ -37,7 +37,7 @@ export function RichEditorCard() {
         aria-hidden
         width={396}
         height={396}
-        className="pointer-events-none absolute left-[-264px] top-[31px] size-[396px] rotate-90"
+        className="rc-arc-l pointer-events-none absolute left-[-264px] top-[31px] size-[396px] rotate-90"
       />
       <img
         src="/assets/realcontent/arc-right.svg"
@@ -45,7 +45,7 @@ export function RichEditorCard() {
         aria-hidden
         width={396}
         height={396}
-        className="pointer-events-none absolute left-[456px] top-[31px] size-[396px] -rotate-90"
+        className="rc-arc-r pointer-events-none absolute left-[456px] top-[31px] size-[396px] -rotate-90"
       />
 
       <div className="absolute left-[84px] top-8 flex w-[420px] flex-col items-center gap-8">

@@ -430,3 +430,14 @@
   .lorem-eraser, .lorem-reveal { animation: none; }
   .lorem-reveal { clip-path: inset(0 0 0 0); }
 }
+
+/* RealContent rich-editor card — the concentric side arcs breathe slowly. */
+@keyframes rc-arc {
+  0%, 100% { scale: 1; opacity: 0.8; }
+  50% { scale: 1.045; opacity: 1; }
+}
+.rc-arc-l { animation: rc-arc 6s ease-in-out infinite; will-change: transform; }
+.rc-arc-r { animation: rc-arc 6s ease-in-out -3s infinite; will-change: transform; }
+@media (prefers-reduced-motion: reduce) {
+  .rc-arc-l, .rc-arc-r { animation: none; }
+}
