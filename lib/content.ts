@@ -75,15 +75,33 @@ export const integrations = {
   title: "Connect Quantum to your whole stack",
   subtitle:
     "Native integrations plus API, MCP, and CLI — bring Quantum into the tools where your content already lives.",
-  left: [
-    { name: "Google Docs", icon: "/assets/integrations/google-docs.svg" },
-    { name: "Notion", icon: "/assets/integrations/notion.svg" },
-    { name: "Dropbox", icon: "/assets/integrations/dropbox.svg" },
+  leftGroups: [
+    {
+      label: "Write in",
+      items: [
+        { name: "Google Docs", icon: "/assets/integrations/google-docs.svg" },
+        { name: "Notion", icon: "/assets/integrations/notion.svg" },
+        { name: "Dropbox", icon: "/assets/integrations/dropbox.svg" },
+      ],
+    },
+    {
+      label: "Build with",
+      items: [
+        { name: "REST API", icon: "/assets/integrations/api.svg" },
+        { name: "MCP server", icon: "/assets/integrations/mcp.svg" },
+        { name: "CLI", icon: "/assets/integrations/cli.svg" },
+      ],
+    },
   ],
   right: [
     { name: "Slack", icon: "/assets/integrations/slack.svg" },
+    { name: "Gmail", icon: "/assets/integrations/gmail.svg" },
     { name: "WordPress", icon: "/assets/integrations/wordpress.svg" },
+    { name: "HubSpot", icon: "/assets/integrations/hubspot.svg" },
+    { name: "Google Drive", icon: "/assets/integrations/google-drive.svg" },
+    { name: "LinkedIn", icon: "/assets/integrations/linkedin.svg" },
     { name: "Zapier", icon: "/assets/integrations/zapier.svg" },
+    { name: "Webflow", icon: "/assets/integrations/webflow.svg" },
   ],
   more: "+40 more integrations",
 };
