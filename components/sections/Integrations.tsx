@@ -7,7 +7,7 @@ type Item = { name: string; icon: string };
 
 function Pill({ item }: { item: Item }) {
   return (
-    <span className="flex h-[52px] items-center gap-2.5 rounded-xl border border-white/[0.08] bg-white/[0.05] px-3.5 backdrop-blur-sm">
+    <span className="flex h-[52px] items-center gap-3 rounded-xl border border-white/[0.08] bg-white/[0.05] px-4 backdrop-blur-sm">
       <img src={item.icon} alt="" aria-hidden width={18} height={18} className="size-[18px] shrink-0" />
       <span className="truncate text-[13px] font-medium text-white/90">{item.name}</span>
     </span>
@@ -16,7 +16,7 @@ function Pill({ item }: { item: Item }) {
 
 function MorePill() {
   return (
-    <span className="flex h-[52px] items-center justify-center rounded-xl border border-accent/40 bg-accent-soft px-3.5 text-[13px] font-bold text-accent">
+    <span className="flex h-[52px] items-center justify-center rounded-xl border border-accent/40 bg-accent-soft px-4 text-[13px] font-bold text-accent">
       {integrations.more}
     </span>
   );
@@ -24,7 +24,7 @@ function MorePill() {
 
 function GroupLabel({ children }: { children: ReactNode }) {
   return (
-    <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.14em] text-white/40">{children}</p>
+    <p className="mb-4 text-[11px] font-bold uppercase tracking-[0.14em] text-white/40">{children}</p>
   );
 }
 
@@ -46,45 +46,45 @@ export function Integrations() {
 
   return (
     <section id="integrations" className="py-14">
-      <Container className="flex flex-col items-center gap-12">
+      <Container className="flex flex-col items-center gap-14">
         <SectionHeading
           title={integrations.title}
           subtitle={integrations.subtitle}
-          titleClassName="text-[34px] leading-[1.1] sm:text-[42px] lg:text-h4"
+          titleClassName="max-w-[520px] text-[34px] leading-[1.15] sm:text-[42px] lg:text-h4"
           subtitleClassName="max-w-[560px] text-base text-white/[0.88]"
         />
 
         {/* desktop: fixed diagram with curved connectors */}
-        <div className="relative mx-auto hidden h-[460px] w-[1000px] xl:block">
-          <svg className="absolute inset-0 h-full w-full" viewBox="0 0 1000 460" fill="none" aria-hidden>
+        <div className="relative mx-auto hidden h-[540px] w-[1080px] xl:block">
+          <svg className="absolute inset-0 h-full w-full" viewBox="0 0 1080 540" fill="none" aria-hidden>
             <g stroke="rgb(255 255 255 / 0.16)" strokeWidth="1.25" strokeLinecap="round">
-              <path d="M214 66 C 300 66 350 230 416 230" />
-              <path d="M214 124 C 300 124 360 230 416 230" />
-              <path d="M214 182 C 330 182 380 230 416 230" />
-              <path d="M214 280 C 330 280 380 230 416 230" />
-              <path d="M214 338 C 300 338 360 230 416 230" />
-              <path d="M214 396 C 300 396 350 230 416 230" />
-              <path d="M584 230 C 690 230 700 56 786 56" />
-              <path d="M584 230 C 690 230 700 114 786 114" />
-              <path d="M584 230 C 690 230 720 172 786 172" />
-              <path d="M584 230 C 690 230 720 230 786 230" />
-              <path d="M584 230 C 690 230 700 288 786 288" />
-              <path d="M584 230 C 690 230 700 346 786 346" />
-              <path d="M584 230 C 690 230 700 404 786 404" />
+              <path d="M220 105 C 320 105 380 270 456 270" />
+              <path d="M220 173 C 320 173 390 270 456 270" />
+              <path d="M220 241 C 340 241 400 270 456 270" />
+              <path d="M220 337 C 340 337 400 270 456 270" />
+              <path d="M220 405 C 320 405 390 270 456 270" />
+              <path d="M220 473 C 320 473 380 270 456 270" />
+              <path d="M624 270 C 740 270 750 66 860 66" />
+              <path d="M624 270 C 740 270 750 134 860 134" />
+              <path d="M624 270 C 740 270 780 202 860 202" />
+              <path d="M624 270 C 740 270 780 270 860 270" />
+              <path d="M624 270 C 740 270 750 338 860 338" />
+              <path d="M624 270 C 740 270 750 406 860 406" />
+              <path d="M624 270 C 740 270 750 474 860 474" />
             </g>
           </svg>
 
-          <div className="absolute left-0 top-[12px] w-[214px]">
+          <div className="absolute left-0 top-[46px] w-[220px]">
             <GroupLabel>{leftGroups[0].label}</GroupLabel>
-            <div className="flex flex-col gap-1.5 [&>span]:w-full">
+            <div className="flex flex-col gap-4 [&>span]:w-full">
               {leftGroups[0].items.map((i) => (
                 <Pill key={i.name} item={i} />
               ))}
             </div>
           </div>
-          <div className="absolute left-0 top-[226px] w-[214px]">
+          <div className="absolute left-0 top-[278px] w-[220px]">
             <GroupLabel>{leftGroups[1].label}</GroupLabel>
-            <div className="flex flex-col gap-1.5 [&>span]:w-full">
+            <div className="flex flex-col gap-4 [&>span]:w-full">
               {leftGroups[1].items.map((i) => (
                 <Pill key={i.name} item={i} />
               ))}
@@ -95,7 +95,7 @@ export function Integrations() {
             <Hub />
           </div>
 
-          <div className="absolute right-0 top-[30px] flex w-[214px] flex-col gap-1.5 [&>span]:w-full">
+          <div className="absolute right-0 top-[40px] flex w-[220px] flex-col gap-4 [&>span]:w-full">
             {right.map((i) => (
               <Pill key={i.name} item={i} />
             ))}
@@ -104,11 +104,11 @@ export function Integrations() {
         </div>
 
         {/* mobile / tablet: stacked */}
-        <div className="flex w-full max-w-[340px] flex-col items-center gap-8 xl:hidden">
+        <div className="flex w-full max-w-[340px] flex-col items-center gap-10 xl:hidden">
           {leftGroups.map((g) => (
             <div key={g.label} className="w-full">
               <GroupLabel>{g.label}</GroupLabel>
-              <div className="flex flex-col gap-2.5 [&>span]:w-full">
+              <div className="flex flex-col gap-3 [&>span]:w-full">
                 {g.items.map((i) => (
                   <Pill key={i.name} item={i} />
                 ))}
@@ -118,7 +118,7 @@ export function Integrations() {
 
           <Hub />
 
-          <div className="flex w-full flex-col gap-2.5 [&>span]:w-full">
+          <div className="flex w-full flex-col gap-3 [&>span]:w-full">
             {right.map((i) => (
               <Pill key={i.name} item={i} />
             ))}
