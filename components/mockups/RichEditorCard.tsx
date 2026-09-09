@@ -76,7 +76,7 @@ export function RichEditorCard() {
 
           <button
             type="button"
-            className="pill-glow flex w-[284px] items-center justify-center gap-2.5 overflow-hidden rounded-lg bg-accent px-4 py-[9px] text-base font-bold text-white"
+            className="pill-glow pill-glow-strong flex w-[284px] items-center justify-center gap-2.5 overflow-hidden rounded-lg bg-accent px-4 py-[9px] text-base font-bold text-white"
           >
             <span aria-hidden className="pill-glow-layer pill-glow-bloom">
               <span className="pill-glow-spin" />

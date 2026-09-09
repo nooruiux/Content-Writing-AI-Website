@@ -322,6 +322,25 @@
   filter: blur(6px);
   opacity: 0.3;
 }
+/* brighter variant for solid-fill buttons (e.g. "Generate copy" on blue) */
+.pill-glow-strong .pill-glow-spin {
+  background: conic-gradient(
+    #ffffff 0deg,
+    rgba(255, 255, 255, 0) 58deg,
+    rgba(255, 255, 255, 0) 302deg,
+    #ffffff 360deg
+  );
+}
+.pill-glow-strong .pill-glow-ring {
+  padding: 1.5px;
+}
+.pill-glow-strong .pill-glow-bloom {
+  overflow: visible;
+}
+.pill-glow-strong .pill-glow-bloom .pill-glow-spin {
+  filter: blur(6px);
+  opacity: 0.7;
+}
 @media (prefers-reduced-motion: reduce) {
   .pill-arrow,
   .pill-arrow-alt,
@@ -433,11 +452,11 @@
 
 /* RealContent rich-editor card — the concentric side arcs pulse and swing. */
 @keyframes rc-arc-l {
-  0%, 100% { rotate: 90deg; scale: 1; opacity: 0.5; }
+  0%, 100% { rotate: 90deg; scale: 1; opacity: 0.7; }
   50% { rotate: 82deg; scale: 1.14; opacity: 1; }
 }
 @keyframes rc-arc-r {
-  0%, 100% { rotate: -90deg; scale: 1; opacity: 0.5; }
+  0%, 100% { rotate: -90deg; scale: 1; opacity: 0.7; }
   50% { rotate: -82deg; scale: 1.14; opacity: 1; }
 }
 .rc-arc-l { animation: rc-arc-l 4.6s ease-in-out infinite; will-change: transform; }
