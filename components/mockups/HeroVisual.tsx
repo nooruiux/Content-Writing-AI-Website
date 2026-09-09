@@ -179,11 +179,11 @@ function GenerateTaskCard({ className = "" }: { className?: string }) {
         </p>
       </div>
       <div className="flex flex-col gap-9 rounded-lg border border-white/[0.08] bg-white/[0.08] px-3 py-2">
-        <div className="min-h-[36px] w-full text-xs leading-[18px] text-white/80">
+        <div className="min-h-[36px] w-full text-xs leading-[18px] text-white">
           <span className="hv-type hv-type-l1">Experienced Advertising Copywriter for</span>
           <span className="hv-type hv-type-l2">
             High-Converting Meta &amp; Google Ads campaigns
-            <span className="caret-blink ml-px inline-block h-3 w-px animate-[caret-blink_1.06s_infinite] bg-white/70 align-middle" />
+            <span className="caret-blink ml-px inline-block h-3 w-px animate-[caret-blink_1.06s_infinite] bg-white align-middle" />
           </span>
         </div>
         <div className="flex w-[279px] items-start justify-between">
@@ -255,10 +255,10 @@ function AskQuantumPanel({ className = "" }: { className?: string }) {
 
       {/* input — Figma 1:1899 */}
       <div className="absolute left-[23px] top-[381px] flex h-12 w-[433px] items-center gap-1 rounded-pill border border-white/[0.12] bg-white/[0.08] pl-6 shadow-[1px_1px_0.8px_0_rgb(255_255_255/0.04),inset_0_-1px_1px_1.5px_rgb(255_255_255/0.08)] backdrop-blur-[6px]">
-        <span className="hv-type hv-type-ask text-base font-bold text-white/70">
+        <span className="hv-type hv-type-ask text-base font-bold text-white">
           What&rsquo;s the best AI tool for content writing?
         </span>
-        <span className="caret-blink h-[18px] w-px animate-[caret-blink_1.06s_infinite] bg-white/70" />
+        <span className="caret-blink h-[18px] w-px animate-[caret-blink_1.06s_infinite] bg-white" />
         <Icon
           src="/assets/hero/sparkle-lg.svg"
           size={36}
