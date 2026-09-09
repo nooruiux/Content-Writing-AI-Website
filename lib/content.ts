@@ -71,6 +71,23 @@ export const realContent = {
   },
 };
 
+export const integrations = {
+  title: "Connect Quantum to your whole stack",
+  subtitle:
+    "Native integrations plus API, MCP, and CLI — bring Quantum into the tools where your content already lives.",
+  left: [
+    { name: "Google Docs", icon: "/assets/integrations/google-docs.svg" },
+    { name: "Notion", icon: "/assets/integrations/notion.svg" },
+    { name: "Dropbox", icon: "/assets/integrations/dropbox.svg" },
+  ],
+  right: [
+    { name: "Slack", icon: "/assets/integrations/slack.svg" },
+    { name: "WordPress", icon: "/assets/integrations/wordpress.svg" },
+    { name: "Zapier", icon: "/assets/integrations/zapier.svg" },
+  ],
+  more: "+40 more integrations",
+};
+
 export const pricing = {
   title: "Pricing",
   subtitle: "Quantum AI plans & pricing are designed to meet your needs as you grow",
