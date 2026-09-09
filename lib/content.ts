@@ -8,8 +8,8 @@ export const nav = {
     { label: "Home", href: "/" },
     { label: "Solution", href: "#solution" },
     { label: "Pricing", href: "#pricing" },
-    { label: "Resources", href: "#resources" },
     { label: "Partner", href: "#partner" },
+    { label: "Contact", href: "#contact" },
   ],
   login: { label: "Login", href: "/login" },
   cta: { label: "Start free trial", href: "/register" },
@@ -145,7 +145,7 @@ export const footer = {
   columns: [
     {
       heading: "Company",
-      links: ["Home", "Solution", "Pricing", "Resources", "Partner"],
+      links: ["Home", "Solution", "Pricing", "Partner", "Contact"],
     },
     {
       heading: "Legal",
