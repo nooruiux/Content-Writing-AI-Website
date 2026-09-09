@@ -5,12 +5,10 @@ export const site = {
 
 export const nav = {
   links: [
-    { label: "Home", href: "/" },
     { label: "Product", href: "#product" },
     { label: "Resources", href: "#resources" },
     { label: "Solution", href: "#solution" },
     { label: "Pricing", href: "#pricing" },
-    { label: "Partner", href: "#partner" },
     { label: "Contact", href: "/contact" },
   ],
   login: { label: "Login", href: "/login" },
@@ -147,7 +145,7 @@ export const footer = {
   columns: [
     {
       heading: "Company",
-      links: ["Home", "Product", "Resources", "Solution", "Pricing", "Partner", "Contact"],
+      links: ["Product", "Resources", "Solution", "Pricing", "Contact"],
     },
     {
       heading: "Legal",
