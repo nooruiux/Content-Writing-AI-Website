@@ -5,6 +5,23 @@ import { integrations, site } from "@/lib/content";
 
 type Item = { name: string; icon: string };
 
+/** Every connector starts at the hub so the light pulse always flows outward. */
+const CONNECTORS = [
+  "M456 270 C 380 270 320 105 220 105",
+  "M456 270 C 390 270 320 173 220 173",
+  "M456 270 C 400 270 340 241 220 241",
+  "M456 270 C 400 270 340 337 220 337",
+  "M456 270 C 390 270 320 405 220 405",
+  "M456 270 C 380 270 320 473 220 473",
+  "M624 270 C 740 270 750 66 860 66",
+  "M624 270 C 740 270 750 134 860 134",
+  "M624 270 C 740 270 780 202 860 202",
+  "M624 270 C 740 270 780 270 860 270",
+  "M624 270 C 740 270 750 338 860 338",
+  "M624 270 C 740 270 750 406 860 406",
+  "M624 270 C 740 270 750 474 860 474",
+];
+
 function Pill({ item }: { item: Item }) {
   return (
     <span className="flex h-[52px] items-center gap-3 rounded-xl border border-white/[0.08] bg-white/[0.05] px-4 backdrop-blur-sm">
@@ -58,19 +75,19 @@ export function Integrations() {
         <div className="relative mx-auto hidden h-[540px] w-[1080px] xl:block">
           <svg className="absolute inset-0 h-full w-full" viewBox="0 0 1080 540" fill="none" aria-hidden>
             <g stroke="rgb(255 255 255 / 0.16)" strokeWidth="1.25" strokeLinecap="round">
-              <path d="M220 105 C 320 105 380 270 456 270" />
-              <path d="M220 173 C 320 173 390 270 456 270" />
-              <path d="M220 241 C 340 241 400 270 456 270" />
-              <path d="M220 337 C 340 337 400 270 456 270" />
-              <path d="M220 405 C 320 405 390 270 456 270" />
-              <path d="M220 473 C 320 473 380 270 456 270" />
-              <path d="M624 270 C 740 270 750 66 860 66" />
-              <path d="M624 270 C 740 270 750 134 860 134" />
-              <path d="M624 270 C 740 270 780 202 860 202" />
-              <path d="M624 270 C 740 270 780 270 860 270" />
-              <path d="M624 270 C 740 270 750 338 860 338" />
-              <path d="M624 270 C 740 270 750 406 860 406" />
-              <path d="M624 270 C 740 270 750 474 860 474" />
+              {CONNECTORS.map((d, i) => (
+                <path key={i} d={d} />
+              ))}
+            </g>
+            <g className="ig-flow-bloom" strokeLinecap="round">
+              {CONNECTORS.map((d, i) => (
+                <path key={i} d={d} pathLength={1} style={{ animationDelay: `${i * -0.26}s` }} />
+              ))}
+            </g>
+            <g className="ig-flow" strokeLinecap="round">
+              {CONNECTORS.map((d, i) => (
+                <path key={i} d={d} pathLength={1} style={{ animationDelay: `${i * -0.26}s` }} />
+              ))}
             </g>
           </svg>
 

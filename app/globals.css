@@ -464,3 +464,32 @@
 @media (prefers-reduced-motion: reduce) {
   .rc-arc-l, .rc-arc-r { animation: none; }
 }
+
+/* Integrations — a soft accent light pulses along every connector, out of
+   the hub, the same brand blue as the pricing Pro card glow. */
+@keyframes ig-flow {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+.ig-flow path,
+.ig-flow-bloom path {
+  fill: none;
+  stroke: #18a0fb;
+  stroke-dasharray: 0.16 0.84;
+  animation: ig-flow 3.6s linear infinite;
+}
+.ig-flow path {
+  stroke-width: 1.5;
+}
+.ig-flow-bloom path {
+  stroke-width: 5;
+  opacity: 0.32;
+  filter: blur(3px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .ig-flow path,
+  .ig-flow-bloom path {
+    animation: none;
+    stroke: transparent;
+  }
+}
