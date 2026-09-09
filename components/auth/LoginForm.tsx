@@ -5,7 +5,6 @@ import { useState, type FormEvent } from "react";
 import {
   authCardClass,
   EMAIL_RE,
-  PHONE_RE,
   PasswordField,
   SocialAuthButtons,
   SubmitButton,
@@ -13,21 +12,21 @@ import {
 } from "@/components/auth/authShared";
 
 export function LoginForm() {
-  const [identifier, setIdentifier] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [remember, setRemember] = useState(false);
-  const [errors, setErrors] = useState<{ identifier?: string; password?: string }>({});
+  const [errors, setErrors] = useState<{ email?: string; password?: string }>({});
   const [submitted, setSubmitted] = useState(false);
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    const id = identifier.trim();
-    const next: { identifier?: string; password?: string } = {};
+    const value = email.trim();
+    const next: { email?: string; password?: string } = {};
 
-    if (!id) {
-      next.identifier = "Email or phone number is required.";
-    } else if (!EMAIL_RE.test(id) && !PHONE_RE.test(id)) {
-      next.identifier = "Enter a valid email or phone number.";
+    if (!value) {
+      next.email = "Email is required.";
+    } else if (!EMAIL_RE.test(value)) {
+      next.email = "Enter a valid email address.";
     }
     if (!password) {
       next.password = "Password is required.";
@@ -45,18 +44,18 @@ export function LoginForm() {
 
       <div className="mt-8 flex flex-col gap-5">
         <TextField
-          label="Email or Phone Number"
+          label="Email"
           required
-          name="identifier"
-          type="text"
-          autoComplete="username"
-          value={identifier}
+          name="email"
+          type="email"
+          autoComplete="email"
+          value={email}
           onChange={(e) => {
-            setIdentifier(e.target.value);
-            if (errors.identifier) setErrors((p) => ({ ...p, identifier: undefined }));
+            setEmail(e.target.value);
+            if (errors.email) setErrors((p) => ({ ...p, email: undefined }));
             if (submitted) setSubmitted(false);
           }}
-          error={errors.identifier}
+          error={errors.email}
         />
         <PasswordField
           label="Password"

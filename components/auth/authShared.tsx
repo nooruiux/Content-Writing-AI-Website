@@ -3,10 +3,9 @@
 import { useId, useState, type InputHTMLAttributes, type ReactNode } from "react";
 
 export const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-export const PHONE_RE = /^[+()\d][\d\s\-()]{6,}$/;
 
 export const authCardClass =
-  "w-full rounded-[32px] border border-white/[0.1] bg-white/[0.05] p-8 shadow-[0_8px_48px_rgb(0_0_0/0.35)] backdrop-blur-2xl sm:p-10";
+  "w-full rounded-3xl border border-white/[0.1] bg-white/[0.05] p-6 shadow-[0_8px_48px_rgb(0_0_0/0.35)] backdrop-blur-2xl sm:rounded-[32px] sm:p-10";
 
 const labelClass = "text-[13px] font-bold text-white/70";
 const fieldClass =
