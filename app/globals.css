@@ -358,3 +358,48 @@
 @media (prefers-reduced-motion: reduce) {
   .it-tile, .it-bar, .it-line { animation: none; }
 }
+
+/* VoiceAI editor — the voice-output visual "plays" (equalizer bars, sonar
+   ripples, pulsing button) and the Voice-to-process card floats. */
+@keyframes wf-bar {
+  0%, 100% { scale: 1 0.32; }
+  50% { scale: 1 1.12; }
+}
+.wf-bar {
+  transform-origin: center;
+  animation: wf-bar 0.9s ease-in-out infinite;
+  will-change: transform;
+}
+@keyframes vo-ring {
+  0% { transform: scale(0.35); opacity: 0.5; }
+  75%, 100% { transform: scale(2); opacity: 0; }
+}
+.vo-ring {
+  animation: vo-ring 3.2s ease-out infinite;
+}
+@keyframes vo-pulse {
+  0%, 100% { scale: 1; }
+  50% { scale: 1.06; }
+}
+.vo-pulse {
+  animation: vo-pulse 1.8s ease-in-out infinite;
+}
+@keyframes vp-float {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -13px; }
+}
+.vp-float {
+  animation: vp-float 4s ease-in-out infinite;
+  will-change: transform;
+}
+@keyframes vp-progress {
+  0% { width: 12%; }
+  55% { width: 92%; }
+  100% { width: 12%; }
+}
+.vp-progress {
+  animation: vp-progress 7s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .wf-bar, .vo-ring, .vo-pulse, .vp-float, .vp-progress { animation: none; }
+}
