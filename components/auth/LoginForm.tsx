@@ -6,9 +6,9 @@ import { useState, type FormEvent } from "react";
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_RE = /^[+()\d][\d\s\-()]{6,}$/;
 
-const labelClass = "text-[13px] font-bold text-[#33334d]";
+const labelClass = "text-[13px] font-bold text-white/70";
 const fieldClass =
-  "h-11 w-full rounded-md border border-[#e3e4e8] bg-[#fbfbfc] px-4 text-sm text-[#14142b] placeholder:text-[#9a9aa5] transition-colors focus:border-[#e31b23] focus:outline-none focus:ring-2 focus:ring-[#e31b23]/20";
+  "h-12 w-full rounded-lg border bg-white/[0.08] px-4 text-sm text-white placeholder:text-white/60 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent";
 
 export function LoginForm() {
   const [identifier, setIdentifier] = useState("");
@@ -42,13 +42,13 @@ export function LoginForm() {
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="w-full rounded-[20px] bg-white p-8 shadow-[0_12px_44px_rgb(17_17_43/0.08)] sm:p-10"
+      className="w-full rounded-[32px] border border-white/[0.1] bg-white/[0.05] p-8 shadow-[0_8px_48px_rgb(0_0_0/0.35)] backdrop-blur-2xl sm:p-10"
     >
-      <h1 className="text-[32px] font-bold leading-none text-[#14142b]">Login</h1>
+      <h1 className="text-[32px] font-bold leading-none text-white">Login</h1>
 
       <div className="mt-8 flex flex-col gap-1.5">
         <label htmlFor="login-id" className={labelClass}>
-          Email or Phone Number <span className="text-[#e31b23]">*</span>
+          Email or Phone Number <span className="text-[#f87171]">*</span>
         </label>
         <input
           id="login-id"
@@ -63,10 +63,10 @@ export function LoginForm() {
           }}
           aria-invalid={errors.identifier ? true : undefined}
           aria-describedby={errors.identifier ? "login-id-error" : undefined}
-          className={fieldClass}
+          className={`${fieldClass} ${errors.identifier ? "border-[#f87171]/70" : "border-white/[0.12]"}`}
         />
         {errors.identifier ? (
-          <p id="login-id-error" className="text-xs text-[#e31b23]">
+          <p id="login-id-error" className="text-xs text-[#f87171]">
             {errors.identifier}
           </p>
         ) : null}
@@ -74,7 +74,7 @@ export function LoginForm() {
 
       <div className="mt-5 flex flex-col gap-1.5">
         <label htmlFor="login-password" className={labelClass}>
-          Password <span className="text-[#e31b23]">*</span>
+          Password <span className="text-[#f87171]">*</span>
         </label>
         <div className="relative">
           <input
@@ -90,14 +90,14 @@ export function LoginForm() {
             }}
             aria-invalid={errors.password ? true : undefined}
             aria-describedby={errors.password ? "login-password-error" : undefined}
-            className={`${fieldClass} pr-11`}
+            className={`${fieldClass} pr-11 ${errors.password ? "border-[#f87171]/70" : "border-white/[0.12]"}`}
           />
           <button
             type="button"
             onClick={() => setShowPassword((v) => !v)}
             aria-label={showPassword ? "Hide password" : "Show password"}
             aria-pressed={showPassword}
-            className="absolute right-1 top-1/2 flex size-9 -translate-y-1/2 items-center justify-center rounded text-[#6b6b7b] transition-colors hover:text-[#14142b]"
+            className="absolute right-1 top-1/2 flex size-9 -translate-y-1/2 items-center justify-center rounded text-white/55 transition-colors hover:text-white"
           >
             {showPassword ? (
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -124,7 +124,7 @@ export function LoginForm() {
           </button>
         </div>
         {errors.password ? (
-          <p id="login-password-error" className="text-xs text-[#e31b23]">
+          <p id="login-password-error" className="text-xs text-[#f87171]">
             {errors.password}
           </p>
         ) : null}
@@ -132,47 +132,47 @@ export function LoginForm() {
 
       <button
         type="submit"
-        className="mt-6 h-12 w-full rounded-md bg-[#e31b23] text-[15px] font-bold text-white transition-colors hover:bg-[#c9161d] focus:outline-none focus:ring-2 focus:ring-[#e31b23]/40 focus:ring-offset-2"
+        className="mt-6 h-12 w-full rounded-lg bg-accent text-[15px] font-bold text-white transition-[filter] duration-150 hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
       >
         Log In
       </button>
 
       {submitted ? (
-        <p role="status" className="mt-3 text-[13px] text-[#1a7f37]">
+        <p role="status" className="mt-3 text-[13px] text-accent">
           Looks good — this is a front-end demo, so no account is signed in.
         </p>
       ) : null}
 
       <div className="mt-4 flex items-center justify-between gap-3">
-        <label className="flex cursor-pointer items-center gap-2 text-sm text-[#33334d]">
+        <label className="flex cursor-pointer items-center gap-2 text-sm text-white/70">
           <input
             type="checkbox"
             checked={remember}
             onChange={(e) => setRemember(e.target.checked)}
-            className="size-4 rounded border-[#c4c4cf] text-[#e31b23] accent-[#e31b23]"
+            className="size-4 rounded border-white/25 bg-white/10 accent-accent"
           />
           Remember me
         </label>
         <Link
           href="/login"
-          className="text-sm font-medium text-[#e31b23] transition-opacity hover:opacity-80"
+          className="text-sm font-medium text-accent transition-opacity hover:opacity-80"
         >
           Lost your password?
         </Link>
       </div>
 
       <div className="my-6 flex items-center gap-4">
-        <span className="h-px flex-1 bg-[#e3e4e8]" />
-        <span className="text-[13px] font-bold uppercase tracking-wide text-[#14142b]">
+        <span className="h-px flex-1 bg-white/15" />
+        <span className="text-[13px] font-bold uppercase tracking-wide text-white/60">
           Or login with
         </span>
-        <span className="h-px flex-1 bg-[#e3e4e8]" />
+        <span className="h-px flex-1 bg-white/15" />
       </div>
 
       <div className="flex flex-col gap-3">
         <button
           type="button"
-          className="relative flex h-12 w-full items-center justify-center rounded-md bg-[#3b5998] text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-[#344e86] focus:outline-none focus:ring-2 focus:ring-[#3b5998]/40 focus:ring-offset-2"
+          className="relative flex h-12 w-full items-center justify-center rounded-lg bg-[#3b5998] text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-[#446bb3] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
         >
           <img
             src="/assets/auth/facebook.svg"
@@ -186,7 +186,7 @@ export function LoginForm() {
         </button>
         <button
           type="button"
-          className="relative flex h-12 w-full items-center justify-center rounded-md bg-[#4285f4] text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-[#3b78e0] focus:outline-none focus:ring-2 focus:ring-[#4285f4]/40 focus:ring-offset-2"
+          className="relative flex h-12 w-full items-center justify-center rounded-lg bg-[#4285f4] text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-[#5b97f6] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
         >
           <img
             src="/assets/auth/google.svg"
@@ -200,9 +200,9 @@ export function LoginForm() {
         </button>
       </div>
 
-      <div className="mt-6 border-t border-[#e3e4e8] pt-5 text-center text-sm text-[#6b6b7b]">
+      <div className="mt-6 border-t border-white/10 pt-5 text-center text-sm text-white/60">
         Don&rsquo;t have an account?{" "}
-        <Link href="/login" className="font-bold text-[#e31b23] transition-opacity hover:opacity-80">
+        <Link href="/login" className="font-bold text-accent transition-opacity hover:opacity-80">
           Register
         </Link>
       </div>
