@@ -140,10 +140,32 @@ export function ContactForm() {
       </div>
 
       {sent ? (
-        <p role="status" className="mt-3 text-[13px] text-accent">
-          Thanks — your message has been received. This is a front-end demo, so nothing
-          is actually sent or stored.
-        </p>
+        <div
+          role="status"
+          className="mt-4 flex items-start gap-3 rounded-lg border border-accent/30 bg-accent-soft px-4 py-3 text-sm text-white/85"
+        >
+          <svg
+            className="mt-0.5 size-[18px] shrink-0 text-accent"
+            viewBox="0 0 20 20"
+            fill="none"
+            aria-hidden
+          >
+            <circle cx="10" cy="10" r="9" stroke="currentColor" strokeWidth="1.6" />
+            <path
+              d="M6 10.5 8.8 13.2 14 7.5"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+          <span className="flex flex-col gap-0.5">
+            <span className="font-bold text-white">Message received</span>
+            <span className="text-[13px] text-white/70">
+              Thanks for reaching out — one of our agents will contact you shortly.
+            </span>
+          </span>
+        </div>
       ) : null}
     </form>
   );
