@@ -1,21 +1,40 @@
+import type { ReactNode } from "react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { integrations, site } from "@/lib/content";
 
-type Integration = { name: string; icon: string };
+type Item = { name: string; icon: string };
 
-function Pill({ item }: { item: Integration }) {
+function Pill({ item }: { item: Item }) {
   return (
-    <span className="flex h-[52px] items-center gap-3 rounded-xl border border-white/[0.08] bg-white/[0.05] px-4 backdrop-blur-sm">
-      <img src={item.icon} alt="" aria-hidden width={18} height={18} className="size-[18px]" />
-      <span className="text-sm font-medium text-white/90">{item.name}</span>
+    <span className="flex h-[52px] items-center gap-2.5 rounded-xl border border-white/[0.08] bg-white/[0.05] px-3.5 backdrop-blur-sm">
+      <img src={item.icon} alt="" aria-hidden width={18} height={18} className="size-[18px] shrink-0" />
+      <span className="truncate text-[13px] font-medium text-white/90">{item.name}</span>
     </span>
+  );
+}
+
+function MorePill() {
+  return (
+    <span className="flex h-[52px] items-center justify-center rounded-xl border border-accent/40 bg-accent-soft px-3.5 text-[13px] font-bold text-accent">
+      {integrations.more}
+    </span>
+  );
+}
+
+function GroupLabel({ children }: { children: ReactNode }) {
+  return (
+    <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-white/40">{children}</p>
   );
 }
 
 function Hub() {
   return (
-    <div className="flex size-[168px] flex-col items-center justify-center gap-3 rounded-[28px] border border-white/25 bg-white/[0.04] backdrop-blur-md shadow-[0_0_50px_-6px_rgb(24_160_251/0.45)]">
+    <div className="relative flex size-[168px] flex-col items-center justify-center gap-3 rounded-[28px] border border-white/20 bg-white/[0.04] backdrop-blur-md">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -inset-24 -z-10 bg-[radial-gradient(circle,rgb(24_160_251/0.26),transparent_62%)]"
+      />
       <img src="/assets/logo-mark.svg" alt="" aria-hidden width={44} height={44} className="size-11" />
       <span className="text-[15px] font-bold text-white">{site.name}</span>
     </div>
@@ -23,7 +42,7 @@ function Hub() {
 }
 
 export function Integrations() {
-  const { left, right, more } = integrations;
+  const { leftGroups, right } = integrations;
 
   return (
     <section id="integrations" className="py-14">
@@ -35,73 +54,72 @@ export function Integrations() {
           subtitleClassName="max-w-[560px] text-base text-white/[0.88]"
         />
 
-        <div className="relative w-full max-w-[1000px] overflow-hidden rounded-[32px] border border-border bg-[#050505] px-6 py-12 sm:px-10">
-          {/* brand glow rising from the bottom, à la sendr.ai */}
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-x-0 bottom-[-12%] h-[58%] bg-[radial-gradient(ellipse_58%_100%_at_50%_100%,rgb(24_160_251/0.34),rgb(24_160_251/0)_72%)]"
-          />
+        {/* desktop: fixed diagram with bracket connectors */}
+        <div className="relative mx-auto hidden h-[460px] w-[1000px] xl:block">
+          <svg className="absolute inset-0 h-full w-full" viewBox="0 0 1000 460" fill="none" aria-hidden>
+            <g stroke="rgb(255 255 255 / 0.16)" strokeWidth="1.25" strokeLinecap="round">
+              <path d="M222 66 L222 410" />
+              <path d="M222 228 L416 228" />
+              <path d="M628 100 L628 356" />
+              <path d="M584 228 L628 228" />
+            </g>
+          </svg>
 
-          {/* desktop: fixed diagram with curved connectors */}
-          <div className="relative mx-auto hidden h-[404px] w-[900px] xl:block">
-            <svg
-              className="absolute inset-0 h-full w-full"
-              viewBox="0 0 900 404"
-              fill="none"
-              aria-hidden
-            >
-              <g stroke="rgb(255 255 255 / 0.16)" strokeWidth="1.25" strokeLinecap="round">
-                <path d="M196 66 C 300 66, 322 202, 366 202" />
-                <path d="M196 194 C 300 194, 332 202, 366 202" />
-                <path d="M196 322 C 300 322, 322 202, 366 202" />
-                <path d="M704 66 C 600 66, 578 202, 534 202" />
-                <path d="M704 194 C 600 194, 568 202, 534 202" />
-                <path d="M704 322 C 600 322, 578 202, 534 202" />
-              </g>
-            </svg>
-
-            <div className="absolute left-0 top-[40px] w-[196px] [&>span]:w-full">
-              <Pill item={left[0]} />
+          <div className="absolute left-0 top-[12px] w-[214px]">
+            <GroupLabel>{leftGroups[0].label}</GroupLabel>
+            <div className="mt-3 flex flex-col gap-2 [&>span]:w-full">
+              {leftGroups[0].items.map((i) => (
+                <Pill key={i.name} item={i} />
+              ))}
             </div>
-            <div className="absolute left-0 top-[168px] w-[196px] [&>span]:w-full">
-              <Pill item={left[1]} />
-            </div>
-            <div className="absolute left-0 top-[296px] w-[196px] [&>span]:w-full">
-              <Pill item={left[2]} />
-            </div>
-
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-              <Hub />
-            </div>
-
-            <div className="absolute right-0 top-[40px] flex w-[196px] justify-end [&>span]:w-full">
-              <Pill item={right[0]} />
-            </div>
-            <div className="absolute right-0 top-[168px] flex w-[196px] justify-end [&>span]:w-full">
-              <Pill item={right[1]} />
-            </div>
-            <div className="absolute right-0 top-[296px] flex w-[196px] justify-end [&>span]:w-full">
-              <Pill item={right[2]} />
+          </div>
+          <div className="absolute left-0 top-[216px] w-[214px]">
+            <GroupLabel>{leftGroups[1].label}</GroupLabel>
+            <div className="mt-3 flex flex-col gap-2 [&>span]:w-full">
+              {leftGroups[1].items.map((i) => (
+                <Pill key={i.name} item={i} />
+              ))}
             </div>
           </div>
 
-          {/* mobile / tablet: stacked */}
-          <div className="relative flex flex-col items-center gap-4 xl:hidden">
-            <div className="flex w-full max-w-[280px] flex-col gap-3 [&>span]:w-full">
-              {left.map((item) => (
-                <Pill key={item.name} item={item} />
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+            <Hub />
+          </div>
+
+          <div className="absolute right-0 top-[74px] w-[364px]">
+            <div className="grid grid-cols-2 gap-x-4 gap-y-3 [&>span]:w-full">
+              {right.map((i) => (
+                <Pill key={i.name} item={i} />
               ))}
             </div>
-            <Hub />
-            <div className="flex w-full max-w-[280px] flex-col gap-3 [&>span]:w-full">
-              {right.map((item) => (
-                <Pill key={item.name} item={item} />
-              ))}
+            <div className="mt-3 w-[174px]">
+              <MorePill />
             </div>
           </div>
         </div>
 
-        <p className="text-sm font-bold text-accent">{more} &rarr;</p>
+        {/* mobile / tablet: stacked */}
+        <div className="flex w-full max-w-[340px] flex-col items-center gap-8 xl:hidden">
+          {leftGroups.map((g) => (
+            <div key={g.label} className="w-full">
+              <GroupLabel>{g.label}</GroupLabel>
+              <div className="mt-3 flex flex-col gap-2.5 [&>span]:w-full">
+                {g.items.map((i) => (
+                  <Pill key={i.name} item={i} />
+                ))}
+              </div>
+            </div>
+          ))}
+
+          <Hub />
+
+          <div className="grid w-full grid-cols-1 gap-2.5 sm:grid-cols-2 [&>span]:w-full">
+            {right.map((i) => (
+              <Pill key={i.name} item={i} />
+            ))}
+            <MorePill />
+          </div>
+        </div>
       </Container>
     </section>
   );
