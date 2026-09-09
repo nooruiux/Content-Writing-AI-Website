@@ -44,7 +44,7 @@ function SelectBox({ value, icon, flash = false }: { value: string; icon?: strin
 function Caret({ on }: { on: boolean }) {
   if (!on) return null;
   return (
-    <span className="caret-blink ml-px inline-block h-[1em] w-px translate-y-[0.15em] animate-[caret-blink_1.06s_infinite] bg-white/70 align-baseline" />
+    <span className="caret-blink ml-px inline-block h-[1em] w-px translate-y-[0.15em] animate-[caret-blink_1.06s_infinite] bg-white align-baseline" />
   );
 }
 
@@ -153,7 +153,7 @@ export function ParagraphGeneratorCard() {
         <div className="relative flex flex-col gap-2">
           <span className="text-base text-white">What is your paragraph about?*</span>
           <div className="h-[108px] rounded-lg border border-border bg-white/[0.04] px-4 py-3.5">
-            <p className="min-h-[1.25em] text-sm text-white/70">
+            <p className="min-h-[1.25em] text-sm text-white">
               {about}
               <Caret on={phase === "about"} />
             </p>
@@ -163,7 +163,7 @@ export function ParagraphGeneratorCard() {
 
         <Field label="Keyword to include">
           <div className="rounded-lg border border-border bg-white/[0.04] px-4 py-3.5">
-            <p className="min-h-[1.25em] text-sm text-white/70">
+            <p className="min-h-[1.25em] text-sm text-white">
               {keyword}
               <Caret on={phase === "keyword"} />
             </p>
