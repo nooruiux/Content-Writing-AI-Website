@@ -76,10 +76,16 @@ export function RichEditorCard() {
 
           <button
             type="button"
-            className="flex w-[284px] items-center justify-center gap-2.5 rounded-lg bg-accent px-4 py-[9px] text-base font-bold text-white"
+            className="pill-glow flex w-[284px] items-center justify-center gap-2.5 overflow-hidden rounded-lg bg-accent px-4 py-[9px] text-base font-bold text-white"
           >
-            <Icon src="/assets/realcontent/ic-generate.svg" size={20} />
-            Generate copy
+            <span aria-hidden className="pill-glow-layer pill-glow-bloom">
+              <span className="pill-glow-spin" />
+            </span>
+            <span aria-hidden className="pill-glow-layer pill-glow-ring">
+              <span className="pill-glow-spin" />
+            </span>
+            <Icon src="/assets/realcontent/ic-generate.svg" size={20} className="relative" />
+            <span className="relative">Generate copy</span>
           </button>
         </div>
       </div>
