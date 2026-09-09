@@ -24,16 +24,25 @@ const CONNECTORS = [
 
 function Pill({ item }: { item: Item }) {
   return (
-    <span className="flex h-[52px] items-center gap-3 rounded-xl border border-white/[0.08] bg-white/[0.05] px-4 backdrop-blur-sm">
-      <img src={item.icon} alt="" aria-hidden width={18} height={18} className="size-[18px] shrink-0" />
-      <span className="truncate text-[13px] font-medium text-white/90">{item.name}</span>
+    <span className="group flex h-[52px] cursor-default items-center gap-3 rounded-xl border border-white/[0.08] bg-white/[0.05] px-4 backdrop-blur-sm transition-[background-color,border-color,box-shadow] duration-200 hover:border-accent/40 hover:bg-white/[0.09] hover:shadow-[0_0_0_1px_rgb(24_160_251/0.22),0_10px_28px_-12px_rgb(24_160_251/0.55)]">
+      <img
+        src={item.icon}
+        alt=""
+        aria-hidden
+        width={18}
+        height={18}
+        className="size-[18px] shrink-0 transition-transform duration-200 group-hover:scale-110"
+      />
+      <span className="truncate text-[13px] font-medium text-white/90 transition-colors duration-200 group-hover:text-white">
+        {item.name}
+      </span>
     </span>
   );
 }
 
 function MorePill() {
   return (
-    <span className="flex h-[52px] items-center justify-center rounded-xl border border-accent/40 bg-accent-soft px-4 text-[13px] font-bold text-accent">
+    <span className="flex h-[52px] cursor-default items-center justify-center rounded-xl border border-accent/40 bg-accent-soft px-4 text-[13px] font-bold text-accent transition-[background-color,border-color,box-shadow] duration-200 hover:border-accent/70 hover:bg-accent/20 hover:shadow-[0_0_0_1px_rgb(24_160_251/0.3),0_10px_28px_-12px_rgb(24_160_251/0.6)]">
       {integrations.more}
     </span>
   );
