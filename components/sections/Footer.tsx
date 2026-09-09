@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { NewsletterForm } from "@/components/ui/NewsletterForm";
 import { footer, site } from "@/lib/content";
@@ -12,10 +13,14 @@ export function Footer() {
           <div className={`w-full p-8 lg:flex-1 ${panel}`}>
             <div className="flex flex-col gap-5">
               <div className="flex flex-col gap-3">
-                <div className="flex items-center gap-2">
+                <Link
+                  href="/"
+                  className="flex w-fit items-center gap-2"
+                  aria-label={`${site.name} home`}
+                >
                   <img src="/assets/logo-mark.svg" alt="" width={24} height={24} className="size-6" />
                   <span className="text-[20px] font-bold leading-6 text-white">{site.name}</span>
-                </div>
+                </Link>
                 <p className="text-base font-bold text-white/[0.72]">{footer.tagline}</p>
               </div>
 

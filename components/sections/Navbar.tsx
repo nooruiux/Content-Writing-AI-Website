@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { nav, site } from "@/lib/content";
@@ -11,10 +12,10 @@ export function Navbar() {
   return (
     <header className="relative z-20 pt-6">
       <Container className="flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-2" aria-label={`${site.name} home`}>
+        <Link href="/" className="flex items-center gap-2" aria-label={`${site.name} home`}>
           <img src="/assets/logo-mark.svg" alt="" width={24} height={24} className="size-6" />
           <span className="text-[20px] font-bold leading-6 text-white">{site.name}</span>
-        </a>
+        </Link>
 
         <nav
           aria-label="Primary"
