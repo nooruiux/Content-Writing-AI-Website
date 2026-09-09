@@ -479,12 +479,12 @@
   animation: ig-flow 3.6s linear infinite;
 }
 .ig-flow path {
-  stroke-width: 1.5;
+  stroke-width: 0.9;
 }
 .ig-flow-bloom path {
-  stroke-width: 5;
-  opacity: 0.32;
-  filter: blur(3px);
+  stroke-width: 3;
+  opacity: 0.28;
+  filter: blur(2.5px);
 }
 @media (prefers-reduced-motion: reduce) {
   .ig-flow path,
