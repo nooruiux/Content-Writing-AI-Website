@@ -408,23 +408,23 @@
    the faded text turns crisp white behind it. */
 @keyframes lorem-eraser {
   0% { translate: -250px 0; }
-  46% { translate: 320px 0; }
-  60% { translate: 320px 0; }
-  76% { translate: -250px 0; }
+  40% { translate: 320px 0; }
+  56% { translate: 320px 0; }
+  94% { translate: -250px 0; }
   100% { translate: -250px 0; }
 }
 .lorem-eraser {
-  animation: lorem-eraser 6s ease-in-out infinite;
+  animation: lorem-eraser 12s cubic-bezier(0.45, 0, 0.55, 1) infinite;
   will-change: transform;
 }
 @keyframes lorem-reveal {
-  0%, 4% { clip-path: inset(0 100% 0 0); }
-  46% { clip-path: inset(0 -12px 0 0); }
-  62% { clip-path: inset(0 -12px 0 0); }
-  72%, 100% { clip-path: inset(0 100% 0 0); }
+  0%, 3% { clip-path: inset(0 100% 0 0); }
+  40% { clip-path: inset(0 -12px 0 0); }
+  56% { clip-path: inset(0 -12px 0 0); }
+  94%, 100% { clip-path: inset(0 100% 0 0); }
 }
 .lorem-reveal {
-  animation: lorem-reveal 6s ease-in-out infinite;
+  animation: lorem-reveal 12s cubic-bezier(0.45, 0, 0.55, 1) infinite;
 }
 @media (prefers-reduced-motion: reduce) {
   .lorem-eraser, .lorem-reveal { animation: none; }
