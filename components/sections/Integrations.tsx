@@ -47,13 +47,26 @@ function GroupLabel({ children }: { children: ReactNode }) {
 
 function Hub() {
   return (
-    <div className="relative flex size-[168px] flex-col items-center justify-center gap-3 rounded-[28px] border border-white/20 bg-white/[0.04] backdrop-blur-md">
+    <div className="pill-glow relative flex size-[168px] flex-col items-center justify-center gap-3 rounded-[28px] border border-white/20 bg-white/[0.04] backdrop-blur-md">
       <div
         aria-hidden
         className="pointer-events-none absolute -inset-24 -z-10 bg-[radial-gradient(circle,rgb(24_160_251/0.26),transparent_62%)]"
       />
-      <img src="/assets/logo-mark.svg" alt="" aria-hidden width={44} height={44} className="size-11" />
-      <span className="text-[15px] font-bold text-white">{site.name}</span>
+      <span aria-hidden className="pill-glow-layer pill-glow-bloom">
+        <span className="pill-glow-spin" />
+      </span>
+      <span aria-hidden className="pill-glow-layer pill-glow-ring">
+        <span className="pill-glow-spin" />
+      </span>
+      <img
+        src="/assets/logo-mark.svg"
+        alt=""
+        aria-hidden
+        width={44}
+        height={44}
+        className="relative size-11"
+      />
+      <span className="relative text-[15px] font-bold text-white">{site.name}</span>
     </div>
   );
 }
