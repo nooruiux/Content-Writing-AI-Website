@@ -129,7 +129,7 @@ function QuantumMenuPanel({ className = "" }: { className?: string }) {
 
       {/* Figma 1:2010 — highlighted */}
       <MenuCard
-        className="absolute left-[314px] top-[118px]"
+        className="hv-float-1 absolute left-[314px] top-[118px]"
         icon="/assets/icon-edit.svg"
         title="Write your blog post"
         subtitle="Write your blog post using quantum AI website"
@@ -156,7 +156,7 @@ function QuantumMenuPanel({ className = "" }: { className?: string }) {
 
       {/* Figma 1:2041 — highlighted, offset left */}
       <MenuCard
-        className="absolute left-[242px] top-[359.58px]"
+        className="hv-float-2 absolute left-[242px] top-[359.58px]"
         flip
         icon="/assets/icon-lightning.svg"
         title="Improve your writing skill"
@@ -179,7 +179,10 @@ function GenerateTaskCard({ className = "" }: { className?: string }) {
         </p>
       </div>
       <div className="flex flex-col gap-9 rounded-lg border border-white/[0.08] bg-white/[0.08] px-3 py-2">
-        <p className="whitespace-nowrap text-xs text-white/80">Type your prompt here...</p>
+        <p className="flex h-[18px] items-center whitespace-nowrap text-xs text-white/80">
+          <span className="hv-type hv-type-prompt">Write a blog post about AI writing tools</span>
+          <span className="caret-blink ml-px inline-block h-3 w-px animate-[caret-blink_1.06s_infinite] bg-white/70" />
+        </p>
         <div className="flex w-[279px] items-start justify-between">
           <div className="flex gap-2">
             <Icon src="/assets/hero/prompt-1.svg" size={28} />
@@ -249,8 +252,10 @@ function AskQuantumPanel({ className = "" }: { className?: string }) {
 
       {/* input — Figma 1:1899 */}
       <div className="absolute left-[23px] top-[381px] flex h-12 w-[433px] items-center gap-1 rounded-pill border border-white/[0.12] bg-white/[0.08] pl-6 shadow-[1px_1px_0.8px_0_rgb(255_255_255/0.04),inset_0_-1px_1px_1.5px_rgb(255_255_255/0.08)] backdrop-blur-[6px]">
+        <span className="hv-type hv-type-ask text-base font-bold text-white/70">
+          What&rsquo;s the best AI tool for content writing?
+        </span>
         <span className="caret-blink h-[18px] w-px animate-[caret-blink_1.06s_infinite] bg-white/70" />
-        <span className="text-base font-bold text-white/40">Ask a question</span>
         <Icon
           src="/assets/hero/sparkle-lg.svg"
           size={36}
@@ -275,8 +280,10 @@ function HeroVisualDesktop() {
         </div>
 
         {/* Figma 1:2048 — rotated card, layered above the container, not clipped. */}
-        <div className="absolute left-[186px] top-[551px] -translate-x-1/2 -translate-y-1/2 -rotate-45">
-          <GenerateTaskCard />
+        <div className="absolute left-[186px] top-[551px] -translate-x-1/2 -translate-y-1/2">
+          <div className="hv-float-3 -rotate-45">
+            <GenerateTaskCard />
+          </div>
         </div>
       </div>
     </div>
@@ -293,8 +300,10 @@ function HeroVisualMobile() {
       <div className="-mt-24 flex flex-col items-center gap-6 min-[420px]:-mt-16">
         <div className="relative rounded-2xl border-[1.4px] border-white/10 bg-white/5 p-2 backdrop-blur-2xl [zoom:0.5] min-[420px]:[zoom:0.56]">
           <QuantumMenuPanel className="relative" />
-          <div className="absolute -left-1 top-[110px] -rotate-45">
-            <GenerateTaskCard />
+          <div className="absolute -left-1 top-[110px]">
+            <div className="hv-float-3 -rotate-45">
+              <GenerateTaskCard />
+            </div>
           </div>
         </div>
         <div className="rounded-2xl border-[1.4px] border-white/10 bg-white/5 p-2 backdrop-blur-2xl [zoom:0.66] min-[420px]:[zoom:0.74]">
