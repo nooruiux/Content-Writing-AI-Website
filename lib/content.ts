@@ -18,7 +18,7 @@ export const nav = {
 export const hero = {
   title: "Design your future with quantum AI",
   subtitle: "Never miss your idea or connection to implement",
-  cta: { label: "Explore the future", href: "#explore" },
+  cta: { label: "Explore the future", href: "/register" },
 };
 
 export const superpowers = {
