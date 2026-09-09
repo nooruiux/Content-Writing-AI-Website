@@ -11,10 +11,17 @@ import {
   TextField,
 } from "@/components/auth/authShared";
 
-type Errors = { name?: string; email?: string; password?: string; agree?: string };
+type Errors = {
+  firstName?: string;
+  lastName?: string;
+  email?: string;
+  password?: string;
+  agree?: string;
+};
 
 export function RegisterForm() {
-  const [name, setName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [agree, setAgree] = useState(false);
@@ -30,7 +37,8 @@ export function RegisterForm() {
     e.preventDefault();
     const next: Errors = {};
 
-    if (!name.trim()) next.name = "Please enter your name.";
+    if (!firstName.trim()) next.firstName = "First name is required.";
+    if (!lastName.trim()) next.lastName = "Last name is required.";
     if (!email.trim()) {
       next.email = "Email is required.";
     } else if (!EMAIL_RE.test(email.trim())) {
@@ -55,19 +63,34 @@ export function RegisterForm() {
       </p>
 
       <div className="mt-8 flex flex-col gap-5">
-        <TextField
-          label="Full Name"
-          required
-          name="name"
-          type="text"
-          autoComplete="name"
-          value={name}
-          onChange={(e) => {
-            setName(e.target.value);
-            if (errors.name) clear("name");
-          }}
-          error={errors.name}
-        />
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <TextField
+            label="First Name"
+            required
+            name="firstName"
+            type="text"
+            autoComplete="given-name"
+            value={firstName}
+            onChange={(e) => {
+              setFirstName(e.target.value);
+              if (errors.firstName) clear("firstName");
+            }}
+            error={errors.firstName}
+          />
+          <TextField
+            label="Last Name"
+            required
+            name="lastName"
+            type="text"
+            autoComplete="family-name"
+            value={lastName}
+            onChange={(e) => {
+              setLastName(e.target.value);
+              if (errors.lastName) clear("lastName");
+            }}
+            error={errors.lastName}
+          />
+        </div>
         <TextField
           label="Email"
           required
