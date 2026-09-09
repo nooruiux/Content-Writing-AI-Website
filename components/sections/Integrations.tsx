@@ -102,6 +102,11 @@ export function Integrations() {
                 <path key={i} d={d} pathLength={1} style={{ animationDelay: `${i * -0.26}s` }} />
               ))}
             </g>
+            <g className="ig-flow-tip" strokeLinecap="round">
+              {CONNECTORS.map((d, i) => (
+                <path key={i} d={d} pathLength={1} style={{ animationDelay: `${i * -0.26}s` }} />
+              ))}
+            </g>
           </svg>
 
           <div className="absolute left-0 top-[46px] w-[220px]">

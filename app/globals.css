@@ -471,24 +471,37 @@
   from { stroke-dashoffset: 1; }
   to { stroke-dashoffset: 0; }
 }
+/* the hairline tip runs 0.03 ahead/behind the core so the pulse tapers at
+   both ends (same trick as the hero bracket lines). */
+@keyframes ig-flow-tip {
+  from { stroke-dashoffset: 1.03; }
+  to { stroke-dashoffset: 0.03; }
+}
 .ig-flow path,
-.ig-flow-bloom path {
+.ig-flow-bloom path,
+.ig-flow-tip path {
   fill: none;
   stroke: #18a0fb;
-  stroke-dasharray: 0.16 0.84;
+  stroke-dasharray: 0.14 0.86;
   animation: ig-flow 3.6s linear infinite;
 }
 .ig-flow path {
-  stroke-width: 2.5;
+  stroke-width: 0.8;
 }
 .ig-flow-bloom path {
   stroke-width: 7;
   opacity: 0.32;
   filter: blur(3px);
 }
+.ig-flow-tip path {
+  stroke-width: 0.2;
+  stroke-dasharray: 0.2 0.8;
+  animation-name: ig-flow-tip;
+}
 @media (prefers-reduced-motion: reduce) {
   .ig-flow path,
-  .ig-flow-bloom path {
+  .ig-flow-bloom path,
+  .ig-flow-tip path {
     animation: none;
     stroke: transparent;
   }
