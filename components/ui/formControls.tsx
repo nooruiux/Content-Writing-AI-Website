@@ -1,6 +1,12 @@
 "use client";
 
-import { useId, useState, type InputHTMLAttributes, type ReactNode } from "react";
+import {
+  useId,
+  useState,
+  type InputHTMLAttributes,
+  type ReactNode,
+  type TextareaHTMLAttributes,
+} from "react";
 
 export const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -8,8 +14,22 @@ export const authCardClass =
   "w-full rounded-3xl border border-white/[0.1] bg-white/[0.05] p-6 shadow-[0_8px_48px_rgb(0_0_0/0.35)] backdrop-blur-2xl sm:rounded-[32px] sm:p-10";
 
 const labelClass = "text-[13px] font-bold text-white/70";
-const fieldClass =
-  "h-12 w-full rounded-lg border bg-white/[0.08] px-4 text-sm text-white placeholder:text-white/60 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent";
+const controlClass =
+  "w-full rounded-lg border bg-white/[0.08] px-4 text-sm text-white placeholder:text-white/60 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent";
+const fieldClass = `h-12 ${controlClass}`;
+
+function borderClass(error?: string) {
+  return error ? "border-[#f87171]/70" : "border-white/[0.12]";
+}
+
+function FieldError({ id, error }: { id: string; error?: string }) {
+  if (!error) return null;
+  return (
+    <p id={id} className="text-xs text-[#f87171]">
+      {error}
+    </p>
+  );
+}
 
 type FieldProps = {
   label: string;
@@ -29,14 +49,37 @@ export function TextField({ label, error, required, id, ...rest }: FieldProps) {
         id={fieldId}
         aria-invalid={error ? true : undefined}
         aria-describedby={error ? `${fieldId}-error` : undefined}
-        className={`${fieldClass} ${error ? "border-[#f87171]/70" : "border-white/[0.12]"}`}
+        className={`${fieldClass} ${borderClass(error)}`}
         {...rest}
       />
-      {error ? (
-        <p id={`${fieldId}-error`} className="text-xs text-[#f87171]">
-          {error}
-        </p>
-      ) : null}
+      <FieldError id={`${fieldId}-error`} error={error} />
+    </div>
+  );
+}
+
+type TextAreaProps = {
+  label: string;
+  error?: string;
+  required?: boolean;
+} & TextareaHTMLAttributes<HTMLTextAreaElement>;
+
+export function TextAreaField({ label, error, required, id, rows = 5, ...rest }: TextAreaProps) {
+  const autoId = useId();
+  const fieldId = id ?? autoId;
+  return (
+    <div className="flex flex-col gap-1.5">
+      <label htmlFor={fieldId} className={labelClass}>
+        {label} {required ? <span className="text-[#f87171]">*</span> : null}
+      </label>
+      <textarea
+        id={fieldId}
+        rows={rows}
+        aria-invalid={error ? true : undefined}
+        aria-describedby={error ? `${fieldId}-error` : undefined}
+        className={`${controlClass} resize-y py-3 leading-relaxed ${borderClass(error)}`}
+        {...rest}
+      />
+      <FieldError id={`${fieldId}-error`} error={error} />
     </div>
   );
 }
@@ -56,7 +99,7 @@ export function PasswordField({ label, error, required, id, ...rest }: FieldProp
           type={show ? "text" : "password"}
           aria-invalid={error ? true : undefined}
           aria-describedby={error ? `${fieldId}-error` : undefined}
-          className={`${fieldClass} pr-11 ${error ? "border-[#f87171]/70" : "border-white/[0.12]"}`}
+          className={`${fieldClass} pr-11 ${borderClass(error)}`}
           {...rest}
         />
         <button
@@ -90,11 +133,7 @@ export function PasswordField({ label, error, required, id, ...rest }: FieldProp
           )}
         </button>
       </div>
-      {error ? (
-        <p id={`${fieldId}-error`} className="text-xs text-[#f87171]">
-          {error}
-        </p>
-      ) : null}
+      <FieldError id={`${fieldId}-error`} error={error} />
     </div>
   );
 }

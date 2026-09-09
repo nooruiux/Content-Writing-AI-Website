@@ -9,7 +9,7 @@ import {
   SocialAuthButtons,
   SubmitButton,
   TextField,
-} from "@/components/auth/authShared";
+} from "@/components/ui/formControls";
 
 export function LoginForm() {
   const [email, setEmail] = useState("");

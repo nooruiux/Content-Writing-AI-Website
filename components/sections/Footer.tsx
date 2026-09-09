@@ -5,6 +5,16 @@ import { footer, site } from "@/lib/content";
 
 const panel = "rounded-xl border-[1.4px] border-border bg-surface backdrop-blur-lg";
 
+const footerRoutes: Record<string, string> = {
+  Home: "/",
+  Contact: "/contact",
+  "Contact Us": "/contact",
+};
+
+function footerLinkHref(label: string) {
+  return footerRoutes[label] ?? "#";
+}
+
 export function Footer() {
   return (
     <footer className="pt-6 pb-14">
@@ -34,7 +44,7 @@ export function Footer() {
                       {col.links.map((link) => (
                         <li key={link}>
                           <a
-                            href={link === "Home" ? "/" : "#"}
+                            href={footerLinkHref(link)}
                             className="transition-colors hover:text-white"
                           >
                             {link}
