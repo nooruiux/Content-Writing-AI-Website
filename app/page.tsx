@@ -3,6 +3,7 @@ import { Hero } from "@/components/sections/Hero";
 import { Superpowers } from "@/components/sections/Superpowers";
 import { VoiceAI } from "@/components/sections/VoiceAI";
 import { RealContent } from "@/components/sections/RealContent";
+import { Integrations } from "@/components/sections/Integrations";
 import { Pricing } from "@/components/sections/Pricing";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { CtaBanner } from "@/components/sections/CtaBanner";
@@ -17,6 +18,7 @@ export default function Home() {
         <Superpowers />
         <VoiceAI />
         <RealContent />
+        <Integrations />
         <Pricing />
         <Testimonials />
         <CtaBanner />
