@@ -2,18 +2,19 @@
 
 import Link from "next/link";
 import { useState, type FormEvent } from "react";
-
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const PHONE_RE = /^[+()\d][\d\s\-()]{6,}$/;
-
-const labelClass = "text-[13px] font-bold text-white/70";
-const fieldClass =
-  "h-12 w-full rounded-lg border bg-white/[0.08] px-4 text-sm text-white placeholder:text-white/60 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent";
+import {
+  authCardClass,
+  EMAIL_RE,
+  PHONE_RE,
+  PasswordField,
+  SocialAuthButtons,
+  SubmitButton,
+  TextField,
+} from "@/components/auth/authShared";
 
 export function LoginForm() {
   const [identifier, setIdentifier] = useState("");
   const [password, setPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
   const [remember, setRemember] = useState(false);
   const [errors, setErrors] = useState<{ identifier?: string; password?: string }>({});
   const [submitted, setSubmitted] = useState(false);
@@ -39,19 +40,13 @@ export function LoginForm() {
   }
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      noValidate
-      className="w-full rounded-[32px] border border-white/[0.1] bg-white/[0.05] p-8 shadow-[0_8px_48px_rgb(0_0_0/0.35)] backdrop-blur-2xl sm:p-10"
-    >
+    <form onSubmit={handleSubmit} noValidate className={authCardClass}>
       <h1 className="text-[32px] font-bold leading-none text-white">Login</h1>
 
-      <div className="mt-8 flex flex-col gap-1.5">
-        <label htmlFor="login-id" className={labelClass}>
-          Email or Phone Number <span className="text-[#f87171]">*</span>
-        </label>
-        <input
-          id="login-id"
+      <div className="mt-8 flex flex-col gap-5">
+        <TextField
+          label="Email or Phone Number"
+          required
           name="identifier"
           type="text"
           autoComplete="username"
@@ -61,81 +56,26 @@ export function LoginForm() {
             if (errors.identifier) setErrors((p) => ({ ...p, identifier: undefined }));
             if (submitted) setSubmitted(false);
           }}
-          aria-invalid={errors.identifier ? true : undefined}
-          aria-describedby={errors.identifier ? "login-id-error" : undefined}
-          className={`${fieldClass} ${errors.identifier ? "border-[#f87171]/70" : "border-white/[0.12]"}`}
+          error={errors.identifier}
         />
-        {errors.identifier ? (
-          <p id="login-id-error" className="text-xs text-[#f87171]">
-            {errors.identifier}
-          </p>
-        ) : null}
+        <PasswordField
+          label="Password"
+          required
+          name="password"
+          autoComplete="current-password"
+          value={password}
+          onChange={(e) => {
+            setPassword(e.target.value);
+            if (errors.password) setErrors((p) => ({ ...p, password: undefined }));
+            if (submitted) setSubmitted(false);
+          }}
+          error={errors.password}
+        />
       </div>
 
-      <div className="mt-5 flex flex-col gap-1.5">
-        <label htmlFor="login-password" className={labelClass}>
-          Password <span className="text-[#f87171]">*</span>
-        </label>
-        <div className="relative">
-          <input
-            id="login-password"
-            name="password"
-            type={showPassword ? "text" : "password"}
-            autoComplete="current-password"
-            value={password}
-            onChange={(e) => {
-              setPassword(e.target.value);
-              if (errors.password) setErrors((p) => ({ ...p, password: undefined }));
-              if (submitted) setSubmitted(false);
-            }}
-            aria-invalid={errors.password ? true : undefined}
-            aria-describedby={errors.password ? "login-password-error" : undefined}
-            className={`${fieldClass} pr-11 ${errors.password ? "border-[#f87171]/70" : "border-white/[0.12]"}`}
-          />
-          <button
-            type="button"
-            onClick={() => setShowPassword((v) => !v)}
-            aria-label={showPassword ? "Hide password" : "Show password"}
-            aria-pressed={showPassword}
-            className="absolute right-1 top-1/2 flex size-9 -translate-y-1/2 items-center justify-center rounded text-white/55 transition-colors hover:text-white"
-          >
-            {showPassword ? (
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden>
-                <path
-                  d="M3 3l18 18M10.6 10.7a2 2 0 002.8 2.8M9.4 5.2A9.5 9.5 0 0112 5c5 0 9 4.5 10 7-.5 1.2-1.6 2.9-3.3 4.3M6.2 6.3C4 7.8 2.6 9.8 2 12c1 2.5 5 7 10 7 1.6 0 3-.4 4.3-1"
-                  stroke="currentColor"
-                  strokeWidth="1.7"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            ) : (
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden>
-                <path
-                  d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"
-                  stroke="currentColor"
-                  strokeWidth="1.7"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="1.7" />
-              </svg>
-            )}
-          </button>
-        </div>
-        {errors.password ? (
-          <p id="login-password-error" className="text-xs text-[#f87171]">
-            {errors.password}
-          </p>
-        ) : null}
+      <div className="mt-6">
+        <SubmitButton>Log In</SubmitButton>
       </div>
-
-      <button
-        type="submit"
-        className="mt-6 h-12 w-full rounded-lg bg-accent text-[15px] font-bold text-white transition-[filter] duration-150 hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
-      >
-        Log In
-      </button>
 
       {submitted ? (
         <p role="status" className="mt-3 text-[13px] text-accent">
@@ -161,48 +101,14 @@ export function LoginForm() {
         </Link>
       </div>
 
-      <div className="my-6 flex items-center gap-4">
-        <span className="h-px flex-1 bg-white/15" />
-        <span className="text-[13px] font-bold uppercase tracking-wide text-white/60">
-          Or login with
-        </span>
-        <span className="h-px flex-1 bg-white/15" />
-      </div>
-
-      <div className="flex flex-col gap-3">
-        <button
-          type="button"
-          className="relative flex h-12 w-full items-center justify-center rounded-lg bg-[#3b5998] text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-[#446bb3] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
-        >
-          <img
-            src="/assets/auth/facebook.svg"
-            alt=""
-            aria-hidden
-            width={26}
-            height={26}
-            className="absolute left-3 size-[26px]"
-          />
-          Facebook
-        </button>
-        <button
-          type="button"
-          className="relative flex h-12 w-full items-center justify-center rounded-lg bg-[#4285f4] text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-[#5b97f6] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
-        >
-          <img
-            src="/assets/auth/google.svg"
-            alt=""
-            aria-hidden
-            width={26}
-            height={26}
-            className="absolute left-3 size-[26px]"
-          />
-          Google
-        </button>
-      </div>
+      <SocialAuthButtons verb="login" />
 
       <div className="mt-6 border-t border-white/10 pt-5 text-center text-sm text-white/60">
         Don&rsquo;t have an account?{" "}
-        <Link href="/login" className="font-bold text-accent transition-opacity hover:opacity-80">
+        <Link
+          href="/register"
+          className="font-bold text-accent transition-opacity hover:opacity-80"
+        >
           Register
         </Link>
       </div>
