@@ -1,4 +1,5 @@
 import { Icon } from "@/components/ui/Icon";
+import { PlayheadTime } from "@/components/mockups/PlayheadTime";
 import { voiceAI } from "@/lib/content";
 
 // Waveform bars transcribed from Figma: [x, y, height, faded]
@@ -92,7 +93,7 @@ function VoiceOutput() {
         </div>
       </div>
       <div className="flex items-center gap-4">
-        {["tb-1", "tb-2", "tb-3", "tb-4", "tb-5"].map((n) => (
+        {["tb-1", "tb-2", "tb-pause", "tb-4", "tb-5"].map((n) => (
           <Icon key={n} src={`/assets/voice/${n}.svg`} size={24} />
         ))}
       </div>
@@ -109,8 +110,8 @@ function EditorTimeline({ width = 732 }: { width?: number }) {
             <Icon key={n} src={`/assets/voice/${n}.svg`} size={22} />
           ))}
         </div>
-        <p className="text-base text-white">
-          0.00:00 / <span className="text-white/[0.48]">0.09:32</span>
+        <p className="text-base text-white tabular-nums">
+          <PlayheadTime full /> / <span className="text-white/[0.48]">0.09:32</span>
         </p>
         <div className="flex gap-4">
           {["tp-6", "tp-7", "tp-8"].map((n) => (
@@ -248,8 +249,8 @@ export function VoiceEditorDesktop() {
       <div className="absolute inset-0 overflow-hidden rounded-[20px]">
         {/* Figma Frame 130: toolbar row spans only the 732px editor column, not the panel */}
         <TopToolbar className="absolute left-8 top-[72px] w-[732px]" />
-        <span className="absolute left-[688px] top-[132px] rounded-lg border border-border px-5 py-2.5 text-sm font-bold text-white">
-          9:32
+        <span className="absolute left-[688px] top-[132px] rounded-lg border border-border px-5 py-2.5 text-sm font-bold text-white tabular-nums">
+          <PlayheadTime />
         </span>
         <div className="absolute left-[155px] top-[132px]">
           <VoiceOutput />
@@ -275,8 +276,8 @@ export function VoiceEditorMobile() {
         <TopToolbar className="w-full max-w-[420px]" />
 
         <div className="flex flex-col items-center gap-3">
-          <span className="self-end rounded-lg border border-border px-4 py-2 text-sm font-bold text-white">
-            9:32
+          <span className="self-end rounded-lg border border-border px-4 py-2 text-sm font-bold text-white tabular-nums">
+            <PlayheadTime />
           </span>
           <div className="[zoom:0.66] min-[380px]:[zoom:0.74]">
             <VoiceOutput />
