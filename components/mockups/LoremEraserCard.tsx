@@ -8,8 +8,11 @@ export function LoremEraserCard() {
         <p className="w-[524px] text-base text-white/[0.88]">{realContent.lorem.description}</p>
       </div>
 
-      <p className="absolute left-[25px] top-[240px] whitespace-nowrap text-[44px] font-bold leading-[52px] text-white">
-        It&rsquo;s Quantum <span className="text-white/[0.28]">Lorem Ipsum</span>
+      {/* faded base — the whole line reads like Lorem Ipsum until the eraser
+          sweeps past; on the return pass the crisp copy is un-revealed and it
+          drops back to this low opacity. */}
+      <p className="absolute left-[25px] top-[240px] whitespace-nowrap text-[44px] font-bold leading-[52px] text-white/[0.28]">
+        It&rsquo;s Quantum Lorem Ipsum
       </p>
       {/* crisp-white copy, revealed left->right behind the sweeping eraser */}
       <p className="lorem-reveal absolute left-[25px] top-[240px] whitespace-nowrap text-[44px] font-bold leading-[52px] text-white">
