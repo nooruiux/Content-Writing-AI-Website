@@ -1,13 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import { useState, type FormEvent } from "react";
 import {
   authCardClass,
   EMAIL_RE,
-  PasswordField,
-  SocialAuthButtons,
   SubmitButton,
+  TextAreaField,
   TextField,
 } from "@/components/ui/formControls";
 
@@ -15,22 +13,22 @@ type Errors = {
   firstName?: string;
   lastName?: string;
   email?: string;
-  password?: string;
-  agree?: string;
+  subject?: string;
+  message?: string;
 };
 
-export function RegisterForm() {
+export function ContactForm() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [agree, setAgree] = useState(false);
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
   const [errors, setErrors] = useState<Errors>({});
-  const [submitted, setSubmitted] = useState(false);
+  const [sent, setSent] = useState(false);
 
   function clear(key: keyof Errors) {
     setErrors((p) => ({ ...p, [key]: undefined }));
-    if (submitted) setSubmitted(false);
+    if (sent) setSent(false);
   }
 
   function handleSubmit(e: FormEvent) {
@@ -44,22 +42,29 @@ export function RegisterForm() {
     } else if (!EMAIL_RE.test(email.trim())) {
       next.email = "Enter a valid email address.";
     }
-    if (!password) {
-      next.password = "Password is required.";
-    } else if (password.length < 8) {
-      next.password = "Use at least 8 characters.";
+    if (!subject.trim()) next.subject = "Please add a subject.";
+    if (!message.trim()) {
+      next.message = "Please write a message.";
+    } else if (message.trim().length < 10) {
+      next.message = "Message is a little short — add a few more details.";
     }
-    if (!agree) next.agree = "Please accept the Terms to continue.";
 
     setErrors(next);
-    setSubmitted(Object.keys(next).length === 0);
+    if (Object.keys(next).length === 0) {
+      setSent(true);
+      setFirstName("");
+      setLastName("");
+      setEmail("");
+      setSubject("");
+      setMessage("");
+    }
   }
 
   return (
     <form onSubmit={handleSubmit} noValidate className={authCardClass}>
-      <h1 className="text-[32px] font-bold leading-none text-white">Start free trial</h1>
+      <h1 className="text-[32px] font-bold leading-none text-white">Contact support</h1>
       <p className="mt-3 text-sm text-white/60">
-        Create your Quantum account — 3,000 free words, no card required.
+        Tell us what you need help with and the team will get back to you by email.
       </p>
 
       <div className="mt-8 flex flex-col gap-5">
@@ -104,67 +109,42 @@ export function RegisterForm() {
           }}
           error={errors.email}
         />
-        <PasswordField
-          label="Password"
+        <TextField
+          label="Subject"
           required
-          name="password"
-          autoComplete="new-password"
-          value={password}
+          name="subject"
+          type="text"
+          value={subject}
           onChange={(e) => {
-            setPassword(e.target.value);
-            if (errors.password) clear("password");
+            setSubject(e.target.value);
+            if (errors.subject) clear("subject");
           }}
-          error={errors.password}
+          error={errors.subject}
+        />
+        <TextAreaField
+          label="Message"
+          required
+          name="message"
+          rows={6}
+          value={message}
+          onChange={(e) => {
+            setMessage(e.target.value);
+            if (errors.message) clear("message");
+          }}
+          error={errors.message}
         />
       </div>
 
-      <div className="mt-4 flex flex-col gap-1.5">
-        <label className="flex cursor-pointer items-start gap-2 text-sm text-white/70">
-          <input
-            type="checkbox"
-            checked={agree}
-            onChange={(e) => {
-              setAgree(e.target.checked);
-              if (errors.agree) clear("agree");
-            }}
-            className="mt-0.5 size-4 rounded border-white/25 bg-white/10 accent-accent"
-          />
-          <span>
-            I agree to the{" "}
-            <Link href="/register" className="text-accent hover:opacity-80">
-              Terms
-            </Link>{" "}
-            and{" "}
-            <Link href="/register" className="text-accent hover:opacity-80">
-              Privacy Policy
-            </Link>
-            .
-          </span>
-        </label>
-        {errors.agree ? <p className="text-xs text-[#f87171]">{errors.agree}</p> : null}
-      </div>
-
       <div className="mt-6">
-        <SubmitButton>Start free trial</SubmitButton>
+        <SubmitButton>Send message</SubmitButton>
       </div>
 
-      {submitted ? (
+      {sent ? (
         <p role="status" className="mt-3 text-[13px] text-accent">
-          Looks good — this is a front-end demo, so no account is created.
+          Thanks — your message has been received. This is a front-end demo, so nothing
+          is actually sent or stored.
         </p>
       ) : null}
-
-      <SocialAuthButtons verb="sign up" />
-
-      <div className="mt-6 border-t border-white/10 pt-5 text-center text-sm text-white/60">
-        Already have an account?{" "}
-        <Link
-          href="/login"
-          className="font-bold text-accent transition-opacity hover:opacity-80"
-        >
-          Log In
-        </Link>
-      </div>
     </form>
   );
 }

@@ -9,7 +9,7 @@ export const nav = {
     { label: "Solution", href: "#solution" },
     { label: "Pricing", href: "#pricing" },
     { label: "Partner", href: "#partner" },
-    { label: "Contact", href: "#contact" },
+    { label: "Contact", href: "/contact" },
   ],
   login: { label: "Login", href: "/login" },
   cta: { label: "Start free trial", href: "/register" },
