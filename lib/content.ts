@@ -77,6 +77,14 @@ export const integrations = {
     "Native integrations plus API, MCP, and CLI — bring Quantum into the tools where your content already lives.",
   leftGroups: [
     {
+      label: "AI agents",
+      items: [
+        { name: "Claude", icon: "/assets/integrations/claude.svg" },
+        { name: "ChatGPT", icon: "/assets/integrations/chatgpt.svg" },
+        { name: "Any MCP client", icon: "/assets/integrations/mcp.svg" },
+      ],
+    },
+    {
       label: "Write in",
       items: [
         { name: "Google Docs", icon: "/assets/integrations/google-docs.svg" },
@@ -84,24 +92,14 @@ export const integrations = {
         { name: "Dropbox", icon: "/assets/integrations/dropbox.svg" },
       ],
     },
-    {
-      label: "Build with",
-      items: [
-        { name: "REST API", icon: "/assets/integrations/api.svg" },
-        { name: "MCP server", icon: "/assets/integrations/mcp.svg" },
-        { name: "CLI", icon: "/assets/integrations/cli.svg" },
-      ],
-    },
   ],
   right: [
     { name: "Slack", icon: "/assets/integrations/slack.svg" },
     { name: "Gmail", icon: "/assets/integrations/gmail.svg" },
-    { name: "WordPress", icon: "/assets/integrations/wordpress.svg" },
     { name: "HubSpot", icon: "/assets/integrations/hubspot.svg" },
     { name: "Google Drive", icon: "/assets/integrations/google-drive.svg" },
     { name: "LinkedIn", icon: "/assets/integrations/linkedin.svg" },
     { name: "Zapier", icon: "/assets/integrations/zapier.svg" },
-    { name: "Webflow", icon: "/assets/integrations/webflow.svg" },
   ],
   more: "+40 more integrations",
 };

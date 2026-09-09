@@ -24,7 +24,7 @@ function MorePill() {
 
 function GroupLabel({ children }: { children: ReactNode }) {
   return (
-    <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-white/40">{children}</p>
+    <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.14em] text-white/40">{children}</p>
   );
 }
 
@@ -54,28 +54,37 @@ export function Integrations() {
           subtitleClassName="max-w-[560px] text-base text-white/[0.88]"
         />
 
-        {/* desktop: fixed diagram with bracket connectors */}
+        {/* desktop: fixed diagram with curved connectors */}
         <div className="relative mx-auto hidden h-[460px] w-[1000px] xl:block">
           <svg className="absolute inset-0 h-full w-full" viewBox="0 0 1000 460" fill="none" aria-hidden>
             <g stroke="rgb(255 255 255 / 0.16)" strokeWidth="1.25" strokeLinecap="round">
-              <path d="M222 66 L222 410" />
-              <path d="M222 228 L416 228" />
-              <path d="M628 100 L628 356" />
-              <path d="M584 228 L628 228" />
+              <path d="M214 66 C 300 66 350 230 416 230" />
+              <path d="M214 124 C 300 124 360 230 416 230" />
+              <path d="M214 182 C 330 182 380 230 416 230" />
+              <path d="M214 280 C 330 280 380 230 416 230" />
+              <path d="M214 338 C 300 338 360 230 416 230" />
+              <path d="M214 396 C 300 396 350 230 416 230" />
+              <path d="M584 230 C 690 230 700 56 786 56" />
+              <path d="M584 230 C 690 230 700 114 786 114" />
+              <path d="M584 230 C 690 230 720 172 786 172" />
+              <path d="M584 230 C 690 230 720 230 786 230" />
+              <path d="M584 230 C 690 230 700 288 786 288" />
+              <path d="M584 230 C 690 230 700 346 786 346" />
+              <path d="M584 230 C 690 230 700 404 786 404" />
             </g>
           </svg>
 
           <div className="absolute left-0 top-[12px] w-[214px]">
             <GroupLabel>{leftGroups[0].label}</GroupLabel>
-            <div className="mt-3 flex flex-col gap-2 [&>span]:w-full">
+            <div className="flex flex-col gap-1.5 [&>span]:w-full">
               {leftGroups[0].items.map((i) => (
                 <Pill key={i.name} item={i} />
               ))}
             </div>
           </div>
-          <div className="absolute left-0 top-[216px] w-[214px]">
+          <div className="absolute left-0 top-[226px] w-[214px]">
             <GroupLabel>{leftGroups[1].label}</GroupLabel>
-            <div className="mt-3 flex flex-col gap-2 [&>span]:w-full">
+            <div className="flex flex-col gap-1.5 [&>span]:w-full">
               {leftGroups[1].items.map((i) => (
                 <Pill key={i.name} item={i} />
               ))}
@@ -86,15 +95,11 @@ export function Integrations() {
             <Hub />
           </div>
 
-          <div className="absolute right-0 top-[74px] w-[364px]">
-            <div className="grid grid-cols-2 gap-x-4 gap-y-3 [&>span]:w-full">
-              {right.map((i) => (
-                <Pill key={i.name} item={i} />
-              ))}
-            </div>
-            <div className="mt-3 w-[174px]">
-              <MorePill />
-            </div>
+          <div className="absolute right-0 top-[30px] flex w-[214px] flex-col gap-1.5 [&>span]:w-full">
+            {right.map((i) => (
+              <Pill key={i.name} item={i} />
+            ))}
+            <MorePill />
           </div>
         </div>
 
@@ -103,7 +108,7 @@ export function Integrations() {
           {leftGroups.map((g) => (
             <div key={g.label} className="w-full">
               <GroupLabel>{g.label}</GroupLabel>
-              <div className="mt-3 flex flex-col gap-2.5 [&>span]:w-full">
+              <div className="flex flex-col gap-2.5 [&>span]:w-full">
                 {g.items.map((i) => (
                   <Pill key={i.name} item={i} />
                 ))}
@@ -113,7 +118,7 @@ export function Integrations() {
 
           <Hub />
 
-          <div className="grid w-full grid-cols-1 gap-2.5 sm:grid-cols-2 [&>span]:w-full">
+          <div className="flex w-full flex-col gap-2.5 [&>span]:w-full">
             {right.map((i) => (
               <Pill key={i.name} item={i} />
             ))}
