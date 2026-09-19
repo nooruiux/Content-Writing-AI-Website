@@ -301,7 +301,7 @@ function HeroVisualMobile() {
         <GlobeOrbit />
       </div>
       <div className="-mt-[185px] flex flex-col items-center gap-6 min-[420px]:-mt-[214px]">
-        <div className="relative rounded-2xl border-[1.4px] border-white/10 bg-white/5 p-2 backdrop-blur-2xl [zoom:0.54] min-[420px]:[zoom:0.61]">
+        <div className="relative rounded-2xl border-[1.4px] border-white/10 bg-white/5 p-2 backdrop-blur-2xl [zoom:0.51] min-[420px]:[zoom:0.58]">
           <QuantumMenuPanel className="relative" />
           <div className="absolute -left-1 top-[110px]">
             <div className="hv-float-3 -rotate-45">
@@ -309,7 +309,7 @@ function HeroVisualMobile() {
             </div>
           </div>
         </div>
-        <div className="rounded-2xl border-[1.4px] border-white/10 bg-white/5 p-2 backdrop-blur-2xl [zoom:0.7] min-[420px]:[zoom:0.79]">
+        <div className="rounded-2xl border-[1.4px] border-white/10 bg-white/5 p-2 backdrop-blur-2xl [zoom:0.67] min-[420px]:[zoom:0.76]">
           <AskQuantumPanel className="relative" />
         </div>
       </div>

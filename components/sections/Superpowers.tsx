@@ -6,12 +6,12 @@ import { IterateCard } from "@/components/mockups/IterateCard";
 import { superpowers } from "@/lib/content";
 
 const scale =
-  "origin-top [zoom:0.61] min-[430px]:[zoom:0.7] sm:[zoom:0.92] lg:[zoom:1]";
+  "origin-top [zoom:0.58] min-[430px]:[zoom:0.68] sm:[zoom:0.92] lg:[zoom:1]";
 /* CollaboratorGraphCard/IterateCard are natively 602px vs ParagraphGeneratorCard's
    576px — scaled down proportionally (×576/602) so all three render at the same
    effective width and keep the same side margin at every breakpoint. */
 const scaleWide =
-  "origin-top [zoom:0.585] min-[430px]:[zoom:0.67] sm:[zoom:0.88] lg:[zoom:0.96]";
+  "origin-top [zoom:0.555] min-[430px]:[zoom:0.65] sm:[zoom:0.88] lg:[zoom:0.96]";
 
 export function Superpowers() {
   return (
