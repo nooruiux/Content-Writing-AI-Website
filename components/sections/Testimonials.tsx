@@ -80,7 +80,7 @@ export function Testimonials() {
         </div>
 
         {/* main card */}
-        <div className="relative z-10 mx-4 flex w-full max-w-[1059px] flex-col overflow-hidden rounded-[32px] border-[1.4px] border-border bg-surface sm:flex-row">
+        <div className="relative z-10 mx-5 flex w-full max-w-[1059px] flex-col overflow-hidden rounded-[32px] border-[1.4px] border-border bg-surface sm:flex-row">
           <div className="relative flex shrink-0 items-end justify-center pt-8 sm:w-[390px] sm:pt-0">
             <div className="relative h-[280px] w-[240px] sm:h-[450px] sm:w-[360px]">
               <Image
