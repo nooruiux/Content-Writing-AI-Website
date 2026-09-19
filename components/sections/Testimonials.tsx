@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
@@ -50,6 +50,20 @@ export function Testimonials() {
 
   const go = (delta: number) =>
     setIndex((v) => Math.min(count - 1, Math.max(0, v + delta)));
+  const wrap = (i: number) => (i + count) % count;
+  const goMobile = (delta: number) => setIndex((v) => wrap(v + delta));
+
+  const touchStartX = useRef<number | null>(null);
+  const handlePointerDown = (e: ReactPointerEvent<HTMLDivElement>) => {
+    touchStartX.current = e.clientX;
+  };
+  const handlePointerUp = (e: ReactPointerEvent<HTMLDivElement>) => {
+    if (touchStartX.current === null) return;
+    const delta = e.clientX - touchStartX.current;
+    touchStartX.current = null;
+    if (delta < -50) goMobile(1);
+    else if (delta > 50) goMobile(-1);
+  };
 
   const q = quotes[index];
   const atStart = index === 0;
@@ -68,8 +82,9 @@ export function Testimonials() {
         />
       </Container>
 
+      {/* Desktop (lg and up) — unchanged: peek cards, wide card, arrow navigation */}
       {/* Figma frame 1:3310 subheading bottom (y128) → card 1:3296 top (y200) = 72px */}
-      <div className="relative mt-18 flex justify-center">
+      <div className="relative mt-18 hidden justify-center lg:flex">
         {/* side peek cards — a faded glimpse of the neighbouring quotes */}
         <div
           aria-hidden
@@ -122,7 +137,7 @@ export function Testimonials() {
         </div>
       </div>
 
-      <div className="mt-10 flex items-center justify-center gap-5">
+      <div className="mt-10 hidden items-center justify-center gap-5 lg:flex">
         <button
           type="button"
           aria-label="Previous testimonial"
@@ -153,6 +168,65 @@ export function Testimonials() {
             className="opacity-55 transition-opacity duration-200 group-hover:opacity-100"
           />
         </button>
+      </div>
+
+      {/* Mobile & tablet (below lg) — card-style photo banner, swipe right-to-left slider, dot nav */}
+      <div className="mt-10 lg:hidden">
+        <div
+          key={q.slug}
+          onPointerDown={handlePointerDown}
+          onPointerUp={handlePointerUp}
+          className="animate-testimonial-slide mx-5 flex touch-pan-y flex-col overflow-hidden rounded-[32px] border-[1.4px] border-border bg-surface"
+        >
+          <div className="relative h-[200px] w-full sm:h-[240px]">
+            <Image
+              src={q.photo}
+              alt=""
+              fill
+              sizes="100vw"
+              priority={index === 0}
+              className="object-cover object-top grayscale"
+            />
+          </div>
+
+          <div className="flex flex-col gap-6 p-6 sm:gap-8 sm:p-8">
+            <div className="flex flex-col items-start gap-3">
+              <GradientText gradient={userStoryGradient} className="text-base font-bold">
+                {q.eyebrow}
+              </GradientText>
+              <p className="text-left text-xl font-bold leading-[1.35] text-white sm:text-[22px]">
+                {q.text}
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-0.5">
+              <p className="text-lead font-bold leading-[26px] text-white">{q.name}</p>
+              <p className="text-sm leading-[18px] text-white/[0.88]">{q.role}</p>
+            </div>
+
+            <Link
+              href={`/story/${q.slug}`}
+              className="flex h-12 w-fit shrink-0 items-center gap-2 rounded-pill-lg bg-accent px-6 text-base font-bold text-white transition-colors duration-200 ease-out hover:bg-[#0f8fe6]"
+            >
+              {testimonials.cta.label}
+              <Icon src="/assets/testimonials/read-arrow.svg" size={16} />
+            </Link>
+          </div>
+        </div>
+
+        <div className="mt-6 flex items-center justify-center gap-2">
+          {quotes.map((quote, i) => (
+            <button
+              key={quote.slug}
+              type="button"
+              aria-label={`Go to testimonial ${i + 1}`}
+              onClick={() => setIndex(i)}
+              className={`h-2 rounded-full transition-all duration-200 ${
+                i === index ? "w-6 bg-accent" : "w-2 bg-white/25"
+              }`}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
