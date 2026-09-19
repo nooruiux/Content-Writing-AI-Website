@@ -33,7 +33,7 @@ function Pill({ item }: { item: Item }) {
         height={18}
         className="size-[18px] shrink-0 transition-transform duration-200 group-hover:scale-110"
       />
-      <span className="truncate text-[13px] font-medium text-white/90 transition-colors duration-200 group-hover:text-white">
+      <span className="truncate text-sm font-semibold text-white/90 transition-colors duration-200 group-hover:text-white">
         {item.name}
       </span>
     </span>
@@ -42,7 +42,7 @@ function Pill({ item }: { item: Item }) {
 
 function MorePill() {
   return (
-    <span className="flex h-[52px] cursor-default items-center justify-center rounded-xl border border-accent/40 bg-accent-soft px-4 text-[13px] font-bold text-accent transition-[background-color,border-color,box-shadow] duration-200 hover:border-accent/70 hover:bg-accent/20 hover:shadow-[0_0_0_1px_rgb(24_160_251/0.3),0_10px_28px_-12px_rgb(24_160_251/0.6)]">
+    <span className="flex h-[52px] cursor-default items-center justify-center rounded-xl border border-accent/40 bg-accent-soft px-4 text-sm font-bold text-accent transition-[background-color,border-color,box-shadow] duration-200 hover:border-accent/70 hover:bg-accent/20 hover:shadow-[0_0_0_1px_rgb(24_160_251/0.3),0_10px_28px_-12px_rgb(24_160_251/0.6)]">
       {integrations.more}
     </span>
   );
@@ -50,7 +50,7 @@ function MorePill() {
 
 function GroupLabel({ children }: { children: ReactNode }) {
   return (
-    <p className="mb-4 text-[11px] font-bold uppercase tracking-[0.14em] text-white/40">{children}</p>
+    <p className="mb-4 text-xs font-bold uppercase tracking-[0.14em] text-white/40">{children}</p>
   );
 }
 
@@ -75,7 +75,7 @@ function Hub() {
         height={44}
         className="relative size-11"
       />
-      <span className="relative text-[15px] font-bold text-white">{site.name}</span>
+      <span className="relative text-base font-bold text-white">{site.name}</span>
     </div>
   );
 }
