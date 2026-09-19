@@ -220,12 +220,12 @@ function TopToolbar({ className = "" }: { className?: string }) {
   return (
     <div className={`flex items-center justify-between ${className}`}>
       <div className="flex items-center gap-6">
-        <span className="rounded-lg border border-border bg-white/10 px-5 py-2.5 text-sm font-bold text-white shadow-[inset_0_-1px_1px_rgb(255_255_255/0.08)]">
+        <span className="rounded-lg border border-border bg-white/10 px-5 py-2.5 text-base font-bold text-white shadow-[inset_0_-1px_1px_rgb(255_255_255/0.08)]">
           Text to speech
         </span>
         <Icon src="/assets/voice/ic-cloud.svg" size={24} />
       </div>
-      <span className="flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-bold text-white">
+      <span className="flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-base font-bold text-white">
         <Icon src="/assets/voice/ic-export-cloud.svg" size={16} />
         Export
         <Icon src="/assets/voice/ic-chevdown.svg" size={16} />
@@ -276,7 +276,7 @@ export function VoiceEditorMobile() {
         <TopToolbar className="w-full max-w-[420px]" />
 
         <div className="flex flex-col items-center gap-3">
-          <span className="self-end rounded-lg border border-border px-4 py-2 text-sm font-bold text-white tabular-nums">
+          <span className="self-end rounded-lg border border-border px-4 py-2 text-base font-bold text-white tabular-nums">
             <PlayheadTime />
           </span>
           <div className="[zoom:0.66] min-[380px]:[zoom:0.74]">
