@@ -6,7 +6,7 @@ export function CtaBanner() {
   return (
     <section className="pt-14 pb-6">
       <Container>
-        <div className="flex flex-col items-start gap-8 rounded-2xl border border-border bg-surface p-8 backdrop-blur-xs sm:flex-row sm:items-center sm:justify-between sm:p-12 lg:p-16">
+        <div className="flex flex-col items-center gap-8 rounded-2xl border border-border bg-surface p-8 text-center backdrop-blur-xs sm:flex-row sm:items-center sm:justify-between sm:p-12 sm:text-left lg:p-16">
           <div className="flex flex-col gap-3">
             <h2 className="text-[28px] font-bold leading-[1.15] text-white sm:text-h5">{cta.title}</h2>
             <p className="text-base font-medium text-white/80 sm:text-lead">{cta.subtitle}</p>
