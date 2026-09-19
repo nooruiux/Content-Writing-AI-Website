@@ -6,7 +6,7 @@ import { hero } from "@/lib/content";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pb-14">
+    <section className="relative overflow-hidden pb-6 md:pb-14">
       <Container className="relative z-10 flex flex-col items-center gap-10 pt-20 text-center lg:pt-28">
         <div className="flex w-full max-w-[690px] flex-col items-center gap-6">
           <h1 className="text-balance text-[32px] font-bold leading-[1.1] text-white sm:text-[52px] lg:text-display">

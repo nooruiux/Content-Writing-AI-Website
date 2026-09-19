@@ -16,7 +16,7 @@ function footerLinkHref(label: string) {
 
 export function Footer() {
   return (
-    <footer className="pt-6 pb-14">
+    <footer className="pt-6 pb-6 md:pb-14">
       <Container className="flex flex-col items-center gap-10">
         <div className="flex w-full flex-col gap-4 lg:flex-row lg:items-stretch">
           <div className={`w-full p-8 lg:flex-1 ${panel}`}>
