@@ -24,7 +24,7 @@ const CONNECTORS = [
 
 function Pill({ item }: { item: Item }) {
   return (
-    <span className="group flex h-[52px] cursor-default items-center gap-3 rounded-xl border border-white/[0.08] bg-white/[0.05] px-4 backdrop-blur-sm transition-[background-color,border-color,box-shadow] duration-200 hover:border-accent/40 hover:bg-white/[0.09] hover:shadow-[0_0_0_1px_rgb(24_160_251/0.22),0_10px_28px_-12px_rgb(24_160_251/0.55)]">
+    <span className="group flex h-[52px] cursor-default items-center justify-center gap-3 rounded-xl border border-white/[0.08] bg-white/[0.05] px-4 backdrop-blur-sm transition-[background-color,border-color,box-shadow] duration-200 hover:border-accent/40 hover:bg-white/[0.09] hover:shadow-[0_0_0_1px_rgb(24_160_251/0.22),0_10px_28px_-12px_rgb(24_160_251/0.55)]">
       <img
         src={item.icon}
         alt=""
