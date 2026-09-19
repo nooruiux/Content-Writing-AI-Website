@@ -50,7 +50,7 @@ function MorePill() {
 
 function GroupLabel({ children }: { children: ReactNode }) {
   return (
-    <p className="mb-4 text-xs font-bold uppercase tracking-[0.14em] text-white/40">{children}</p>
+    <p className="mb-4 text-center text-xs font-bold uppercase tracking-[0.14em] text-white/40">{children}</p>
   );
 }
 
