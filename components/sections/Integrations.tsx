@@ -84,7 +84,7 @@ export function Integrations() {
   const { leftGroups, right } = integrations;
 
   return (
-    <section id="integrations" className="py-14">
+    <section id="integrations" className="pt-14 pb-6 md:pb-14">
       <Container className="flex flex-col items-center gap-14">
         <SectionHeading
           title={integrations.title}

@@ -5,7 +5,7 @@ import { voiceAI } from "@/lib/content";
 
 export function VoiceAI() {
   return (
-    <section className="overflow-hidden py-14">
+    <section className="overflow-hidden pt-14 pb-6 md:pb-14">
       <Container className="flex flex-col items-center gap-12 lg:gap-16">
         <SectionHeading
           balance={false}

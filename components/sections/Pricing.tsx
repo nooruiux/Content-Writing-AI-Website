@@ -73,7 +73,7 @@ function PricingCard({ plan }: { plan: Plan }) {
 
 export function Pricing() {
   return (
-    <section id="pricing" className="py-14">
+    <section id="pricing" className="pt-14 pb-6 md:pb-14">
       <Container className="flex flex-col items-center gap-12 lg:gap-16">
         <div className="flex flex-col items-center gap-8">
           <SectionHeading

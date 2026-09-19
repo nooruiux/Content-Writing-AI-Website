@@ -10,7 +10,7 @@ const scale =
 
 export function Superpowers() {
   return (
-    <section id="solution" className="py-14">
+    <section id="solution" className="pt-14 pb-6 md:pb-14">
       <Container className="flex flex-col items-center gap-12 lg:gap-16">
         <SectionHeading
           balance={false}
