@@ -279,12 +279,12 @@ export function VoiceEditorMobile() {
           <span className="self-end rounded-lg border border-border px-4 py-2 text-base font-bold text-white tabular-nums">
             <PlayheadTime />
           </span>
-          <div className="[zoom:0.66] min-[380px]:[zoom:0.74]">
+          <div className="[zoom:0.7] min-[380px]:[zoom:0.78]">
             <VoiceOutput />
           </div>
         </div>
 
-        <div className="[zoom:0.46] min-[380px]:[zoom:0.52]">
+        <div className="[zoom:0.52] min-[380px]:[zoom:0.58]">
           <EditorTimeline width={640} />
         </div>
 
