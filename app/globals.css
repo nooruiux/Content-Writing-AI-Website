@@ -53,6 +53,9 @@
 
   html {
     -webkit-text-size-adjust: 100%;
+    /* belt-and-braces: body's overflow-x:hidden alone doesn't reliably stop
+       window-level horizontal scroll in every engine if a descendant overflows */
+    overflow-x: hidden;
   }
 
   body {

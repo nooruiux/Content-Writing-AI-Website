@@ -39,12 +39,12 @@ export function Footer() {
                 {footer.columns.map((col) => (
                   <div key={col.heading} className="flex flex-col gap-5">
                     <p className="text-base font-bold text-white">{col.heading}</p>
-                    <ul className="flex flex-col gap-3 text-base text-white/[0.72]">
+                    <ul className="-my-1.5 flex flex-col text-base text-white/[0.72]">
                       {col.links.map((link) => (
                         <li key={link}>
                           <a
                             href={footerLinkHref(link)}
-                            className="transition-colors hover:text-white"
+                            className="inline-block py-1.5 transition-colors hover:text-white"
                           >
                             {link}
                           </a>
