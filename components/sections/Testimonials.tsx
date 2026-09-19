@@ -105,7 +105,7 @@ export function Testimonials() {
               </p>
             </div>
 
-            <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between sm:gap-8">
+            <div className="flex flex-col items-start gap-6 lg:flex-row lg:items-center lg:justify-between lg:gap-8">
               <div className="flex flex-col gap-0.5">
                 <p className="text-lead font-bold leading-[26px] text-white">{q.name}</p>
                 <p className="text-sm leading-[18px] text-white/[0.88]">{q.role}</p>

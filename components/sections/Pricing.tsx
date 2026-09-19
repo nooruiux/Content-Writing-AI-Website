@@ -85,7 +85,7 @@ export function Pricing() {
           <BillingToggle />
         </div>
 
-        <div className="flex w-full max-w-[1072px] flex-col items-center gap-8 md:flex-row md:items-stretch md:justify-center md:gap-6 lg:gap-11">
+        <div className="flex w-full max-w-[1072px] flex-col items-center gap-8 xl:flex-row xl:items-stretch xl:justify-center xl:gap-6 2xl:gap-8">
           {pricing.plans.map((plan) => (
             <PricingCard key={plan.name} plan={plan} />
           ))}
