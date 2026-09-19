@@ -191,7 +191,7 @@ export function Testimonials() {
 
           <div className="flex flex-col gap-6 p-6 sm:gap-8 sm:p-8">
             <div className="flex flex-col items-start gap-3">
-              <GradientText gradient={userStoryGradient} className="text-base font-bold">
+              <GradientText gradient={userStoryGradient} className="self-center text-base font-bold">
                 {q.eyebrow}
               </GradientText>
               <p className="text-left text-xl font-bold leading-[1.35] text-white sm:text-[22px]">
@@ -199,14 +199,14 @@ export function Testimonials() {
               </p>
             </div>
 
-            <div className="flex flex-col gap-0.5">
+            <div className="flex flex-col items-center gap-0.5 text-center">
               <p className="text-lead font-bold leading-[26px] text-white">{q.name}</p>
               <p className="text-sm leading-[18px] text-white/[0.88]">{q.role}</p>
             </div>
 
             <Link
               href={`/story/${q.slug}`}
-              className="flex h-12 w-fit shrink-0 items-center gap-2 rounded-pill-lg bg-accent px-6 text-base font-bold text-white transition-colors duration-200 ease-out hover:bg-[#0f8fe6]"
+              className="flex h-12 w-fit shrink-0 items-center gap-2 self-center rounded-pill-lg bg-accent px-6 text-base font-bold text-white transition-colors duration-200 ease-out hover:bg-[#0f8fe6]"
             >
               {testimonials.cta.label}
               <Icon src="/assets/testimonials/read-arrow.svg" size={16} />
