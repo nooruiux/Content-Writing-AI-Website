@@ -234,7 +234,7 @@ function TopToolbar({
   const pillPad = mobileCompact ? "px-4 py-2 md:px-5 md:py-2.5" : "px-5 py-2.5";
   const pillText = mobileCompact ? "text-sm md:text-base" : "text-base";
   return (
-    <div className={`flex items-center justify-between ${className}`}>
+    <div className={`flex items-center justify-between gap-4 ${className}`}>
       <div className="flex items-center gap-3 md:gap-6">
         <span
           className={`whitespace-nowrap rounded-lg border border-border bg-white/10 font-bold text-white shadow-[inset_0_-1px_1px_rgb(255_255_255/0.08)] ${pillPad} ${pillText}`}
@@ -261,7 +261,7 @@ export function VoiceEditorDesktop() {
       {/* Window frame — exact outline, gradient border and traffic lights
          exported from Figma node 1:2310 (radius 20, tabbed top-left, #1D1C20). */}
       <img
-        src="/assets/voice/editor-frame.svg"
+        src="/assets/voice/editor-frame-v2.svg"
         alt=""
         aria-hidden
         className="pointer-events-none absolute inset-0 size-full"
