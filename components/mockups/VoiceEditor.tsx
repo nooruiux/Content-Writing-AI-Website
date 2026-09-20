@@ -255,7 +255,7 @@ function TopToolbar({
     ? "whitespace-nowrap rounded-lg border border-border bg-white/10 px-4 py-2 text-sm font-bold text-white shadow-[inset_0_-1px_1px_rgb(255_255_255/0.08)] md:px-5 md:py-2.5 md:text-base"
     : "rounded-lg border border-border bg-white/10 px-5 py-2.5 text-base font-bold text-white shadow-[inset_0_-1px_1px_rgb(255_255_255/0.08)]";
   const exportClass = compact
-    ? "flex shrink-0 items-center gap-2 whitespace-nowrap rounded-lg bg-accent px-4 py-2 text-sm font-bold text-white md:px-5 md:py-2.5 md:text-base"
+    ? "flex shrink-0 items-center gap-2 whitespace-nowrap rounded-lg bg-accent py-2 pl-4 pr-5 text-sm font-bold text-white md:py-2.5 md:pl-5 md:pr-6 md:text-base"
     : "flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-base font-bold text-white";
 
   return (
