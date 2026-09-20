@@ -1,11 +1,11 @@
 import { superpowers } from "@/lib/content";
 
 const positions = [
-  { top: 120, left: 12 }, // Michael
-  { top: 104, left: 356 }, // Eleanor
-  { top: 200, left: 240 }, // Darrell
-  { top: 258, left: 52 }, // Kristin
-  { top: 244, left: 404 }, // Jacob
+  { top: 120, left: 40 }, // Michael — left edge aligned with the "Craft together" heading
+  { top: 104, left: 384 }, // Eleanor
+  { top: 200, left: 268 }, // Darrell
+  { top: 258, left: 80 }, // Kristin
+  { top: 244, left: 432 }, // Jacob
 ];
 
 function PersonPill({
@@ -53,10 +53,10 @@ function PersonPill({
 /** Each connector: the base run, plus the two node points (elbow + pill entry)
    where a diamond / chevron marker sits, matching the Figma connector style. */
 const CONNECTORS = [
-  { d: "M110 150 L250 150 L250 220", diamond: [250, 150], arrow: { at: [250, 220], dir: "down" } },
-  { d: "M300 232 L390 232 L390 128", diamond: [390, 232], arrow: { at: [390, 128], dir: "up" } },
-  { d: "M330 232 L440 232 L440 268", diamond: [440, 232], arrow: { at: [440, 268], dir: "down" } },
-  { d: "M270 232 L120 232 L120 282", diamond: [120, 232], arrow: { at: [120, 282], dir: "down" } },
+  { d: "M138 150 L278 150 L278 220", diamond: [278, 150], arrow: { at: [278, 220], dir: "down" } },
+  { d: "M328 232 L418 232 L418 128", diamond: [418, 232], arrow: { at: [418, 128], dir: "up" } },
+  { d: "M358 232 L468 232 L468 268", diamond: [468, 232], arrow: { at: [468, 268], dir: "down" } },
+  { d: "M298 232 L148 232 L148 282", diamond: [148, 232], arrow: { at: [148, 282], dir: "down" } },
 ] as const;
 
 const ARROW_POINTS: Record<string, string> = {
