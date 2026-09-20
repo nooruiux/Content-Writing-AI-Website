@@ -50,18 +50,49 @@ function PersonPill({
   );
 }
 
-/** Each connector: the base run, plus the two node points (elbow + pill entry)
-   where a diamond / chevron marker sits, matching the Figma connector style. */
+/** Each connector runs from a person into Darrell. The joint cluster
+   (diamond, circle, arrow — arrow nearest Darrell, pointing outward) sits on
+   the segment that's adjacent to Darrell, matching the Figma connector style. */
 const CONNECTORS = [
-  { d: "M138 150 L278 150 L278 220", diamond: [278, 150], arrow: { at: [278, 220], dir: "down" } },
-  { d: "M328 232 L418 232 L418 128", diamond: [418, 232], arrow: { at: [418, 128], dir: "up" } },
-  { d: "M358 232 L468 232 L468 268", diamond: [468, 232], arrow: { at: [468, 268], dir: "down" } },
-  { d: "M298 232 L148 232 L148 282", diamond: [148, 232], arrow: { at: [148, 282], dir: "down" } },
+  {
+    d: "M138 150 L278 150 L278 220",
+    cluster: [
+      { type: "diamond", at: [278, 183] },
+      { type: "circle", at: [278, 195] },
+      { type: "arrow", at: [278, 206], dir: "up" },
+    ],
+  },
+  {
+    d: "M328 232 L418 232 L418 128",
+    cluster: [
+      { type: "arrow", at: [345, 232], dir: "right" },
+      { type: "circle", at: [357, 232] },
+      { type: "diamond", at: [370, 232] },
+    ],
+  },
+  {
+    d: "M358 232 L468 232 L468 268",
+    cluster: [
+      { type: "arrow", at: [375, 232], dir: "right" },
+      { type: "circle", at: [387, 232] },
+      { type: "diamond", at: [400, 232] },
+    ],
+  },
+  {
+    d: "M298 232 L148 232 L148 282",
+    cluster: [
+      { type: "arrow", at: [280, 232], dir: "left" },
+      { type: "circle", at: [267, 232] },
+      { type: "diamond", at: [254, 232] },
+    ],
+  },
 ] as const;
 
 const ARROW_POINTS: Record<string, string> = {
   up: "-4,3 4,3 0,-4",
   down: "-4,-3 4,-3 0,4",
+  left: "3,-4 3,4 -4,0",
+  right: "-3,-4 -3,4 4,0",
 };
 
 function Diamond({ x, y }: { x: number; y: number }) {
@@ -78,6 +109,10 @@ function Diamond({ x, y }: { x: number; y: number }) {
       strokeOpacity="0.32"
     />
   );
+}
+
+function Circle({ x, y }: { x: number; y: number }) {
+  return <circle cx={x} cy={y} r={2.5} fill="#1D1C20" stroke="white" strokeOpacity="0.32" />;
 }
 
 function Arrow({ x, y, dir }: { x: number; y: number; dir: string }) {
@@ -121,12 +156,14 @@ export function CollaboratorGraphCard() {
             <path key={i} d={c.d} pathLength={1} style={{ animationDelay: `${i * -0.9}s` }} />
           ))}
         </g>
-        {CONNECTORS.map((c, i) => (
-          <Diamond key={`d${i}`} x={c.diamond[0]} y={c.diamond[1]} />
-        ))}
-        {CONNECTORS.map((c, i) => (
-          <Arrow key={`a${i}`} x={c.arrow.at[0]} y={c.arrow.at[1]} dir={c.arrow.dir} />
-        ))}
+        {CONNECTORS.map((c, i) =>
+          c.cluster.map((m, j) => {
+            const key = `${i}-${j}`;
+            if (m.type === "diamond") return <Diamond key={key} x={m.at[0]} y={m.at[1]} />;
+            if (m.type === "circle") return <Circle key={key} x={m.at[0]} y={m.at[1]} />;
+            return <Arrow key={key} x={m.at[0]} y={m.at[1]} dir={"dir" in m ? m.dir : "up"} />;
+          }),
+        )}
       </svg>
 
       {craft.people.map((person, i) => (
