@@ -510,6 +510,32 @@
   }
 }
 
+/* Superpowers "Craft together" connectors — a purple light pulses along
+   each dashed line into Darrell, same trick as the Integrations flow. */
+.craft-flow path,
+.craft-flow-bloom path {
+  fill: none;
+  stroke: #b321cb;
+  stroke-linecap: round;
+  stroke-dasharray: 0.12 0.88;
+  animation: ig-flow 2.4s linear infinite;
+}
+.craft-flow path {
+  stroke-width: 1.2;
+}
+.craft-flow-bloom path {
+  stroke-width: 5;
+  opacity: 0.35;
+  filter: blur(2.5px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .craft-flow path,
+  .craft-flow-bloom path {
+    animation: none;
+    stroke: transparent;
+  }
+}
+
 /* Testimonials mobile/tablet slider — each swipe/dot change re-mounts the
    card (via key={slug}), replaying a right-to-left slide-in. */
 @keyframes testimonial-slide-in {

@@ -50,6 +50,47 @@ function PersonPill({
   );
 }
 
+/** Each connector: the base run, plus the two node points (elbow + pill entry)
+   where a diamond / chevron marker sits, matching the Figma connector style. */
+const CONNECTORS = [
+  { d: "M110 150 L250 150 L250 220", diamond: [250, 150], arrow: { at: [250, 220], dir: "down" } },
+  { d: "M300 232 L390 232 L390 128", diamond: [390, 232], arrow: { at: [390, 128], dir: "up" } },
+  { d: "M330 232 L440 232 L440 268", diamond: [440, 232], arrow: { at: [440, 268], dir: "down" } },
+  { d: "M270 232 L120 232 L120 282", diamond: [120, 232], arrow: { at: [120, 282], dir: "down" } },
+] as const;
+
+const ARROW_POINTS: Record<string, string> = {
+  up: "-4,3 4,3 0,-4",
+  down: "-4,-3 4,-3 0,4",
+};
+
+function Diamond({ x, y }: { x: number; y: number }) {
+  return (
+    <rect
+      x={x - 3.5}
+      y={y - 3.5}
+      width={7}
+      height={7}
+      rx={1.5}
+      transform={`rotate(45 ${x} ${y})`}
+      fill="#1D1C20"
+      stroke="white"
+      strokeOpacity="0.32"
+    />
+  );
+}
+
+function Arrow({ x, y, dir }: { x: number; y: number; dir: string }) {
+  return (
+    <polygon
+      points={ARROW_POINTS[dir]}
+      transform={`translate(${x} ${y})`}
+      fill="white"
+      fillOpacity="0.32"
+    />
+  );
+}
+
 export function CollaboratorGraphCard() {
   const { craft } = superpowers;
   return (
@@ -65,11 +106,27 @@ export function CollaboratorGraphCard() {
         fill="none"
         aria-hidden
       >
-        <path
-          d="M110 150 L250 150 L250 220 M300 232 L390 232 L390 128 M330 232 L440 232 L440 268 M270 232 L120 232 L120 282"
-          stroke="white"
-          strokeOpacity="0.14"
-        />
+        <g stroke="white" strokeOpacity="0.16" strokeDasharray="1.5 3.5" strokeLinecap="round">
+          {CONNECTORS.map((c, i) => (
+            <path key={i} d={c.d} />
+          ))}
+        </g>
+        <g className="craft-flow-bloom">
+          {CONNECTORS.map((c, i) => (
+            <path key={i} d={c.d} pathLength={1} style={{ animationDelay: `${i * -0.9}s` }} />
+          ))}
+        </g>
+        <g className="craft-flow">
+          {CONNECTORS.map((c, i) => (
+            <path key={i} d={c.d} pathLength={1} style={{ animationDelay: `${i * -0.9}s` }} />
+          ))}
+        </g>
+        {CONNECTORS.map((c, i) => (
+          <Diamond key={`d${i}`} x={c.diamond[0]} y={c.diamond[1]} />
+        ))}
+        {CONNECTORS.map((c, i) => (
+          <Arrow key={`a${i}`} x={c.arrow.at[0]} y={c.arrow.at[1]} dir={c.arrow.dir} />
+        ))}
       </svg>
 
       {craft.people.map((person, i) => (
