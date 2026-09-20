@@ -224,16 +224,28 @@ function TitleBar() {
   );
 }
 
-function TopToolbar({ className = "" }: { className?: string }) {
+function TopToolbar({
+  className = "",
+  mobileCompact = false,
+}: {
+  className?: string;
+  mobileCompact?: boolean;
+}) {
+  const pillPad = mobileCompact ? "px-4 py-2 md:px-5 md:py-2.5" : "px-5 py-2.5";
+  const pillText = mobileCompact ? "text-sm md:text-base" : "text-base";
   return (
     <div className={`flex items-center justify-between ${className}`}>
       <div className="flex items-center gap-3 md:gap-6">
-        <span className="whitespace-nowrap rounded-lg border border-border bg-white/10 px-5 py-2.5 text-base font-bold text-white shadow-[inset_0_-1px_1px_rgb(255_255_255/0.08)]">
+        <span
+          className={`whitespace-nowrap rounded-lg border border-border bg-white/10 font-bold text-white shadow-[inset_0_-1px_1px_rgb(255_255_255/0.08)] ${pillPad} ${pillText}`}
+        >
           Text to speech
         </span>
         <Icon src="/assets/voice/ic-cloud.svg" size={24} className="shrink-0" />
       </div>
-      <span className="flex shrink-0 items-center gap-2 whitespace-nowrap rounded-lg bg-accent px-5 py-2.5 text-base font-bold text-white">
+      <span
+        className={`flex shrink-0 items-center gap-2 whitespace-nowrap rounded-lg bg-accent font-bold text-white ${pillPad} ${pillText}`}
+      >
         <Icon src="/assets/voice/ic-export-cloud.svg" size={16} />
         Export
         <Icon src="/assets/voice/ic-chevdown.svg" size={16} />
@@ -280,19 +292,19 @@ export function VoiceEditorMobile() {
   return (
     <div className="w-full overflow-hidden rounded-[20px] border border-white/[0.12] bg-surface pb-8">
       <TitleBar />
-      <div className="mt-6 flex flex-col items-center gap-8 px-4">
-        <TopToolbar className="w-full max-w-[420px]" />
+      <div className="mt-6 flex flex-col items-center gap-8 px-6">
+        <TopToolbar className="w-full max-w-[420px]" mobileCompact />
 
         <div className="flex w-full flex-col items-center gap-4">
           <span className="self-end rounded-lg border border-border px-4 py-2 text-base font-bold text-white tabular-nums">
             <PlayheadTime />
           </span>
-          <div className="[zoom:0.7] min-[380px]:[zoom:0.78]">
+          <div className="[zoom:0.56] min-[380px]:[zoom:0.62]">
             <VoiceOutput />
           </div>
         </div>
 
-        <div className="[zoom:0.52] min-[380px]:[zoom:0.58]">
+        <div className="[zoom:0.42] min-[380px]:[zoom:0.46]">
           <EditorTimeline width={640} />
         </div>
 
