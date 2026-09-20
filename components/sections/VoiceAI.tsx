@@ -20,17 +20,18 @@ export function VoiceAI() {
         />
       </Container>
 
-      {/* lg+ (true desktop) : layered Figma editor, unchanged. 24px below the
-         subheading per Figma (1:2306 → 1:2309). */}
-      <div className="mt-6 hidden w-full justify-center lg:flex">
-        <div className="shrink-0 lg:[zoom:0.82] xl:[zoom:1]">
+      {/* xl+ (true desktop, 1280px+) : layered Figma editor, unchanged. 24px
+         below the subheading per Figma (1:2306 → 1:2309). */}
+      <div className="mt-6 hidden w-full justify-center xl:flex">
+        <div className="shrink-0 [zoom:1]">
           <VoiceEditorDesktop />
         </div>
       </div>
 
-      {/* md–lg (tablet) : same layered layout, with the curve/spacing fixes */}
-      <div className="mt-6 hidden w-full justify-center md:flex lg:hidden">
-        <div className="shrink-0 [zoom:0.66]">
+      {/* md–xl (tablet, incl. common landscape tablet widths up to 1279px) :
+         same layered layout, with the curve/spacing fixes */}
+      <div className="mt-6 hidden w-full justify-center md:flex xl:hidden">
+        <div className="shrink-0 [zoom:0.66] lg:[zoom:0.82]">
           <VoiceEditorTablet />
         </div>
       </div>
