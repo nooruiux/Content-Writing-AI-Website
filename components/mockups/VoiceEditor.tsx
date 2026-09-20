@@ -299,7 +299,7 @@ export function VoiceEditorMobile() {
         <SettingsPanel
           className="[zoom:0.9] min-[380px]:[zoom:1]"
           afterHearThisVoice={
-            <VoiceToProcessCard className="max-w-full self-center [zoom:0.65] min-[380px]:[zoom:0.72]" />
+            <VoiceToProcessCard className="w-fit max-w-full self-center [zoom:0.6]" />
           }
         />
       </div>
