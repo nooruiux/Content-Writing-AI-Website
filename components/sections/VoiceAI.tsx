@@ -1,6 +1,10 @@
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { VoiceEditorDesktop, VoiceEditorMobile } from "@/components/mockups/VoiceEditor";
+import {
+  VoiceEditorDesktop,
+  VoiceEditorMobile,
+  VoiceEditorTablet,
+} from "@/components/mockups/VoiceEditor";
 import { voiceAI } from "@/lib/content";
 
 export function VoiceAI() {
@@ -16,10 +20,18 @@ export function VoiceAI() {
         />
       </Container>
 
-      {/* md+ : layered Figma editor, scaled. 24px below the subheading per Figma (1:2306 → 1:2309). */}
-      <div className="mt-6 hidden w-full justify-center md:flex">
-        <div className="shrink-0 [zoom:0.66] lg:[zoom:0.82] xl:[zoom:1]">
+      {/* lg+ (true desktop) : layered Figma editor, unchanged. 24px below the
+         subheading per Figma (1:2306 → 1:2309). */}
+      <div className="mt-6 hidden w-full justify-center lg:flex">
+        <div className="shrink-0 lg:[zoom:0.82] xl:[zoom:1]">
           <VoiceEditorDesktop />
+        </div>
+      </div>
+
+      {/* md–lg (tablet) : same layered layout, with the curve/spacing fixes */}
+      <div className="mt-6 hidden w-full justify-center md:flex lg:hidden">
+        <div className="shrink-0 [zoom:0.66]">
+          <VoiceEditorTablet />
         </div>
       </div>
 
