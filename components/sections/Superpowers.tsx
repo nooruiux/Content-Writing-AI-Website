@@ -35,7 +35,7 @@ export function Superpowers() {
           <div className={scale}>
             <ParagraphGeneratorCard />
           </div>
-          <div className="flex flex-col items-center gap-6">
+          <div className="flex flex-col items-center gap-6 lg:gap-12">
             <div className={scaleWide}>
               <CollaboratorGraphCard />
             </div>
