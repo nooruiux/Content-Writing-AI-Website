@@ -510,12 +510,12 @@
   }
 }
 
-/* Superpowers "Craft together" connectors — a purple light pulses along
+/* Superpowers "Craft together" connectors — a white light pulses along
    each dashed line into Darrell, same trick as the Integrations flow. */
 .craft-flow path,
 .craft-flow-bloom path {
   fill: none;
-  stroke: #b321cb;
+  stroke: #ffffff;
   stroke-linecap: round;
   stroke-dasharray: 0.12 0.88;
   animation: ig-flow 2.4s linear infinite;
