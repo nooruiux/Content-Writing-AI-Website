@@ -50,40 +50,41 @@ function PersonPill({
   );
 }
 
-/** Each connector runs from a person into Darrell. The joint cluster
-   (diamond, circle, arrow — arrow nearest Darrell, pointing outward) sits on
-   the segment that's adjacent to Darrell, matching the Figma connector style. */
+/** Each connector runs from a person into Darrell. Per the Figma reference,
+   the three joint markers are spread along the segment adjacent to Darrell:
+   diamond at the far elbow, circle at the midpoint, arrow closest to Darrell
+   (pointing outward, away from Darrell) — not bunched together at one end. */
 const CONNECTORS = [
   {
     d: "M138 150 L278 150 L278 220",
     cluster: [
-      { type: "diamond", at: [278, 183] },
-      { type: "circle", at: [278, 195] },
-      { type: "arrow", at: [278, 206], dir: "up" },
+      { type: "diamond", at: [278, 150] },
+      { type: "circle", at: [278, 183] },
+      { type: "arrow", at: [278, 210], dir: "up" },
     ],
   },
   {
     d: "M328 232 L418 232 L418 128",
     cluster: [
+      { type: "diamond", at: [418, 232] },
+      { type: "circle", at: [373, 232] },
       { type: "arrow", at: [345, 232], dir: "right" },
-      { type: "circle", at: [357, 232] },
-      { type: "diamond", at: [370, 232] },
     ],
   },
   {
     d: "M358 232 L468 232 L468 268",
     cluster: [
+      { type: "diamond", at: [468, 232] },
+      { type: "circle", at: [413, 232] },
       { type: "arrow", at: [375, 232], dir: "right" },
-      { type: "circle", at: [387, 232] },
-      { type: "diamond", at: [400, 232] },
     ],
   },
   {
     d: "M298 232 L148 232 L148 282",
     cluster: [
+      { type: "diamond", at: [148, 232] },
+      { type: "circle", at: [223, 232] },
       { type: "arrow", at: [280, 232], dir: "left" },
-      { type: "circle", at: [267, 232] },
-      { type: "diamond", at: [254, 232] },
     ],
   },
 ] as const;
