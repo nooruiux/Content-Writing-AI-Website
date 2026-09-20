@@ -1,0 +1,18 @@
+<svg preserveAspectRatio="none" width="1200" height="767" viewBox="0 0 1200 767" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 20C0 8.95429 8.95431 0 20 0H81.3106C88.4573 0 95.0609 3.81344 98.6331 10.0034L110.174 30.002C113.746 36.192 120.35 40.0054 127.497 40.0054H370.329L1180.03 41.3517C1191.07 41.37 1200 50.319 1200 61.3517V747C1200 758.046 1191.05 767 1180 767H20C8.95429 767 0 758.046 0 747V20Z" fill="#1D1C20"/>
+<g stroke-opacity="0.16" stroke-width="1.4" fill="none">
+<path d="M20 0.7H81.31C88.21 0.7 94.58 4.38 98.03 10.35L109.57 30.35C113.26 36.76 120.1 40.7 127.5 40.71H370.33L1180.03 42.05C1190.68 42.07 1199.3 50.71 1199.3 61.35V747C1199.3 757.66 1190.66 766.3 1180 766.3H20C9.34 766.3 0.7 757.66 0.7 747V20C0.7 9.34 9.34 0.7 20 0.7Z" stroke="url(#p0)"/>
+<path d="M20 0.7H81.31C88.21 0.7 94.58 4.38 98.03 10.35L109.57 30.35C113.26 36.76 120.1 40.7 127.5 40.71H370.33L1180.03 42.05C1190.68 42.07 1199.3 50.71 1199.3 61.35V747C1199.3 757.66 1190.66 766.3 1180 766.3H20C9.34 766.3 0.7 757.66 0.7 747V20C0.7 9.34 9.34 0.7 20 0.7Z" stroke="url(#p1)"/>
+<path d="M20 0.7H81.31C88.21 0.7 94.58 4.38 98.03 10.35L109.57 30.35C113.26 36.76 120.1 40.7 127.5 40.71H370.33L1180.03 42.05C1190.68 42.07 1199.3 50.71 1199.3 61.35V747C1199.3 757.66 1190.66 766.3 1180 766.3H20C9.34 766.3 0.7 757.66 0.7 747V20C0.7 9.34 9.34 0.7 20 0.7Z" stroke="url(#p2)"/>
+<path d="M20 0.7H81.31C88.21 0.7 94.58 4.38 98.03 10.35L109.57 30.35C113.26 36.76 120.1 40.7 127.5 40.71H370.33L1180.03 42.05C1190.68 42.07 1199.3 50.71 1199.3 61.35V747C1199.3 757.66 1190.66 766.3 1180 766.3H20C9.34 766.3 0.7 757.66 0.7 747V20C0.7 9.34 9.34 0.7 20 0.7Z" stroke="url(#p3)"/>
+</g>
+<circle cx="37" cy="17" r="5" fill="#EC6B5E"/>
+<circle cx="55" cy="17" r="5" fill="#F4BF4E"/>
+<circle cx="73" cy="17" r="5" fill="#61C654"/>
+<defs>
+<radialGradient id="p0" cx="0" cy="0" r="1" gradientTransform="matrix(86.5 -188.489 294.898 230.27 1083 680.256)" gradientUnits="userSpaceOnUse"><stop stop-color="white"/><stop offset="1" stop-color="white" stop-opacity="0"/></radialGradient>
+<radialGradient id="p1" cx="0" cy="0" r="1" gradientTransform="matrix(159 -161.748 253.061 423.271 177 195.011)" gradientUnits="userSpaceOnUse"><stop stop-color="white"/><stop offset="1" stop-color="white" stop-opacity="0"/></radialGradient>
+<radialGradient id="p2" cx="0" cy="0" r="1" gradientTransform="matrix(-170 -131.094 205.102 -452.555 1038 155.878)" gradientUnits="userSpaceOnUse"><stop stop-color="white"/><stop offset="1" stop-color="white" stop-opacity="0"/></radialGradient>
+<radialGradient id="p3" cx="0" cy="0" r="1" gradientTransform="matrix(-18 -185.228 289.796 -47.9175 139.5 680.256)" gradientUnits="userSpaceOnUse"><stop stop-color="white"/><stop offset="1" stop-color="white" stop-opacity="0"/></radialGradient>
+</defs>
+</svg>
