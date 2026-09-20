@@ -1,4 +1,3 @@
-import type { ReactNode } from "react";
 import { Icon } from "@/components/ui/Icon";
 import { PlayheadTime } from "@/components/mockups/PlayheadTime";
 import { voiceAI } from "@/lib/content";
@@ -128,7 +127,7 @@ function EditorTimeline({ width = 732 }: { width?: number }) {
           <span>0.16</span>
           <span>0.20</span>
         </div>
-        <div className="mt-6 flex h-8 items-center gap-2 rounded-sm bg-accent px-3 text-sm font-medium text-white ring-2 ring-[#68d0be]">
+        <div className="mt-6 flex h-7 items-center gap-1 rounded-sm bg-accent px-2 text-sm font-medium text-white ring-2 ring-[#68d0be]">
           <Icon src="/assets/voice/ic-play-sm.svg" size={14} className="shrink-0" />
           <span className="truncate">{voiceAI.clipText}</span>
         </div>
@@ -137,13 +136,7 @@ function EditorTimeline({ width = 732 }: { width?: number }) {
   );
 }
 
-function SettingsPanel({
-  className = "",
-  afterHearThisVoice,
-}: {
-  className?: string;
-  afterHearThisVoice?: ReactNode;
-}) {
+function SettingsPanel({ className = "" }: { className?: string }) {
   return (
     <div
       className={`flex flex-col gap-4 rounded-2xl border border-border bg-white/[0.04] p-6 ${className}`}
@@ -158,7 +151,6 @@ function SettingsPanel({
         <Icon src="/assets/voice/ic-mic-blue.svg" size={16} />
         Hear this voice
       </span>
-      {afterHearThisVoice}
       <SelectField label="Emotion" value="Neutral" />
       <SelectField label="Pitch" value="Default" />
       <label className="flex flex-col gap-2">
@@ -224,28 +216,16 @@ function TitleBar() {
   );
 }
 
-function TopToolbar({
-  className = "",
-  mobileCompact = false,
-}: {
-  className?: string;
-  mobileCompact?: boolean;
-}) {
-  const pillPad = mobileCompact ? "px-4 py-2 md:px-5 md:py-2.5" : "px-5 py-2.5";
-  const pillText = mobileCompact ? "text-sm md:text-base" : "text-base";
+function TopToolbar({ className = "" }: { className?: string }) {
   return (
-    <div className={`flex items-center justify-between gap-4 ${className}`}>
-      <div className="flex items-center gap-3 md:gap-6">
-        <span
-          className={`whitespace-nowrap rounded-lg border border-border bg-white/10 font-bold text-white shadow-[inset_0_-1px_1px_rgb(255_255_255/0.08)] ${pillPad} ${pillText}`}
-        >
+    <div className={`flex items-center justify-between ${className}`}>
+      <div className="flex items-center gap-6">
+        <span className="rounded-lg border border-border bg-white/10 px-5 py-2.5 text-base font-bold text-white shadow-[inset_0_-1px_1px_rgb(255_255_255/0.08)]">
           Text to speech
         </span>
-        <Icon src="/assets/voice/ic-cloud.svg" size={24} className="shrink-0" />
+        <Icon src="/assets/voice/ic-cloud.svg" size={24} />
       </div>
-      <span
-        className={`flex shrink-0 items-center gap-2 whitespace-nowrap rounded-lg bg-accent font-bold text-white ${pillPad} ${pillText}`}
-      >
+      <span className="flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-base font-bold text-white">
         <Icon src="/assets/voice/ic-export-cloud.svg" size={16} />
         Export
         <Icon src="/assets/voice/ic-chevdown.svg" size={16} />
@@ -261,7 +241,7 @@ export function VoiceEditorDesktop() {
       {/* Window frame — exact outline, gradient border and traffic lights
          exported from Figma node 1:2310 (radius 20, tabbed top-left, #1D1C20). */}
       <img
-        src="/assets/voice/editor-frame-v2.svg"
+        src="/assets/voice/editor-frame.svg"
         alt=""
         aria-hidden
         className="pointer-events-none absolute inset-0 size-full"
@@ -292,28 +272,25 @@ export function VoiceEditorMobile() {
   return (
     <div className="w-full overflow-hidden rounded-[20px] border border-white/[0.12] bg-surface pb-8">
       <TitleBar />
-      <div className="mt-6 flex flex-col items-center gap-8 px-6">
-        <TopToolbar className="w-full max-w-[420px]" mobileCompact />
+      <div className="mt-6 flex flex-col items-center gap-8 px-4">
+        <TopToolbar className="w-full max-w-[420px]" />
 
-        <div className="flex w-full flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-3">
           <span className="self-end rounded-lg border border-border px-4 py-2 text-base font-bold text-white tabular-nums">
             <PlayheadTime />
           </span>
-          <div className="[zoom:0.56] min-[380px]:[zoom:0.62]">
+          <div className="[zoom:0.7] min-[380px]:[zoom:0.78]">
             <VoiceOutput />
           </div>
         </div>
 
-        <div className="[zoom:0.42] min-[380px]:[zoom:0.46]">
+        <div className="[zoom:0.52] min-[380px]:[zoom:0.58]">
           <EditorTimeline width={640} />
         </div>
 
-        <SettingsPanel
-          className="[zoom:0.9] min-[380px]:[zoom:1]"
-          afterHearThisVoice={
-            <VoiceToProcessCard className="w-fit max-w-full self-center [zoom:0.6]" />
-          }
-        />
+        <SettingsPanel className="[zoom:0.9] min-[380px]:[zoom:1]" />
+
+        <VoiceToProcessCard className="[zoom:0.6] min-[380px]:[zoom:0.68]" />
       </div>
     </div>
   );
