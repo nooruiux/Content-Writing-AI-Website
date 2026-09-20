@@ -238,6 +238,7 @@ function TopToolbar({
   className = "",
   compact = false,
   gapFix = false,
+  exportEdgeGap = false,
 }: {
   className?: string;
   /** Mobile only: smaller font/padding so "Text to speech" never wraps at narrow widths. */
@@ -245,8 +246,14 @@ function TopToolbar({
   /** Mobile/tablet only: guarantees a minimum gap so the cloud icon can't end
      up squeezed against the Export button — never shrinks desktop's already-ample gap. */
   gapFix?: boolean;
+  /** Mobile only: nudges Export a few px left via a paint-time transform (the
+     row is already at zero slack, so any padding/margin added to Export or
+     the row is absorbed by the existing overflow and never actually moves
+     it — a transform shifts it visually without touching layout at all, so
+     "Text to speech" and everything else stays pixel-for-pixel identical). */
+  exportEdgeGap?: boolean;
 }) {
-  // Untouched when compact/gapFix are both false: identical output to the original markup.
+  // Untouched when compact/gapFix/exportEdgeGap are all false: identical output to the original markup.
   const outerClass = gapFix
     ? `flex items-center justify-between gap-4 ${className}`
     : `flex items-center justify-between ${className}`;
@@ -254,9 +261,11 @@ function TopToolbar({
   const pillClass = compact
     ? "whitespace-nowrap rounded-lg border border-border bg-white/10 px-4 py-2 text-sm font-bold text-white shadow-[inset_0_-1px_1px_rgb(255_255_255/0.08)] md:px-5 md:py-2.5 md:text-base"
     : "rounded-lg border border-border bg-white/10 px-5 py-2.5 text-base font-bold text-white shadow-[inset_0_-1px_1px_rgb(255_255_255/0.08)]";
-  const exportClass = compact
-    ? "flex shrink-0 items-center gap-2 whitespace-nowrap rounded-lg bg-accent py-2 pl-4 pr-5 text-sm font-bold text-white md:py-2.5 md:pl-5 md:pr-6 md:text-base"
-    : "flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-base font-bold text-white";
+  const exportClass = `${
+    compact
+      ? "flex shrink-0 items-center gap-2 whitespace-nowrap rounded-lg bg-accent px-4 py-2 text-sm font-bold text-white md:px-5 md:py-2.5 md:text-base"
+      : "flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-base font-bold text-white"
+  }${exportEdgeGap ? " -translate-x-2" : ""}`;
 
   return (
     <div className={outerClass}>
@@ -347,7 +356,7 @@ export function VoiceEditorMobile() {
     <div className="w-full overflow-hidden rounded-[20px] border border-white/[0.12] bg-surface pb-8">
       <TitleBar />
       <div className="mt-6 flex flex-col items-center gap-8 px-6">
-        <TopToolbar className="w-full max-w-[420px]" compact gapFix />
+        <TopToolbar className="w-full max-w-[420px]" compact gapFix exportEdgeGap />
 
         <div className="flex w-full flex-col items-center gap-4">
           <span className="self-end rounded-lg border border-border px-4 py-2 text-base font-bold text-white tabular-nums">
