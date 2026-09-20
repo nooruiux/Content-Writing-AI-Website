@@ -50,42 +50,30 @@ function PersonPill({
   );
 }
 
-/** Each connector runs from a person into Darrell. Per the Figma reference,
-   the three joint markers are spread along the segment adjacent to Darrell:
-   diamond at the far elbow, circle at the midpoint, arrow closest to Darrell
-   (pointing outward, away from Darrell) — not bunched together at one end. */
-const CONNECTORS = [
+/** Michael+Kristin share one line into Darrell's left side; Eleanor+Jacob
+   share one into the right side — each pair merges at a single T-junction
+   (where its diamond sits) rather than each person having their own separate
+   line straight into Darrell. Coordinates read off the live pill positions. */
+const LINES = [
+  "M171 146 L220 146 L220 226 L269 226", // Michael -> left junction -> Darrell
+  "M201 284 L220 284 L220 226", // Kristin -> left junction
+  "M385 130 L415 130 L415 226 L392 226", // Eleanor -> right junction -> Darrell
+  "M434 270 L415 270 L415 226", // Jacob -> right junction
+] as const;
+
+/** One joint cluster per side: diamond at the shared junction (far from
+   Darrell), circle at the midpoint, arrow closest to Darrell pointing
+   outward — matching the Figma connector style. */
+const CLUSTERS = [
   {
-    d: "M138 150 L278 150 L278 220",
-    cluster: [
-      { type: "diamond", at: [278, 150] },
-      { type: "circle", at: [278, 183] },
-      { type: "arrow", at: [278, 210], dir: "up" },
-    ],
+    diamond: [220, 226],
+    circle: [245, 226],
+    arrow: { at: [263, 226], dir: "left" },
   },
   {
-    d: "M328 232 L418 232 L418 128",
-    cluster: [
-      { type: "diamond", at: [418, 232] },
-      { type: "circle", at: [373, 232] },
-      { type: "arrow", at: [345, 232], dir: "right" },
-    ],
-  },
-  {
-    d: "M358 232 L468 232 L468 268",
-    cluster: [
-      { type: "diamond", at: [468, 232] },
-      { type: "circle", at: [413, 232] },
-      { type: "arrow", at: [375, 232], dir: "right" },
-    ],
-  },
-  {
-    d: "M298 232 L148 232 L148 282",
-    cluster: [
-      { type: "diamond", at: [148, 232] },
-      { type: "circle", at: [223, 232] },
-      { type: "arrow", at: [280, 232], dir: "left" },
-    ],
+    diamond: [415, 226],
+    circle: [405, 226],
+    arrow: { at: [398, 226], dir: "right" },
   },
 ] as const;
 
@@ -143,28 +131,27 @@ export function CollaboratorGraphCard() {
         aria-hidden
       >
         <g stroke="white" strokeOpacity="0.16" strokeDasharray="1.5 3.5" strokeLinecap="round">
-          {CONNECTORS.map((c, i) => (
-            <path key={i} d={c.d} />
+          {LINES.map((d, i) => (
+            <path key={i} d={d} />
           ))}
         </g>
         <g className="craft-flow-bloom">
-          {CONNECTORS.map((c, i) => (
-            <path key={i} d={c.d} pathLength={1} style={{ animationDelay: `${i * -0.9}s` }} />
+          {LINES.map((d, i) => (
+            <path key={i} d={d} pathLength={1} style={{ animationDelay: `${i * -0.7}s` }} />
           ))}
         </g>
         <g className="craft-flow">
-          {CONNECTORS.map((c, i) => (
-            <path key={i} d={c.d} pathLength={1} style={{ animationDelay: `${i * -0.9}s` }} />
+          {LINES.map((d, i) => (
+            <path key={i} d={d} pathLength={1} style={{ animationDelay: `${i * -0.7}s` }} />
           ))}
         </g>
-        {CONNECTORS.map((c, i) =>
-          c.cluster.map((m, j) => {
-            const key = `${i}-${j}`;
-            if (m.type === "diamond") return <Diamond key={key} x={m.at[0]} y={m.at[1]} />;
-            if (m.type === "circle") return <Circle key={key} x={m.at[0]} y={m.at[1]} />;
-            return <Arrow key={key} x={m.at[0]} y={m.at[1]} dir={"dir" in m ? m.dir : "up"} />;
-          }),
-        )}
+        {CLUSTERS.map((c, i) => (
+          <g key={i}>
+            <Diamond x={c.diamond[0]} y={c.diamond[1]} />
+            <Circle x={c.circle[0]} y={c.circle[1]} />
+            <Arrow x={c.arrow.at[0]} y={c.arrow.at[1]} dir={c.arrow.dir} />
+          </g>
+        ))}
       </svg>
 
       {craft.people.map((person, i) => (
