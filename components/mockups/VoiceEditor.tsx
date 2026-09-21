@@ -224,13 +224,20 @@ function VoiceToProcessCard({ className = "" }: { className?: string }) {
   );
 }
 
+/** Sits OUTSIDE/above the main card (not clipped by its rounded corners), so
+   the area to the tab's right stays empty page background — matching the
+   desktop/tablet frame's "raised tab" look, which needs genuine empty space
+   there, not just a same-color overlay drawn inside an already-uniform card.
+   Same exact curve as editor-frame.svg (desktop), at 1:1 scale — dots are
+   baked into the SVG itself, same as the desktop asset, not separate HTML. */
 function TitleBar() {
   return (
-    <div className="flex items-center gap-2 px-6 pt-5">
-      <span className="size-3 rounded-full bg-[#ff5f57]" />
-      <span className="size-3 rounded-full bg-[#febc2e]" />
-      <span className="size-3 rounded-full bg-[#28c840]" />
-    </div>
+    <img
+      src="/assets/voice/editor-frame-mobile-tab.svg"
+      alt=""
+      aria-hidden
+      className="pointer-events-none block h-[60px] w-[200px]"
+    />
   );
 }
 
@@ -323,7 +330,7 @@ export function VoiceEditorTablet() {
   return (
     <div className="relative h-[767px] w-[1200px]">
       <img
-        src="/assets/voice/editor-frame-fixed.svg"
+        src="/assets/voice/editor-frame.svg"
         alt=""
         aria-hidden
         className="pointer-events-none absolute inset-0 size-full"
@@ -353,8 +360,9 @@ export function VoiceEditorTablet() {
 /** Below md: restacked so every control stays legible without horizontal scroll. */
 export function VoiceEditorMobile() {
   return (
-    <div className="w-full overflow-hidden rounded-[20px] border border-white/[0.12] bg-surface pb-8">
+    <div className="w-full">
       <TitleBar />
+      <div className="-mt-px overflow-hidden rounded-[20px] border border-white/[0.12] bg-surface pb-8">
       <div className="mt-6 flex flex-col items-center gap-8 px-6">
         <TopToolbar className="w-full max-w-[420px]" compact gapFix exportEdgeGap />
 
@@ -377,6 +385,7 @@ export function VoiceEditorMobile() {
             <VoiceToProcessCard className="w-fit max-w-full self-center [zoom:0.6]" />
           }
         />
+      </div>
       </div>
     </div>
   );
