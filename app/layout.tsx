@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Starfield } from "@/components/Starfield";
+import { site } from "@/lib/site";
 import "./globals.css";
 
 const satoshi = localFont({
@@ -14,9 +15,34 @@ const satoshi = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Quantum — AI Content Writing",
-  description:
-    "Design your future with quantum AI. Generate blog posts, paragraphs, rewrites, summaries and AI voiceovers with Quantum AI.",
+  metadataBase: new URL(site.url),
+  title: { default: site.title, template: `%s · ${site.name}` },
+  description: site.description,
+  applicationName: site.name,
+  keywords: [
+    "AI content writing",
+    "AI writing tool",
+    "AI copywriting",
+    "blog post generator",
+    "AI summarizer",
+    "AI voiceover",
+    "Quantum AI",
+  ],
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    url: "/",
+    siteName: site.name,
+    title: site.title,
+    description: site.description,
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: site.title,
+    description: site.description,
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
